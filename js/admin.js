@@ -86,17 +86,21 @@ function renderPeopleList() {
       <input type="text" value="${escapeAttr(person.photo)}" data-field="photo" data-index="${index}" placeholder="Photo URL">
       <div style="display:flex;flex-direction:column;gap:0.4rem;">
         <div class="avail-checks">
-          <label><input type="checkbox" data-field="today" data-index="${index}" ${person.available.includes('today') ? 'checked' : ''}> Today</label>
-          <label><input type="checkbox" data-field="tomorrow" data-index="${index}" ${person.available.includes('tomorrow') ? 'checked' : ''}> Tomorrow</label>
+          <label><input type="checkbox" data-field="today" data-index="${index}" ${(person.available||[]).includes('today') ? 'checked' : ''}> Today</label>
+          <label><input type="checkbox" data-field="tomorrow" data-index="${index}" ${(person.available||[]).includes('tomorrow') ? 'checked' : ''}> Tomorrow</label>
         </div>
         <button class="btn btn-danger btn-sm" data-delete="${index}">Delete</button>
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label style="font-size:0.8rem;color:var(--text-muted);">Description (profile page only)</label>
+        <textarea data-field="description" data-index="${index}" rows="2" style="width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:0.5rem;border-radius:4px;margin-top:0.25rem;">${escapeAttr(person.description || '')}</textarea>
       </div>
     `;
     list.appendChild(row);
   });
 
   // Bind change events
-  list.querySelectorAll('input[data-field]').forEach(input => {
+  list.querySelectorAll('input[data-field], textarea[data-field]').forEach(input => {
     input.addEventListener('change', onPersonFieldChange);
   });
   list.querySelectorAll('[data-delete]').forEach(btn => {
@@ -135,6 +139,7 @@ function addPerson() {
   const name = document.getElementById('new-name').value.trim();
   const nationality = document.getElementById('new-nationality').value.trim();
   const photo = document.getElementById('new-photo').value.trim() || 'https://via.placeholder.com/400x500/1a1a1a/e63946?text=Photo';
+  const description = (document.getElementById('new-description') || {}).value || '';
   const today = document.getElementById('new-today').checked;
   const tomorrow = document.getElementById('new-tomorrow').checked;
 
@@ -154,6 +159,7 @@ function addPerson() {
     name,
     nationality: nationality || 'Unknown',
     photo,
+    description: description.trim(),
     available
   });
 
@@ -161,10 +167,10 @@ function addPerson() {
   syncPeopleToRuntime(people);
   renderPeopleList();
 
-  // Clear form
   document.getElementById('new-name').value = '';
   document.getElementById('new-nationality').value = '';
   document.getElementById('new-photo').value = '';
+  if (document.getElementById('new-description')) document.getElementById('new-description').value = '';
   document.getElementById('new-today').checked = true;
   document.getElementById('new-tomorrow').checked = false;
 }
@@ -211,6 +217,118 @@ function initTabs() {
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     });
   });
+}
+
+
+// ---------- GitHub publish ----------
+function loadGhSettings() {
+  try {
+    return JSON.parse(localStorage.getItem('7ways_gh_settings') || '{}');
+  } catch (e) { return {}; }
+}
+
+function saveGhSettingsToStore() {
+  const settings = {
+    owner: document.getElementById('gh-owner').value.trim(),
+    repo: document.getElementById('gh-repo').value.trim(),
+    branch: document.getElementById('gh-branch').value.trim() || 'main',
+    path: document.getElementById('gh-path').value.trim() || 'js/data.js',
+    token: document.getElementById('gh-token').value.trim()
+  };
+  localStorage.setItem('7ways_gh_settings', JSON.stringify(settings));
+  return settings;
+}
+
+function fillGhForm() {
+  const s = loadGhSettings();
+  if (document.getElementById('gh-owner')) document.getElementById('gh-owner').value = s.owner || '';
+  if (document.getElementById('gh-repo')) document.getElementById('gh-repo').value = s.repo || '';
+  if (document.getElementById('gh-branch')) document.getElementById('gh-branch').value = s.branch || 'main';
+  if (document.getElementById('gh-path')) document.getElementById('gh-path').value = s.path || 'js/data.js';
+  if (document.getElementById('gh-token')) document.getElementById('gh-token').value = s.token || '';
+}
+
+function buildDataJsContent() {
+  const people = getPeople();
+  const langs = ['en', 'ja', 'zh', 'ko'];
+  const pricing = {};
+  const contact = {};
+  langs.forEach(l => {
+    pricing[l] = getTextForLang('pricingText', l);
+    contact[l] = getTextForLang('contactText', l);
+  });
+
+  // Build a valid data.js file string
+  let out = `/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = {\n  people: `;
+  out += JSON.stringify(people, null, 2).replace(/^/gm, '  ').replace(/^  \[/, '[');
+  // simpler:
+  out = '/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = ' + JSON.stringify({
+    people: people,
+    pricingText: pricing,
+    contactText: contact
+  }, null, 2) + ';\n';
+  return out;
+}
+
+async function publishToGitHub() {
+  const s = loadGhSettings();
+  if (!s.token || !s.owner || !s.repo) {
+    return { ok: false, message: 'GitHub not configured – changes saved in this browser only.' };
+  }
+
+  const path = s.path || 'js/data.js';
+  const branch = s.branch || 'main';
+  const content = buildDataJsContent();
+  const apiBase = `https://api.github.com/repos/${s.owner}/${s.repo}/contents/${path}`;
+
+  // Get current file SHA (required for update)
+  let sha = null;
+  try {
+    const getRes = await fetch(`${apiBase}?ref=${encodeURIComponent(branch)}`, {
+      headers: {
+        'Authorization': `Bearer ${s.token}`,
+        'Accept': 'application/vnd.github+json'
+      }
+    });
+    if (getRes.ok) {
+      const data = await getRes.json();
+      sha = data.sha;
+    } else if (getRes.status !== 404) {
+      const err = await getRes.text();
+      return { ok: false, message: 'GitHub read failed: ' + getRes.status + ' ' + err };
+    }
+  } catch (e) {
+    return { ok: false, message: 'Network error reading GitHub: ' + e.message };
+  }
+
+  // Encode content as base64
+  const base64 = btoa(unescape(encodeURIComponent(content)));
+
+  const body = {
+    message: 'Update CMS data via admin panel',
+    content: base64,
+    branch: branch
+  };
+  if (sha) body.sha = sha;
+
+  try {
+    const putRes = await fetch(apiBase, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${s.token}`,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    if (!putRes.ok) {
+      const err = await putRes.text();
+      return { ok: false, message: 'GitHub push failed: ' + putRes.status + ' ' + err };
+    }
+    return { ok: true, message: '✓ Saved locally and pushed live to GitHub.' };
+  } catch (e) {
+    return { ok: false, message: 'Network error pushing to GitHub: ' + e.message };
+  }
 }
 
 // ---------- Init ----------
@@ -272,25 +390,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs();
 
 
-  // Save & Publish – writes everything and confirms live
-  document.getElementById('save-publish-btn').addEventListener('click', () => {
-    // Ensure current textareas are saved for active language
+  // Save GitHub settings button
+  const ghSaveBtn = document.getElementById('save-gh-settings');
+  if (ghSaveBtn) {
+    ghSaveBtn.addEventListener('click', () => {
+      saveGhSettingsToStore();
+      alert('GitHub settings saved in this browser.');
+    });
+  }
+  fillGhForm();
+
+  // Save & Publish – local + optional GitHub push
+  document.getElementById('save-publish-btn').addEventListener('click', async () => {
+    const status = document.getElementById('save-status');
+    status.textContent = 'Saving…';
+    status.style.color = 'var(--text-muted)';
+
     const pricingVal = document.getElementById('admin-pricing-edit').value;
     saveTextForLang('pricingText', pricingEditLang, pricingVal);
     const contactVal = document.getElementById('admin-contact-edit').value;
     saveTextForLang('contactText', contactEditLang, contactVal);
 
-    // People already auto-save on change; re-sync runtime
     const people = getPeople();
     savePeople(people);
     syncPeopleToRuntime(people);
 
-    const status = document.getElementById('save-status');
-    status.textContent = '✓ All changes saved and now live on the site.';
-    status.style.color = '#2a9d8f';
-    setTimeout(() => {
-      status.textContent = '';
-    }, 4000);
+    const result = await publishToGitHub();
+    status.textContent = result.message;
+    status.style.color = result.ok ? '#2a9d8f' : '#e63946';
+    setTimeout(() => { status.textContent = ''; }, 8000);
   });
 
   // Auto-login if already authenticated in this session

@@ -48,7 +48,7 @@
     .tab-content.active { display: block; }
     .person-row {
       display: grid;
-      grid-template-columns: 60px 1fr 1fr 1fr auto;
+      grid-template-columns: 60px 1fr 1fr 1.2fr auto;
       gap: 0.75rem;
       align-items: center;
       background: var(--bg-card);
@@ -144,8 +144,8 @@
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <img src="images/logo.svg" alt="7 Ways Dragon Logo">
-        <div class="logo-text">7 WAYS</div>
+        
+        <div class="logo-text">Black Garter<br><span>7 ways</span></div>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">← Back to Site</a></li>
@@ -191,6 +191,40 @@
         <span id="save-status" style="color:var(--text-muted); font-size:0.95rem;"></span>
       </div>
 
+      <div class="content-section" style="margin-bottom:1.5rem;">
+        <h2 style="margin-top:0;">GitHub Live Publish (optional)</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">
+          To push changes live to your GitHub-hosted site when you click Save &amp; Publish,
+          enter your repository details and a Personal Access Token (classic) with <code>repo</code> scope.
+          The token is stored only in this browser. Leave blank to save locally only.
+        </p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>GitHub Owner (username/org)</label>
+            <input type="text" id="gh-owner" placeholder="your-github-username">
+          </div>
+          <div class="form-group">
+            <label>Repository name</label>
+            <input type="text" id="gh-repo" placeholder="your-repo-name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Branch</label>
+            <input type="text" id="gh-branch" placeholder="main" value="main">
+          </div>
+          <div class="form-group">
+            <label>Path to data file</label>
+            <input type="text" id="gh-path" placeholder="js/data.js" value="js/data.js">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Personal Access Token</label>
+          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx">
+        </div>
+        <button type="button" id="save-gh-settings" class="btn btn-outline btn-sm">Save GitHub Settings</button>
+      </div>
+
       <!-- ROSTER TAB -->
       <div id="tab-roster" class="tab-content active">
         <h2>Manage Roster</h2>
@@ -212,6 +246,10 @@
           <div class="form-group">
             <label>Photo URL</label>
             <input type="url" id="new-photo" placeholder="https://... or images/photo.jpg">
+          </div>
+          <div class="form-group">
+            <label>Description (shown only on profile page)</label>
+            <textarea id="new-description" rows="3" placeholder="Short description about this person..." style="width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:0.7rem;border-radius:6px;"></textarea>
           </div>
           <div class="form-group">
             <label>Available</label>

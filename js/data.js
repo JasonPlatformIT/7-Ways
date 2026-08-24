@@ -19,56 +19,64 @@ const CMS_DATA = {
       name: "Sophia Laurent",
       photo: "https://picsum.photos/id/64/400/500",
       nationality: "French",
-      available: ["today", "tomorrow"]
+      available: ["today", "tomorrow"],
+      description: "Elegant and sophisticated. Enjoys fine dining and interesting conversation."
     },
     {
       id: 2,
       name: "Isabella Rossi",
       photo: "https://picsum.photos/id/65/400/500",
       nationality: "Italian",
-      available: ["today"]
+      available: ["today"],
+      description: "Warm personality with a passion for art and travel."
     },
     {
       id: 3,
       name: "Emma Johansson",
       photo: "https://picsum.photos/id/91/400/500",
       nationality: "Swedish",
-      available: ["tomorrow"]
+      available: ["tomorrow"],
+      description: "Calm and friendly. Loves outdoor activities and good music."
     },
     {
       id: 4,
       name: "Mia Chen",
       photo: "https://picsum.photos/id/177/400/500",
       nationality: "Chinese",
-      available: ["today", "tomorrow"]
+      available: ["today", "tomorrow"],
+      description: "Charming and well-travelled. Speaks multiple languages."
     },
     {
       id: 5,
       name: "Olivia Müller",
       photo: "https://picsum.photos/id/338/400/500",
       nationality: "German",
-      available: ["today"]
+      available: ["today"],
+      description: "Professional and discreet. Enjoys theatre and city walks."
     },
     {
       id: 6,
       name: "Ava Petrov",
       photo: "https://picsum.photos/id/342/400/500",
       nationality: "Russian",
-      available: ["tomorrow"]
+      available: ["tomorrow"],
+      description: "Striking presence with a love of fashion and culture."
     },
     {
       id: 7,
       name: "Chloe Dubois",
       photo: "https://picsum.photos/id/1011/400/500",
       nationality: "Canadian",
-      available: ["today", "tomorrow"]
+      available: ["today", "tomorrow"],
+      description: "Fun and outgoing. Great company for evenings out."
     },
     {
       id: 8,
       name: "Luna Santos",
       photo: "https://picsum.photos/id/1027/400/500",
       nationality: "Brazilian",
-      available: ["tomorrow"]
+      available: ["tomorrow"],
+      description: "Vibrant energy and a warm smile. Loves dancing and good food."
     }
   ],
 

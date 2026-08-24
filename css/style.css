@@ -50,31 +50,26 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
   text-decoration: none;
   color: var(--red);
 }
 
-.logo img {
-  height: 52px;
-  width: auto;
-  display: block;
-}
-
 .logo-text {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--red);
-  line-height: 1.1;
+  line-height: 1.15;
+  text-transform: none;
 }
 
 .logo-text span {
   display: block;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -147,6 +142,29 @@ nav {
 .lang-btn.active {
   background: rgba(230, 57, 70, 0.2);
   box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
+}
+
+
+/* Contact strip under header / on home */
+.contact-strip {
+  background: #0d0d0d;
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.contact-strip a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-strip a:hover {
+  text-decoration: underline;
+}
+.contact-strip .sep {
+  margin: 0 0.75rem;
+  color: var(--border);
 }
 
 /* Main content */

@@ -219,6 +219,7 @@ function initProfilePage() {
             <span class="meta-value">${availableText}</span>
           </div>
         </div>
+        ${person.description ? `<div class="profile-description" style="margin-top:1.5rem; color:var(--text-muted); line-height:1.7;">${person.description}</div>` : ''}
         <p style="margin-top: 2rem;">
           <a href="roster.html" class="btn btn-outline">${backTxt}</a>
           <a href="contact.html" class="btn" style="margin-left: 0.75rem;">${contactTxt}</a>
