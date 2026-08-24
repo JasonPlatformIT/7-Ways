@@ -1,0 +1,310 @@
+/**
+ * Main site logic
+ */
+
+// Load text content for CURRENT language from localStorage or CMS_DATA
+// key = 'pricingText' or 'contactText'
+function getTextContent(key, lang) {
+  const useLang = lang || (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  const storageKey = 'cms_' + key + '_' + useLang;
+  const stored = localStorage.getItem(storageKey);
+  if (stored !== null) return stored;
+
+  // Fallback to CMS_DATA (now an object per language)
+  const data = CMS_DATA[key];
+  if (data && typeof data === 'object') {
+    return data[useLang] || data.en || '';
+  }
+  // Legacy single-string support
+  return data || '';
+}
+
+function saveTextContent(key, value, lang) {
+  const useLang = lang || (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  localStorage.setItem('cms_' + key + '_' + useLang, value);
+}
+
+// Render a person card (links to individual profile page)
+function createPersonCard(person) {
+  const card = document.createElement('div');
+  card.className = 'person-card';
+  card.innerHTML = `
+    <a href="profile.html?id=${person.id}" class="card-link">
+      <img src="${person.photo}" alt="${person.name}" loading="lazy"
+           onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/e63946?text=No+Photo'">
+      <div class="person-info">
+        <h3>${person.name}</h3>
+        <div class="nationality">${person.nationality}</div>
+      </div>
+    </a>
+  `;
+  return card;
+}
+
+// Prefer admin-edited people from localStorage when available
+function getLivePeople() {
+  const stored = localStorage.getItem('cms_people');
+  if (stored) {
+    try { return JSON.parse(stored); } catch (e) {}
+  }
+  return CMS_DATA.people || [];
+}
+
+// Render people filtered by availability
+function renderRoster(containerId, filter) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  let people = getLivePeople();
+  if (filter && filter !== 'all') {
+    people = people.filter(p => p.available && p.available.includes(filter));
+  }
+
+  if (people.length === 0) {
+    const emptyMsg = (typeof t === 'function') ? t('empty_day') : 'No one scheduled for this day yet.';
+    container.innerHTML = `<div class="empty-state">${emptyMsg}</div>`;
+    return;
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'roster-grid';
+  people.forEach(person => grid.appendChild(createPersonCard(person)));
+  container.appendChild(grid);
+}
+
+// Home page: Today / Tomorrow buttons
+function initHomePage() {
+  const todayBtn = document.getElementById('btn-today');
+  const tomorrowBtn = document.getElementById('btn-tomorrow');
+  const rosterArea = document.getElementById('roster-display');
+
+  if (!todayBtn || !tomorrowBtn || !rosterArea) return;
+
+  function showDay(day) {
+    todayBtn.classList.toggle('active', day === 'today');
+    tomorrowBtn.classList.toggle('active', day === 'tomorrow');
+    renderRoster('roster-display', day);
+  }
+
+  todayBtn.addEventListener('click', () => showDay('today'));
+  tomorrowBtn.addEventListener('click', () => showDay('tomorrow'));
+
+  // Default to today
+  showDay('today');
+}
+
+// Roster page: show all or filtered
+function initRosterPage() {
+  const allBtn = document.getElementById('btn-all');
+  const todayBtn = document.getElementById('btn-today');
+  const tomorrowBtn = document.getElementById('btn-tomorrow');
+  const rosterArea = document.getElementById('roster-display');
+
+  if (!rosterArea) return;
+
+  function showFilter(filter) {
+    [allBtn, todayBtn, tomorrowBtn].forEach(btn => {
+      if (btn) btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+    renderRoster('roster-display', filter);
+  }
+
+  if (allBtn) allBtn.addEventListener('click', () => showFilter('all'));
+  if (todayBtn) todayBtn.addEventListener('click', () => showFilter('today'));
+  if (tomorrowBtn) tomorrowBtn.addEventListener('click', () => showFilter('tomorrow'));
+
+  // Default to all
+  showFilter('all');
+}
+
+// Editable text sections (Pricing & Contact) – language aware
+function initEditableSection(sectionKey, displayId, editId, saveBtnId) {
+  const displayEl = document.getElementById(displayId);
+  const editEl = document.getElementById(editId);
+  const saveBtn = document.getElementById(saveBtnId);
+
+  if (!displayEl) return;
+
+  function loadCurrent() {
+    const content = getTextContent(sectionKey);
+    displayEl.textContent = content;
+    if (editEl) editEl.value = content;
+  }
+
+  loadCurrent();
+
+  // Expose so language switch can refresh
+  window['refresh_' + sectionKey] = loadCurrent;
+
+  if (editEl && saveBtn) {
+    // Avoid duplicate listeners
+    if (!saveBtn.dataset.bound) {
+      saveBtn.dataset.bound = '1';
+      saveBtn.addEventListener('click', () => {
+        const newValue = editEl.value.trim();
+        // Save for the CURRENT language
+        saveTextContent(sectionKey, newValue);
+        displayEl.textContent = newValue;
+        const msg = (typeof t === 'function') ? t('saved') : 'Saved! Content updated (stored in your browser).';
+        alert(msg);
+      });
+    }
+  }
+}
+
+// Refresh custom text areas when language changes
+function refreshCustomTexts() {
+  if (typeof window.refresh_pricingText === 'function') window.refresh_pricingText();
+  if (typeof window.refresh_contactText === 'function') window.refresh_contactText();
+
+  // Home page previews
+  const pricingPreview = document.getElementById('pricing-preview');
+  const contactPreview = document.getElementById('contact-preview');
+  if (pricingPreview) pricingPreview.textContent = getTextContent('pricingText');
+  if (contactPreview) contactPreview.textContent = getTextContent('contactText');
+}
+
+// Individual profile page (profile.html?id=1)
+function initProfilePage() {
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'), 10);
+  const container = document.getElementById('profile-content');
+
+  if (!container) return;
+
+  const person = getLivePeople().find(p => p.id === id);
+
+  if (!person) {
+    const notFound = (typeof t === 'function') ? t('person_not_found') : 'Person not found';
+    const notExist = (typeof t === 'function') ? t('profile_not_exist') : 'This profile does not exist.';
+    const back = (typeof t === 'function') ? t('back_to_roster') : 'Back to Roster';
+    container.innerHTML = `
+      <div class="empty-state">
+        <h2>${notFound}</h2>
+        <p>${notExist}</p>
+        <p style="margin-top:1.5rem;"><a href="roster.html" class="btn">${back}</a></p>
+      </div>
+    `;
+    return;
+  }
+
+  document.title = `${person.name} | 7 Ways`;
+
+  const availableText = person.available
+    .map(d => d.charAt(0).toUpperCase() + d.slice(1))
+    .join(' & ');
+
+  const natLabel = (typeof t === 'function') ? t('nationality') : 'Nationality';
+  const availLabel = (typeof t === 'function') ? t('available') : 'Available';
+  const backTxt = (typeof t === 'function') ? t('back_to_roster') : '← Back to Roster';
+  const contactTxt = (typeof t === 'function') ? t('contact_us') : 'Contact Us';
+
+  container.innerHTML = `
+    <div class="profile-layout">
+      <div class="profile-photo">
+        <img src="${person.photo}" alt="${person.name}"
+             onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/e63946?text=No+Photo'">
+      </div>
+      <div class="profile-details">
+        <h1>${person.name}</h1>
+        <div class="profile-meta">
+          <div class="meta-item">
+            <span class="meta-label">${natLabel}</span>
+            <span class="meta-value">${person.nationality}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">${availLabel}</span>
+            <span class="meta-value">${availableText}</span>
+          </div>
+        </div>
+        <p style="margin-top: 2rem;">
+          <a href="roster.html" class="btn btn-outline">${backTxt}</a>
+          <a href="contact.html" class="btn" style="margin-left: 0.75rem;">${contactTxt}</a>
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+// Employment application form
+function initEmploymentForm() {
+  const form = document.getElementById('employment-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('emp-name').value.trim();
+    const nationality = document.getElementById('emp-nationality').value.trim();
+    const age = document.getElementById('emp-age').value.trim();
+    const contact = document.getElementById('emp-contact').value.trim();
+
+    // Basic validation (HTML required already handles most)
+    if (!name || !nationality || !age || !contact) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Show confirmation
+    const msg = (typeof t === 'function' ? t('form_success') : 'Application received! Thank you.');
+    alert(msg + '\n\nName: ' + name + '\nNationality: ' + nationality + '\nAge: ' + age + '\nContact: ' + contact);
+    form.reset();
+  });
+}
+
+// Set active nav link
+function setActiveNav() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === path || (path === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Initialize based on page
+document.addEventListener('DOMContentLoaded', () => {
+  setActiveNav();
+
+  // Language system
+  if (typeof applyTranslations === 'function') {
+    applyTranslations();
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === (typeof currentLang !== 'undefined' ? currentLang : 'en'));
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+  }
+
+  const page = document.body.dataset.page;
+
+  if (page === 'home') {
+    initHomePage();
+    const pricingPreview = document.getElementById('pricing-preview');
+    const contactPreview = document.getElementById('contact-preview');
+    if (pricingPreview) pricingPreview.textContent = getTextContent('pricingText');
+    if (contactPreview) contactPreview.textContent = getTextContent('contactText');
+  }
+
+  if (page === 'roster') {
+    initRosterPage();
+  }
+
+  if (page === 'pricing') {
+    initEditableSection('pricingText', 'pricing-display', 'pricing-edit', 'save-pricing');
+  }
+
+  if (page === 'contact') {
+    initEditableSection('contactText', 'contact-display', 'contact-edit', 'save-contact');
+  }
+
+  if (page === 'profile') {
+    initProfilePage();
+  }
+
+  if (page === 'employment') {
+    initEmploymentForm();
+  }
+});

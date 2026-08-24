@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180">
+  <defs>
+    <linearGradient id="scaleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4d5a"/>
+      <stop offset="40%" style="stop-color:#e63946"/>
+      <stop offset="100%" style="stop-color:#9b2226"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff8dc"/>
+      <stop offset="70%" style="stop-color:#ffcc00"/>
+      <stop offset="100%" style="stop-color:#e63946"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <circle cx="110" cy="75" r="68" fill="#1a1a1a" opacity="0.6"/>
+
+  <!-- Mane -->
+  <path d="M55 50 Q25 30 35 70 Q15 85 50 95 Q30 110 60 115" fill="#c1121f" filter="url(#shadow)"/>
+  <path d="M50 45 Q20 20 40 55" fill="#e63946"/>
+  
+  <!-- Head -->
+  <ellipse cx="105" cy="75" rx="52" ry="42" fill="url(#scaleGrad)" stroke="#1a0000" stroke-width="2.5" filter="url(#shadow)"/>
+  
+  <!-- Forehead ridge -->
+  <path d="M70 55 Q105 35 145 55 Q140 70 105 65 Q70 70 70 55" fill="#c1121f"/>
+  
+  <!-- Snout -->
+  <ellipse cx="155" cy="78" rx="32" ry="22" fill="url(#scaleGrad)" stroke="#1a0000" stroke-width="2"/>
+  
+  <!-- Nostril -->
+  <ellipse cx="175" cy="75" rx="6" ry="4" fill="#1a0000"/>
+  
+  <!-- Mouth -->
+  <path d="M145 90 Q165 105 180 92" fill="none" stroke="#1a0000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M150 92 Q162 100 175 93" fill="#4a0000"/>
+  
+  <!-- Teeth -->
+  <path d="M152 92 L154 98 L156 92" fill="#f5f5f5"/>
+  <path d="M160 93 L162 99 L164 93" fill="#f5f5f5"/>
+  
+  <!-- Eye -->
+  <ellipse cx="118" cy="58" rx="16" ry="14" fill="#1a0000"/>
+  <ellipse cx="120" cy="56" rx="11" ry="10" fill="url(#eyeGlow)"/>
+  <circle cx="122" cy="54" r="4" fill="#1a1a1a"/>
+  <circle cx="123" cy="52.5" r="1.5" fill="#fff"/>
+  
+  <!-- Eyebrow -->
+  <path d="M100 48 Q118 40 135 50" fill="none" stroke="#9b2226" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Horns -->
+  <path d="M78 42 Q65 5 90 28" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M95 38 Q90 0 110 25" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="88" cy="12" r="4" fill="#ffd700"/>
+  <circle cx="108" cy="8" r="4" fill="#ffd700"/>
+  
+  <!-- Whiskers -->
+  <path d="M165 70 Q200 55 195 80" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M168 88 Q205 95 195 110" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round"/>
+  
+  <!-- Scale details -->
+  <path d="M85 70 Q95 65 100 75" fill="none" stroke="#9b2226" stroke-width="1.5" opacity="0.7"/>
+  <path d="M90 85 Q100 80 110 90" fill="none" stroke="#9b2226" stroke-width="1.5" opacity="0.7"/>
+  <path d="M115 80 Q125 75 135 85" fill="none" stroke="#9b2226" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Text -->
+  <text x="110" y="160" font-family="Arial Black, Helvetica, sans-serif" font-size="26" font-weight="900" fill="#e63946" text-anchor="middle" letter-spacing="3">7 WAYS</text>
+</svg>

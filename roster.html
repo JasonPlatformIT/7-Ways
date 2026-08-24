@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="7 Ways - Premium roster and booking service. Available in English, Japanese, Chinese and Korean.">
+  <meta name="keywords" content="7 Ways, roster, booking, premium service">
+  <meta name="author" content="7 Ways">
+  <meta property="og:site_name" content="7 Ways">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <link rel="alternate" hreflang="en" href="roster.html">
+  <link rel="alternate" hreflang="ja" href="roster.html">
+  <link rel="alternate" hreflang="zh" href="roster.html">
+  <link rel="alternate" hreflang="ko" href="roster.html">
+  <link rel="alternate" hreflang="x-default" href="roster.html">
+  <meta name="google" content="notranslate">
+  <title>Roster | 7 Ways</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="roster">
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="7 Ways Dragon Logo">
+        <div class="logo-text">7 WAYS</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="roster.html" class="active" data-i18n="nav_roster">Roster</a></li>
+        <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="employment.html" data-i18n="nav_employment">Employment</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="lang-bar">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en" title="English"><img src="images/flag-en.png" alt="English"></button>
+      <button class="lang-btn" data-lang="ja" title="日本語"><img src="images/flag-ja.png" alt="日本語"></button>
+      <button class="lang-btn" data-lang="zh" title="中文"><img src="images/flag-zh.png" alt="中文"></button>
+      <button class="lang-btn" data-lang="ko" title="한국어"><img src="images/flag-ko.png" alt="한국어"></button>
+    </div>
+  </div>
+
+  <main>
+    <h1 data-i18n="roster_title">Roster</h1>
+    <p style="margin-bottom: 1.5rem; color: var(--text-muted);" data-i18n="roster_subtitle">
+      Full roster managed via CMS. Filter by availability.
+    </p>
+
+    <div class="btn-group">
+      <button id="btn-all" class="btn btn-outline" data-filter="all" data-i18n="btn_all">All</button>
+      <button id="btn-today" class="btn btn-outline" data-filter="today" data-i18n="btn_today">Today</button>
+      <button id="btn-tomorrow" class="btn btn-outline" data-filter="tomorrow" data-i18n="btn_tomorrow">Tomorrow</button>
+    </div>
+
+    <div id="roster-display"></div>
+
+    <p class="admin-note" data-i18n="admin_note_roster">
+      To update the roster: edit js/data.js and add/remove people.
+    </p>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">&copy; 2026 7 Ways. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

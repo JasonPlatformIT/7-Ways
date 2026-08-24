@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | 7 Ways</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .login-box {
+      max-width: 400px;
+      margin: 4rem auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .login-box h1 {
+      text-align: center;
+      border: none;
+      margin-bottom: 1.5rem;
+    }
+    .admin-panel { display: none; }
+    .admin-panel.visible { display: block; }
+    .login-section.visible { display: block; }
+    .login-section { display: none; }
+    .admin-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .admin-tabs button {
+      padding: 0.6rem 1.2rem;
+      background: transparent;
+      border: 2px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .admin-tabs button.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .person-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .person-row img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .person-row input, .person-row select {
+      width: 100%;
+      padding: 0.4rem 0.6rem;
+      background: #111;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .avail-checks {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+    .avail-checks label {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+    }
+    .btn-sm {
+      padding: 0.35rem 0.7rem;
+      font-size: 0.85rem;
+    }
+    .btn-danger {
+      background: #6b0f1a;
+      border: none;
+      color: #fff;
+    }
+    .btn-danger:hover { background: #9b1b2e; }
+    .add-form {
+      background: var(--bg-card);
+      border: 1px dashed var(--red);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .add-form h3 { color: var(--red-light); margin-bottom: 1rem; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .person-row {
+        grid-template-columns: 1fr;
+      }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .logout-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .lang-edit-tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .lang-edit-tabs button {
+      padding: 0.35rem 0.8rem;
+      font-size: 0.85rem;
+      background: #222;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .lang-edit-tabs button.active {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+  </style>
+</head>
+<body data-page="admin">
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="7 Ways Dragon Logo">
+        <div class="logo-text">7 WAYS</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">← Back to Site</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- LOGIN -->
+    <div id="login-section" class="login-section visible">
+      <div class="login-box">
+        <h1>Admin Login</h1>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="current-password" required>
+        </div>
+        <p id="login-error" style="color: var(--red); margin-bottom: 1rem; display: none;">Incorrect username or password.</p>
+        <button id="login-btn" class="btn" style="width: 100%;">Login</button>
+      </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-panel" class="admin-panel">
+      <div class="logout-bar">
+        <h1 style="margin: 0; border: none;">CMS Admin</h1>
+        <button id="logout-btn" class="btn btn-outline btn-sm">Logout</button>
+      </div>
+
+      <div class="admin-tabs">
+        <button class="tab-btn active" data-tab="roster">Roster</button>
+        <button class="tab-btn" data-tab="pricing">Pricing Text</button>
+        <button class="tab-btn" data-tab="contact">Contact Text</button>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+        <button id="save-publish-btn" class="btn" style="font-size:1.05rem; padding:0.85rem 1.75rem;">
+          Save &amp; Publish Changes
+        </button>
+        <span id="save-status" style="color:var(--text-muted); font-size:0.95rem;"></span>
+      </div>
+
+      <!-- ROSTER TAB -->
+      <div id="tab-roster" class="tab-content active">
+        <h2>Manage Roster</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Add, edit or remove people. Changes are saved in this browser.</p>
+        <div id="people-list"></div>
+
+        <div class="add-form">
+          <h3>Add New Person</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" id="new-name" placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label>Nationality</label>
+              <input type="text" id="new-nationality" placeholder="e.g. French">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Photo URL</label>
+            <input type="url" id="new-photo" placeholder="https://... or images/photo.jpg">
+          </div>
+          <div class="form-group">
+            <label>Available</label>
+            <div class="avail-checks">
+              <label><input type="checkbox" id="new-today" checked> Today</label>
+              <label><input type="checkbox" id="new-tomorrow"> Tomorrow</label>
+            </div>
+          </div>
+          <button id="add-person-btn" class="btn">Add Person</button>
+        </div>
+      </div>
+
+      <!-- PRICING TAB -->
+      <div id="tab-pricing" class="tab-content">
+        <h2>Pricing Text (per language)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Select a language, edit the text, then save.</p>
+        <div class="lang-edit-tabs" id="pricing-lang-tabs">
+          <button data-lang="en" class="active">English</button>
+          <button data-lang="ja">日本語</button>
+          <button data-lang="zh">中文</button>
+          <button data-lang="ko">한국어</button>
+        </div>
+        <textarea id="admin-pricing-edit" class="editable" rows="14"></textarea>
+        <button id="save-admin-pricing" class="btn save-btn" style="margin-top: 0.75rem;">Save Pricing</button>
+      </div>
+
+      <!-- CONTACT TAB -->
+      <div id="tab-contact" class="tab-content">
+        <h2>Contact Text (per language)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Select a language, edit the text, then save.</p>
+        <div class="lang-edit-tabs" id="contact-lang-tabs">
+          <button data-lang="en" class="active">English</button>
+          <button data-lang="ja">日本語</button>
+          <button data-lang="zh">中文</button>
+          <button data-lang="ko">한국어</button>
+        </div>
+        <textarea id="admin-contact-edit" class="editable" rows="14"></textarea>
+        <button id="save-admin-contact" class="btn save-btn" style="margin-top: 0.75rem;">Save Contact</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 7 Ways. Admin area – not publicly linked.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
