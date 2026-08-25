@@ -20,35 +20,6 @@ const CMS_DATA = {
       ],
       "description": "Elegant and sophisticated. Enjoys fine dining and interesting conversation.",
       "slug": "sophia-laurent"
-    },
-    {
-      "id": 7,
-      "name": "Chloe Dubois",
-      "photos": [
-        "https://picsum.photos/id/1011/400/500"
-      ],
-      "photo": "https://picsum.photos/id/1011/400/500",
-      "nationality": "Canadian",
-      "available": [
-        "today",
-        "tomorrow"
-      ],
-      "description": "Fun and outgoing. Great company for evenings out.",
-      "slug": "chloe-dubois"
-    },
-    {
-      "id": 8,
-      "name": "Luna Santos",
-      "photos": [
-        "https://picsum.photos/id/1027/400/500"
-      ],
-      "photo": "https://picsum.photos/id/1027/400/500",
-      "nationality": "Brazilian",
-      "available": [
-        "tomorrow"
-      ],
-      "description": "Vibrant energy and a warm smile. Loves dancing and good food.",
-      "slug": "luna-santos"
     }
   ],
   "pricingText": {
