@@ -35,6 +35,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 3,
+      "name": "Kitty",
+      "slug": "kitty",
+      "nationality": "Chinese",
+      "photo": "images/people/3/1787660100319-img_0426.jpeg",
+      "photos": [
+        "images/people/3/1787660100319-img_0426.jpeg"
+      ],
+      "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "pricingText": {
