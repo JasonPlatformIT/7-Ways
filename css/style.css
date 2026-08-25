@@ -1,14 +1,14 @@
-/* Black & Red Theme */
+/* Black & Gold Theme */
 :root {
   --bg-dark: #0a0a0a;
   --bg-card: #1a1a1a;
   --bg-nav: #111111;
-  --red: #e63946;
-  --red-dark: #c1121f;
-  --red-light: #ff4d5a;
+  --red: #d4af37;
+  --red-dark: #a68b1d;
+  --red-light: #e8c547;
   --text: #f1f1f1;
   --text-muted: #aaaaaa;
-  --border: #333333;
+  --border: #3d3d3d;
   --success: #2a9d8f;
 }
 
@@ -467,3 +467,31 @@ footer {
   margin-top: 0.5rem;
   font-style: italic;
 }
+/* Profile multi-image gallery */
+.profile-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.profile-thumb {
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  width: 64px;
+  height: 64px;
+}
+.profile-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.profile-thumb.active,
+.profile-thumb:hover {
+  border-color: var(--red);
+}
+

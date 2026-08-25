@@ -188,41 +188,32 @@
         <button id="save-publish-btn" class="btn" style="font-size:1.05rem; padding:0.85rem 1.75rem;">
           Save &amp; Publish Changes
         </button>
+        <button type="button" id="reload-live-btn" class="btn btn-outline" style="font-size:0.95rem;">
+          Reload from live site
+        </button>
         <span id="save-status" style="color:var(--text-muted); font-size:0.95rem;"></span>
       </div>
 
       <div class="content-section" style="margin-bottom:1.5rem;">
-        <h2 style="margin-top:0;">GitHub Live Publish (optional)</h2>
+        <h2 style="margin-top:0;">Live Publish (Option C – Cloudflare Worker)</h2>
         <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">
-          To push changes live to your GitHub-hosted site when you click Save &amp; Publish,
-          enter your repository details and a Personal Access Token (classic) with <code>repo</code> scope.
-          The token is stored only in this browser. Leave blank to save locally only.
+          Save &amp; Publish sends changes to your Cloudflare Worker, which pushes to GitHub.
+          The GitHub token stays only on Cloudflare (secret). Each admin only needs the
+          <strong>Worker URL</strong> and shared <strong>Admin Key</strong> once per device.
         </p>
-        <div class="form-row">
-          <div class="form-group">
-            <label>GitHub Owner (username/org)</label>
-            <input type="text" id="gh-owner" placeholder="your-github-username">
-          </div>
-          <div class="form-group">
-            <label>Repository name</label>
-            <input type="text" id="gh-repo" placeholder="your-repo-name">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Branch</label>
-            <input type="text" id="gh-branch" placeholder="main" value="main">
-          </div>
-          <div class="form-group">
-            <label>Path to data file</label>
-            <input type="text" id="gh-path" placeholder="js/data.js" value="js/data.js">
-          </div>
+        <div class="form-group">
+          <label>Cloudflare Worker URL</label>
+          <input type="url" id="worker-url" placeholder="https://7ways-cms-publish.YOUR_SUBDOMAIN.workers.dev">
         </div>
         <div class="form-group">
-          <label>Personal Access Token</label>
-          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx">
+          <label>Admin Key (X-Admin-Key – same as Cloudflare secret ADMIN_KEY)</label>
+          <input type="password" id="admin-key" placeholder="Your shared publish password">
         </div>
-        <button type="button" id="save-gh-settings" class="btn btn-outline btn-sm">Save GitHub Settings</button>
+        <button type="button" id="save-gh-settings" class="btn btn-outline btn-sm">Save Publish Settings</button>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.75rem;">
+          Worker secrets on Cloudflare: <code>GITHUB_TOKEN</code>, <code>GH_OWNER</code>, <code>GH_REPO</code>,
+          <code>GH_BRANCH</code>, <code>GH_PATH</code>, <code>ADMIN_KEY</code>
+        </p>
       </div>
 
       <!-- ROSTER TAB -->
@@ -244,8 +235,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label>Photo URL</label>
-            <input type="url" id="new-photo" placeholder="https://... or images/photo.jpg">
+            <label>Photo URL (optional if uploading files)</label>
+            <input type="url" id="new-photo" placeholder="https://... or leave blank and upload files">
+          </div>
+          <div class="form-group">
+            <label>Upload photos (multiple allowed)</label>
+            <input type="file" id="new-photos-files" accept="image/*" multiple>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.35rem;">Images upload to GitHub via your Cloudflare Worker. First image is the main Home card photo.</p>
           </div>
           <div class="form-group">
             <label>Description (shown only on profile page)</label>

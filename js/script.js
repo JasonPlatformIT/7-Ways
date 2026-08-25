@@ -2,23 +2,18 @@
  * Main site logic
  */
 
-// Load text content for CURRENT language from localStorage or CMS_DATA
+// Load text content for CURRENT language from deployed CMS_DATA (GitHub = source of truth)
 // key = 'pricingText' or 'contactText'
 function getTextContent(key, lang) {
   const useLang = lang || (typeof currentLang !== 'undefined' ? currentLang : 'en');
-  const storageKey = 'cms_' + key + '_' + useLang;
-  const stored = localStorage.getItem(storageKey);
-  if (stored !== null) return stored;
-
-  // Fallback to CMS_DATA (now an object per language)
   const data = CMS_DATA[key];
   if (data && typeof data === 'object') {
     return data[useLang] || data.en || '';
   }
-  // Legacy single-string support
   return data || '';
 }
 
+// Kept for admin compatibility (admin writes via its own helpers)
 function saveTextContent(key, value, lang) {
   const useLang = lang || (typeof currentLang !== 'undefined' ? currentLang : 'en');
   localStorage.setItem('cms_' + key + '_' + useLang, value);
@@ -30,8 +25,8 @@ function createPersonCard(person) {
   card.className = 'person-card';
   card.innerHTML = `
     <a href="profile.html?id=${person.id}" class="card-link">
-      <img src="${person.photo}" alt="${person.name}" loading="lazy"
-           onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/e63946?text=No+Photo'">
+      <img src="${getPrimaryPhoto(person)}" alt="${person.name}" loading="lazy"
+           onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/d4af37?text=No+Photo'">
       <div class="person-info">
         <h3>${person.name}</h3>
         <div class="nationality">${person.nationality}</div>
@@ -41,13 +36,16 @@ function createPersonCard(person) {
   return card;
 }
 
-// Prefer admin-edited people from localStorage when available
+
+/** Primary photo for cards – supports photos[] or legacy photo */
+function getPrimaryPhoto(person) {
+  if (person.photos && person.photos.length) return person.photos[0];
+  return person.photo || 'https://via.placeholder.com/400x500/1a1a1a/d4af37?text=No+Photo';
+}
+
+// Public site always uses deployed CMS_DATA (updated when GitHub Pages rebuilds)
 function getLivePeople() {
-  const stored = localStorage.getItem('cms_people');
-  if (stored) {
-    try { return JSON.parse(stored); } catch (e) {}
-  }
-  return CMS_DATA.people || [];
+  return (typeof CMS_DATA !== 'undefined' && CMS_DATA.people) ? CMS_DATA.people : [];
 }
 
 // Render people filtered by availability
@@ -204,8 +202,13 @@ function initProfilePage() {
   container.innerHTML = `
     <div class="profile-layout">
       <div class="profile-photo">
-        <img src="${person.photo}" alt="${person.name}"
-             onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/e63946?text=No+Photo'">
+        <img id="profile-main-img" src="${getPrimaryPhoto(person)}" alt="${person.name}"
+             onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/d4af37?text=No+Photo'">
+        ${ (person.photos && person.photos.length > 1)
+            ? `<div class="profile-thumbs">${person.photos.map((src,i) =>
+                `<button type="button" class="profile-thumb${i===0?' active':''}" data-src="${src}"><img src="${src}" alt=""></button>`
+              ).join('')}</div>`
+            : '' }
       </div>
       <div class="profile-details">
         <h1>${person.name}</h1>
@@ -227,6 +230,15 @@ function initProfilePage() {
       </div>
     </div>
   `;
+
+  container.querySelectorAll('.profile-thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const main = document.getElementById('profile-main-img');
+      if (main) main.src = btn.dataset.src;
+      container.querySelectorAll('.profile-thumb').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
 }
 
 // Employment application form

@@ -43,14 +43,29 @@ function showAdmin() {
 
 // ---------- People data (localStorage override) ----------
 function getPeople() {
+  // Admin working copy in this browser; publish pushes to GitHub for all devices
   const stored = localStorage.getItem('cms_people');
   if (stored) {
     try {
       return JSON.parse(stored);
     } catch (e) {}
   }
-  // Fall back to original CMS_DATA and clone
   return JSON.parse(JSON.stringify(CMS_DATA.people || []));
+}
+
+/** Reset admin draft from the live deployed data.js (use after others published) */
+function reloadFromLiveSite() {
+  localStorage.removeItem('cms_people');
+  ['en','ja','zh','ko'].forEach(l => {
+    localStorage.removeItem('cms_pricingText_' + l);
+    localStorage.removeItem('cms_contactText_' + l);
+  });
+  if (typeof CMS_DATA !== 'undefined') {
+    // editors will re-read CMS_DATA
+  }
+  renderPeopleList();
+  loadTextEditors();
+  alert('Reloaded from the live site data. Any unpublished local edits on this device were cleared.');
 }
 
 function savePeople(people) {
@@ -80,10 +95,10 @@ function renderPeopleList() {
     const row = document.createElement('div');
     row.className = 'person-row';
     row.innerHTML = `
-      <img src="${person.photo}" alt="" onerror="this.src='https://via.placeholder.com/50x50/1a1a1a/e63946?text=?'">
+      <img src="${(normalizePhotos(person)[0] || '')}" alt="" onerror="this.src='https://via.placeholder.com/50x50/1a1a1a/d4af37?text=?'">
       <input type="text" value="${escapeAttr(person.name)}" data-field="name" data-index="${index}" placeholder="Name">
       <input type="text" value="${escapeAttr(person.nationality)}" data-field="nationality" data-index="${index}" placeholder="Nationality">
-      <input type="text" value="${escapeAttr(person.photo)}" data-field="photo" data-index="${index}" placeholder="Photo URL">
+      <div style="font-size:0.8rem;color:var(--text-muted);">Photos: ${normalizePhotos(person).length}</div>
       <div style="display:flex;flex-direction:column;gap:0.4rem;">
         <div class="avail-checks">
           <label><input type="checkbox" data-field="today" data-index="${index}" ${(person.available||[]).includes('today') ? 'checked' : ''}> Today</label>
@@ -94,6 +109,18 @@ function renderPeopleList() {
       <div style="grid-column: 1 / -1;">
         <label style="font-size:0.8rem;color:var(--text-muted);">Description (profile page only)</label>
         <textarea data-field="description" data-index="${index}" rows="2" style="width:100%;background:#111;border:1px solid var(--border);color:var(--text);padding:0.5rem;border-radius:4px;margin-top:0.25rem;">${escapeAttr(person.description || '')}</textarea>
+      </div>
+      <div style="grid-column: 1 / -1; margin-top:0.5rem;">
+        <label style="font-size:0.8rem;color:var(--text-muted);">Photos (multiple – first is main on Home)</label>
+        <div class="admin-photo-list" data-index="${index}" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.5rem 0;">
+          ${normalizePhotos(person).map((src, pi) => `
+            <div style="position:relative;width:72px;height:72px;">
+              <img src="${src}" style="width:72px;height:72px;object-fit:cover;border-radius:6px;border:1px solid var(--border);">
+              <button type="button" class="btn btn-danger btn-sm" data-remove-photo="${index}" data-photo-i="${pi}" style="position:absolute;top:2px;right:2px;padding:0 4px;font-size:0.7rem;">×</button>
+            </div>`).join('')}
+        </div>
+        <input type="file" accept="image/*" multiple data-upload-index="${index}" class="person-upload">
+        <span style="font-size:0.75rem;color:var(--text-muted);"> Select images → uploads to GitHub via Worker</span>
       </div>
     `;
     list.appendChild(row);
@@ -111,7 +138,55 @@ function renderPeopleList() {
         savePeople(people);
         syncPeopleToRuntime(people);
         renderPeopleList();
-            }
+      }
+    });
+  });
+
+  list.querySelectorAll('[data-remove-photo]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const people = getPeople();
+      const idx = parseInt(btn.dataset.removePhoto, 10);
+      const pi = parseInt(btn.dataset.photoI, 10);
+      if (!people[idx]) return;
+      const photos = normalizePhotos(people[idx]);
+      photos.splice(pi, 1);
+      people[idx].photos = photos;
+      people[idx].photo = photos[0] || '';
+      savePeople(people);
+      syncPeopleToRuntime(people);
+      renderPeopleList();
+    });
+  });
+
+  list.querySelectorAll('.person-upload').forEach(input => {
+    input.addEventListener('change', async () => {
+      const idx = parseInt(input.dataset.uploadIndex, 10);
+      const files = Array.from(input.files || []);
+      if (!files.length) return;
+      const people = getPeople();
+      if (!people[idx]) return;
+      const status = document.getElementById('save-status');
+      if (status) { status.textContent = 'Uploading images…'; status.style.color = 'var(--text-muted)'; }
+      try {
+        const photos = normalizePhotos(people[idx]);
+        for (const file of files) {
+          const path = await uploadImageToGitHub(people[idx].id, file);
+          photos.push(path);
+        }
+        people[idx].photos = photos;
+        people[idx].photo = photos[0] || '';
+        savePeople(people);
+        syncPeopleToRuntime(people);
+        renderPeopleList();
+        if (status) {
+          status.textContent = '✓ Images uploaded. Click Save & Publish to update listings.';
+          status.style.color = '#2a9d8f';
+        }
+      } catch (e) {
+        alert('Image upload failed: ' + e.message);
+        if (status) status.textContent = '';
+      }
+      input.value = '';
     });
   });
 }
@@ -135,13 +210,15 @@ function onPersonFieldChange(e) {
   syncPeopleToRuntime(people);
 }
 
-function addPerson() {
+async function addPerson() {
   const name = document.getElementById('new-name').value.trim();
   const nationality = document.getElementById('new-nationality').value.trim();
-  const photo = document.getElementById('new-photo').value.trim() || 'https://via.placeholder.com/400x500/1a1a1a/e63946?text=Photo';
+  const photoUrl = document.getElementById('new-photo') ? document.getElementById('new-photo').value.trim() : '';
   const description = (document.getElementById('new-description') || {}).value || '';
   const today = document.getElementById('new-today').checked;
   const tomorrow = document.getElementById('new-tomorrow').checked;
+  const fileInput = document.getElementById('new-photos-files');
+  const files = fileInput ? Array.from(fileInput.files || []) : [];
 
   if (!name) {
     alert('Name is required.');
@@ -150,16 +227,40 @@ function addPerson() {
 
   const people = getPeople();
   const maxId = people.reduce((m, p) => Math.max(m, p.id || 0), 0);
+  const id = maxId + 1;
   const available = [];
   if (today) available.push('today');
   if (tomorrow) available.push('tomorrow');
 
+  const photos = [];
+  if (photoUrl) photos.push(photoUrl);
+
+  const status = document.getElementById('save-status');
+  if (files.length) {
+    if (status) { status.textContent = 'Uploading images…'; status.style.color = 'var(--text-muted)'; }
+    try {
+      for (const file of files) {
+        const path = await uploadImageToGitHub(id, file);
+        photos.push(path);
+      }
+    } catch (e) {
+      alert('Image upload failed: ' + e.message);
+      if (status) status.textContent = '';
+      return;
+    }
+  }
+
+  if (!photos.length) {
+    photos.push('https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo');
+  }
+
   people.push({
-    id: maxId + 1,
+    id,
     name,
     nationality: nationality || 'Unknown',
-    photo,
-    description: description.trim(),
+    photo: photos[0],
+    photos,
+    description: (description || '').trim(),
     available
   });
 
@@ -169,10 +270,12 @@ function addPerson() {
 
   document.getElementById('new-name').value = '';
   document.getElementById('new-nationality').value = '';
-  document.getElementById('new-photo').value = '';
+  if (document.getElementById('new-photo')) document.getElementById('new-photo').value = '';
   if (document.getElementById('new-description')) document.getElementById('new-description').value = '';
+  if (fileInput) fileInput.value = '';
   document.getElementById('new-today').checked = true;
   document.getElementById('new-tomorrow').checked = false;
+  if (status) { status.textContent = 'Person added. Click Save & Publish to go live.'; status.style.color = '#2a9d8f'; }
 }
 
 function escapeAttr(str) {
@@ -220,32 +323,32 @@ function initTabs() {
 }
 
 
-// ---------- GitHub publish ----------
-function loadGhSettings() {
+// ---------- Option C: Cloudflare Worker publish ----------
+function loadPublishSettings() {
   try {
-    return JSON.parse(localStorage.getItem('7ways_gh_settings') || '{}');
-  } catch (e) { return {}; }
+    return JSON.parse(localStorage.getItem('7ways_publish_settings') || '{}');
+  } catch (e) {
+    return {};
+  }
 }
 
-function saveGhSettingsToStore() {
+function savePublishSettingsToStore() {
   const settings = {
-    owner: document.getElementById('gh-owner').value.trim(),
-    repo: document.getElementById('gh-repo').value.trim(),
-    branch: document.getElementById('gh-branch').value.trim() || 'main',
-    path: document.getElementById('gh-path').value.trim() || 'js/data.js',
-    token: document.getElementById('gh-token').value.trim()
+    workerUrl: (document.getElementById('worker-url') || {}).value || '',
+    adminKey: (document.getElementById('admin-key') || {}).value || ''
   };
-  localStorage.setItem('7ways_gh_settings', JSON.stringify(settings));
+  settings.workerUrl = settings.workerUrl.trim().replace(/\/$/, '');
+  settings.adminKey = settings.adminKey.trim();
+  localStorage.setItem('7ways_publish_settings', JSON.stringify(settings));
   return settings;
 }
 
-function fillGhForm() {
-  const s = loadGhSettings();
-  if (document.getElementById('gh-owner')) document.getElementById('gh-owner').value = s.owner || '';
-  if (document.getElementById('gh-repo')) document.getElementById('gh-repo').value = s.repo || '';
-  if (document.getElementById('gh-branch')) document.getElementById('gh-branch').value = s.branch || 'main';
-  if (document.getElementById('gh-path')) document.getElementById('gh-path').value = s.path || 'js/data.js';
-  if (document.getElementById('gh-token')) document.getElementById('gh-token').value = s.token || '';
+function fillPublishForm() {
+  const s = loadPublishSettings();
+  const urlEl = document.getElementById('worker-url');
+  const keyEl = document.getElementById('admin-key');
+  if (urlEl) urlEl.value = s.workerUrl || '';
+  if (keyEl) keyEl.value = s.adminKey || '';
 }
 
 function buildDataJsContent() {
@@ -257,77 +360,104 @@ function buildDataJsContent() {
     pricing[l] = getTextForLang('pricingText', l);
     contact[l] = getTextForLang('contactText', l);
   });
-
-  // Build a valid data.js file string
-  let out = `/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = {\n  people: `;
-  out += JSON.stringify(people, null, 2).replace(/^/gm, '  ').replace(/^  \[/, '[');
-  // simpler:
-  out = '/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = ' + JSON.stringify({
+  return '/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = ' + JSON.stringify({
     people: people,
     pricingText: pricing,
     contactText: contact
   }, null, 2) + ';\n';
-  return out;
 }
 
-async function publishToGitHub() {
-  const s = loadGhSettings();
-  if (!s.token || !s.owner || !s.repo) {
-    return { ok: false, message: 'GitHub not configured – changes saved in this browser only.' };
+
+function normalizePhotos(person) {
+  if (person.photos && person.photos.length) return person.photos.slice();
+  if (person.photo) return [person.photo];
+  return [];
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result || '';
+      const base64 = String(result).split(',')[1] || '';
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function safeFileName(name) {
+  return String(name || 'photo.jpg')
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, '-')
+    .replace(/-+/g, '-')
+    .slice(0, 80) || 'photo.jpg';
+}
+
+async function uploadImageToGitHub(personId, file) {
+  const s = loadPublishSettings();
+  if (!s.workerUrl) {
+    throw new Error('Set Cloudflare Worker URL first');
+  }
+  const base64 = await fileToBase64(file);
+  const fname = Date.now() + '-' + safeFileName(file.name);
+  const path = 'images/people/' + personId + '/' + fname;
+  const res = await fetch(s.workerUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Admin-Key': s.adminKey || ''
+    },
+    body: JSON.stringify({
+      type: 'image',
+      path: path,
+      contentBase64: base64,
+      message: 'CMS photo upload for person ' + personId
+    })
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) {
+    throw new Error(data.message || ('Upload failed HTTP ' + res.status));
+  }
+  // Prefer relative path so it works on the live site
+  return path;
+}
+
+async function publishViaWorker() {
+  const s = loadPublishSettings();
+  if (!s.workerUrl) {
+    return {
+      ok: false,
+      message: 'Set Cloudflare Worker URL in Publish Settings first (Option C).'
+    };
   }
 
-  const path = s.path || 'js/data.js';
-  const branch = s.branch || 'main';
   const content = buildDataJsContent();
-  const apiBase = `https://api.github.com/repos/${s.owner}/${s.repo}/contents/${path}`;
-
-  // Get current file SHA (required for update)
-  let sha = null;
   try {
-    const getRes = await fetch(`${apiBase}?ref=${encodeURIComponent(branch)}`, {
+    const res = await fetch(s.workerUrl, {
+      method: 'POST',
       headers: {
-        'Authorization': `Bearer ${s.token}`,
-        'Accept': 'application/vnd.github+json'
-      }
-    });
-    if (getRes.ok) {
-      const data = await getRes.json();
-      sha = data.sha;
-    } else if (getRes.status !== 404) {
-      const err = await getRes.text();
-      return { ok: false, message: 'GitHub read failed: ' + getRes.status + ' ' + err };
-    }
-  } catch (e) {
-    return { ok: false, message: 'Network error reading GitHub: ' + e.message };
-  }
-
-  // Encode content as base64
-  const base64 = btoa(unescape(encodeURIComponent(content)));
-
-  const body = {
-    message: 'Update CMS data via admin panel',
-    content: base64,
-    branch: branch
-  };
-  if (sha) body.sha = sha;
-
-  try {
-    const putRes = await fetch(apiBase, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${s.token}`,
-        'Accept': 'application/vnd.github+json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-Admin-Key': s.adminKey || ''
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify({ type: 'data', content: content })
     });
-    if (!putRes.ok) {
-      const err = await putRes.text();
-      return { ok: false, message: 'GitHub push failed: ' + putRes.status + ' ' + err };
+    let data = {};
+    try {
+      data = await res.json();
+    } catch (e) {
+      return { ok: false, message: 'Worker returned non-JSON (HTTP ' + res.status + ')' };
     }
-    return { ok: true, message: '✓ Saved locally and pushed live to GitHub.' };
+    if (!res.ok || !data.ok) {
+      return { ok: false, message: data.message || ('Publish failed (HTTP ' + res.status + ')') };
+    }
+    return {
+      ok: true,
+      message: data.message || '✓ Pushed to GitHub. Live for everyone in about 1 minute. Other admins: refresh.'
+    };
   } catch (e) {
-    return { ok: false, message: 'Network error pushing to GitHub: ' + e.message };
+    return { ok: false, message: 'Network error calling Worker: ' + e.message };
   }
 }
 
@@ -394,11 +524,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const ghSaveBtn = document.getElementById('save-gh-settings');
   if (ghSaveBtn) {
     ghSaveBtn.addEventListener('click', () => {
-      saveGhSettingsToStore();
-      alert('GitHub settings saved in this browser.');
+      savePublishSettingsToStore();
+      alert('Publish settings saved on this device.');
     });
   }
-  fillGhForm();
+  fillPublishForm();
 
   // Save & Publish – local + optional GitHub push
   document.getElementById('save-publish-btn').addEventListener('click', async () => {
@@ -415,11 +545,21 @@ document.addEventListener('DOMContentLoaded', () => {
     savePeople(people);
     syncPeopleToRuntime(people);
 
-    const result = await publishToGitHub();
+    const result = await publishViaWorker();
     status.textContent = result.message;
-    status.style.color = result.ok ? '#2a9d8f' : '#e63946';
+    status.style.color = result.ok ? '#2a9d8f' : '#d4af37';
     setTimeout(() => { status.textContent = ''; }, 8000);
   });
+
+
+  const reloadBtn = document.getElementById('reload-live-btn');
+  if (reloadBtn) {
+    reloadBtn.addEventListener('click', () => {
+      if (confirm('Reload from the live site? Unpublished edits on this device will be lost.')) {
+        reloadFromLiveSite();
+      }
+    });
+  }
 
   // Auto-login if already authenticated in this session
   if (isLoggedIn()) {

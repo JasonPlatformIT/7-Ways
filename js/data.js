@@ -17,6 +17,7 @@ const CMS_DATA = {
     {
       id: 1,
       name: "Sophia Laurent",
+      photos: ["https://picsum.photos/id/64/400/500"],
       photo: "https://picsum.photos/id/64/400/500",
       nationality: "French",
       available: ["today", "tomorrow"],
@@ -25,6 +26,7 @@ const CMS_DATA = {
     {
       id: 2,
       name: "Isabella Rossi",
+      photos: ["https://picsum.photos/id/65/400/500"],
       photo: "https://picsum.photos/id/65/400/500",
       nationality: "Italian",
       available: ["today"],
@@ -33,6 +35,7 @@ const CMS_DATA = {
     {
       id: 3,
       name: "Emma Johansson",
+      photos: ["https://picsum.photos/id/91/400/500"],
       photo: "https://picsum.photos/id/91/400/500",
       nationality: "Swedish",
       available: ["tomorrow"],
@@ -41,6 +44,7 @@ const CMS_DATA = {
     {
       id: 4,
       name: "Mia Chen",
+      photos: ["https://picsum.photos/id/177/400/500"],
       photo: "https://picsum.photos/id/177/400/500",
       nationality: "Chinese",
       available: ["today", "tomorrow"],
@@ -49,6 +53,7 @@ const CMS_DATA = {
     {
       id: 5,
       name: "Olivia Müller",
+      photos: ["https://picsum.photos/id/338/400/500"],
       photo: "https://picsum.photos/id/338/400/500",
       nationality: "German",
       available: ["today"],
@@ -57,6 +62,7 @@ const CMS_DATA = {
     {
       id: 6,
       name: "Ava Petrov",
+      photos: ["https://picsum.photos/id/342/400/500"],
       photo: "https://picsum.photos/id/342/400/500",
       nationality: "Russian",
       available: ["tomorrow"],
@@ -65,6 +71,7 @@ const CMS_DATA = {
     {
       id: 7,
       name: "Chloe Dubois",
+      photos: ["https://picsum.photos/id/1011/400/500"],
       photo: "https://picsum.photos/id/1011/400/500",
       nationality: "Canadian",
       available: ["today", "tomorrow"],
@@ -73,6 +80,7 @@ const CMS_DATA = {
     {
       id: 8,
       name: "Luna Santos",
+      photos: ["https://picsum.photos/id/1027/400/500"],
       photo: "https://picsum.photos/id/1027/400/500",
       nationality: "Brazilian",
       available: ["tomorrow"],
