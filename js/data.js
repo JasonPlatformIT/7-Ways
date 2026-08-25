@@ -20,6 +20,21 @@ const CMS_DATA = {
       ],
       "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
       "slug": "ivana"
+    },
+    {
+      "id": 2,
+      "name": "Mizu",
+      "slug": "mizu",
+      "nationality": "Japanese",
+      "photo": "images/people/2/1787660033668-img_0425.jpeg",
+      "photos": [
+        "images/people/2/1787660033668-img_0425.jpeg"
+      ],
+      "description": "All new girl (Japanese Miku)\nRecommend Very good Service!!\n168cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "pricingText": {
