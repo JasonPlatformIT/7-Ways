@@ -22,21 +22,6 @@ const CMS_DATA = {
       "slug": "sophia-laurent"
     },
     {
-      "id": 4,
-      "name": "Mia Chen",
-      "photos": [
-        "https://picsum.photos/id/177/400/500"
-      ],
-      "photo": "https://picsum.photos/id/177/400/500",
-      "nationality": "Chinese",
-      "available": [
-        "today",
-        "tomorrow"
-      ],
-      "description": "Charming and well-travelled. Speaks multiple languages.",
-      "slug": "mia-chen"
-    },
-    {
       "id": 5,
       "name": "Olivia Müller",
       "photos": [
