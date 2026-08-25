@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Black Garter 7 ways</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .not-found {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+    }
+    .not-found h1 {
+      font-size: 4rem;
+      margin-bottom: 0.25rem;
+      border: none;
+    }
+    .not-found .code {
+      color: var(--red);
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      max-width: 720px;
+      margin: 1.5rem auto 0;
+      text-align: left;
+    }
+    .link-grid a {
+      display: block;
+      padding: 0.85rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .link-grid a:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+    .section-label {
+      margin: 2rem 0 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body data-page="404">
+  <header>
+    <nav>
+      <a href="/index.html" class="logo">
+        <div class="logo-text">Black Garter<br><span>7 ways</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/roster.html">Roster</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/employment.html">Employment</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="lang-bar">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en" title="English"><img src="/images/flag-en.png" alt="English"></button>
+      <button class="lang-btn" data-lang="ja" title="日本語"><img src="/images/flag-ja.png" alt="日本語"></button>
+      <button class="lang-btn" data-lang="zh" title="中文"><img src="/images/flag-zh.png" alt="中文"></button>
+      <button class="lang-btn" data-lang="ko" title="한국어"><img src="/images/flag-ko.png" alt="한국어"></button>
+    </div>
+  </div>
+
+  <main>
+    <div class="not-found content-section">
+      <p class="code">404</p>
+      <h1>Page not found</h1>
+      <p style="color: var(--text-muted); max-width: 32rem; margin: 0 auto 1rem;">
+        The page you requested does not exist or may have been moved.
+        Use the links below to continue.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <a href="/index.html" class="btn">Go to Home</a>
+      </p>
+
+      <p class="section-label">Main pages</p>
+      <div class="link-grid">
+        <a href="/index.html">Home</a>
+        <a href="/roster.html">Roster</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/employment.html">Employment</a>
+        <a href="/contact.html">Contact Us</a>
+      </div>
+
+      <p class="section-label">Profiles</p>
+      <div class="link-grid" id="profile-links">
+        <!-- Filled from CMS data -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Black Garter 7 ways. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/script.js"></script>
+  <script>
+    (function () {
+      function slugify(name) {
+        if (typeof slugifyName === 'function') return slugifyName(name);
+        return String(name || '').toLowerCase()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'profile';
+      }
+      var box = document.getElementById('profile-links');
+      if (!box || typeof CMS_DATA === 'undefined') return;
+      var people = CMS_DATA.people || [];
+      people.forEach(function (p) {
+        var slug = p.slug || slugify(p.name);
+        var a = document.createElement('a');
+        a.href = '/' + slug + '.html';
+        a.textContent = p.name;
+        box.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>

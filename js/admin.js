@@ -160,14 +160,20 @@ function renderPeopleList() {
     input.addEventListener('change', onPersonFieldChange);
   });
   list.querySelectorAll('[data-delete]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (confirm('Delete this person?')) {
-        const people = getPeople();
-        people.splice(parseInt(btn.dataset.delete, 10), 1);
-        savePeople(people);
-        syncPeopleToRuntime(people);
-        renderPeopleList();
+    btn.addEventListener('click', async () => {
+      const people = getPeople();
+      const idx = parseInt(btn.dataset.delete, 10);
+      const person = people[idx];
+      if (!person) return;
+      const slug = person.slug || slugifyAdmin(person.name);
+      if (!confirm('Delete this person and remove /' + slug + '.html from GitHub?')) {
+        return;
       }
+      people.splice(idx, 1);
+      savePeople(people);
+      syncPeopleToRuntime(people);
+      renderPeopleList();
+      await removePersonAndLivePage(person, people);
     });
   });
 
@@ -257,6 +263,87 @@ function onPersonFieldChange(e) {
 
 
 /** Create /name.html and push data.js so the new profile link works on the live site */
+
+/** Delete /{slug}.html from GitHub via Worker */
+async function deleteProfilePageFromGitHub(person) {
+  const s = loadPublishSettings();
+  if (!s.workerUrl) {
+    return { ok: false, message: 'Worker not configured – page file not removed from GitHub.' };
+  }
+  const slug = (person && (person.slug || slugifyAdmin(person.name))) || '';
+  if (!slug) return { ok: false, message: 'No profile slug to delete.' };
+  const path = slug + '.html';
+  try {
+    const res = await fetch(s.workerUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Admin-Key': s.adminKey || ''
+      },
+      body: JSON.stringify({
+        type: 'delete',
+        path: path,
+        message: 'Delete profile page for ' + (person.name || slug)
+      })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) {
+      return { ok: false, message: data.message || ('Delete failed HTTP ' + res.status) };
+    }
+    return { ok: true, message: data.message || ('Deleted /' + path), path: path };
+  } catch (e) {
+    return { ok: false, message: 'Network error deleting page: ' + e.message };
+  }
+}
+
+/** After delete: remove GitHub page and push updated data.js */
+async function removePersonAndLivePage(person, peopleAfter) {
+  const status = document.getElementById('save-status');
+  if (status) {
+    status.textContent = 'Deleting profile page from GitHub…';
+    status.style.color = 'var(--text-muted)';
+  }
+  const del = await deleteProfilePageFromGitHub(person);
+  // Always try to push data so roster matches (even if page was already gone)
+  const s = loadPublishSettings();
+  if (s.workerUrl) {
+    try {
+      savePeople(peopleAfter);
+      syncPeopleToRuntime(peopleAfter);
+      const content = buildDataJsContent();
+      const res = await fetch(s.workerUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Admin-Key': s.adminKey || ''
+        },
+        body: JSON.stringify({ type: 'data', content: content })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        if (status) {
+          status.textContent = (del.ok ? del.message + ' ' : '') +
+            'Data update failed: ' + (data.message || res.status);
+          status.style.color = '#d4af37';
+        }
+        return;
+      }
+    } catch (e) {
+      if (status) {
+        status.textContent = 'Page delete: ' + del.message + ' Data push error: ' + e.message;
+        status.style.color = '#d4af37';
+      }
+      return;
+    }
+  }
+  if (status) {
+    status.textContent = del.ok
+      ? '✓ Profile removed and /' + (del.path || '') + ' deleted from GitHub. Live in ~1 minute.'
+      : ('Profile removed locally. ' + del.message + ' Click Save & Publish if needed.');
+    status.style.color = del.ok ? '#2a9d8f' : '#d4af37';
+  }
+}
+
 async function createProfileLinkForPerson(person) {
   const s = loadPublishSettings();
   if (!s.workerUrl) {

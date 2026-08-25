@@ -19,6 +19,7 @@ const CMS_DATA = {
     {
       id: 1,
       name: "Sophia Laurent",
+      slug: "sophia-laurent",
       photos: ["https://picsum.photos/id/64/400/500"],
       photo: "https://picsum.photos/id/64/400/500",
       nationality: "French",
@@ -28,6 +29,7 @@ const CMS_DATA = {
     {
       id: 2,
       name: "Isabella Rossi",
+      slug: "isabella-rossi",
       photos: ["https://picsum.photos/id/65/400/500"],
       photo: "https://picsum.photos/id/65/400/500",
       nationality: "Italian",
@@ -37,6 +39,7 @@ const CMS_DATA = {
     {
       id: 3,
       name: "Emma Johansson",
+      slug: "emma-johansson",
       photos: ["https://picsum.photos/id/91/400/500"],
       photo: "https://picsum.photos/id/91/400/500",
       nationality: "Swedish",
@@ -46,6 +49,7 @@ const CMS_DATA = {
     {
       id: 4,
       name: "Mia Chen",
+      slug: "mia-chen",
       photos: ["https://picsum.photos/id/177/400/500"],
       photo: "https://picsum.photos/id/177/400/500",
       nationality: "Chinese",
@@ -55,6 +59,7 @@ const CMS_DATA = {
     {
       id: 5,
       name: "Olivia Müller",
+      slug: "olivia-muller",
       photos: ["https://picsum.photos/id/338/400/500"],
       photo: "https://picsum.photos/id/338/400/500",
       nationality: "German",
@@ -64,6 +69,7 @@ const CMS_DATA = {
     {
       id: 6,
       name: "Ava Petrov",
+      slug: "ava-petrov",
       photos: ["https://picsum.photos/id/342/400/500"],
       photo: "https://picsum.photos/id/342/400/500",
       nationality: "Russian",
@@ -73,6 +79,7 @@ const CMS_DATA = {
     {
       id: 7,
       name: "Chloe Dubois",
+      slug: "chloe-dubois",
       photos: ["https://picsum.photos/id/1011/400/500"],
       photo: "https://picsum.photos/id/1011/400/500",
       nationality: "Canadian",
@@ -82,6 +89,7 @@ const CMS_DATA = {
     {
       id: 8,
       name: "Luna Santos",
+      slug: "luna-santos",
       photos: ["https://picsum.photos/id/1027/400/500"],
       photo: "https://picsum.photos/id/1027/400/500",
       nationality: "Brazilian",

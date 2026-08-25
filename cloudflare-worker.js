@@ -1,7 +1,11 @@
 /**
- * Cloudflare Worker – Option C CMS publish + image upload
+ * Cloudflare Worker – Option C CMS publish, image upload, file delete
  * Secrets: GITHUB_TOKEN, GH_OWNER, GH_REPO, GH_BRANCH, GH_PATH, ADMIN_KEY
- * POST { type:"data", content:"..." } or { type:"image", path:"images/...", contentBase64:"..." }
+ *
+ * POST types:
+ *   { type:"data", content:"..." }
+ *   { type:"image"|"file", path:"...", contentBase64:"..." }
+ *   { type:"delete", path:"name.html" }
  */
 export default {
   async fetch(request, env) {
@@ -28,11 +32,32 @@ export default {
     const type = body.type || 'data';
     const owner = env.GH_OWNER;
     const repo = env.GH_REPO;
-    const branch = env.GH_BRANCH || 'main';
     const token = env.GITHUB_TOKEN;
     if (!token || !owner || !repo) {
       return json({ ok: false, message: 'Worker secrets not configured' }, 500);
     }
+
+    if (type === 'delete') {
+      const path = body.path;
+      if (!path || path.includes('..') || path.startsWith('/')) {
+        return json({ ok: false, message: 'Invalid path' }, 400);
+      }
+      // Only allow deleting profile HTML pages or files under images/
+      if (!(path.endsWith('.html') || path.startsWith('images/'))) {
+        return json({ ok: false, message: 'Delete only allowed for profile HTML or images/' }, 400);
+      }
+      // Never delete core site pages
+      const protectedFiles = [
+        'index.html', 'roster.html', 'pricing.html', 'employment.html',
+        'contact.html', 'profile.html', 'admin.html', '404.html'
+      ];
+      if (protectedFiles.includes(path)) {
+        return json({ ok: false, message: 'Cannot delete core site page' }, 400);
+      }
+      const result = await deleteGitHubFile(env, path, body.message || ('Delete ' + path));
+      return json(result, result.ok ? 200 : 502);
+    }
+
     if (type === 'image' || type === 'file') {
       const path = body.path;
       const contentBase64 = body.contentBase64;
@@ -42,7 +67,6 @@ export default {
       if (path.includes('..') || path.startsWith('/')) {
         return json({ ok: false, message: 'Invalid path' }, 400);
       }
-      // Images must stay under images/; HTML profile pages allowed at repo root
       if (type === 'image' && !path.startsWith('images/')) {
         return json({ ok: false, message: 'Invalid image path' }, 400);
       }
@@ -52,6 +76,7 @@ export default {
       const result = await putGitHubFile(env, path, contentBase64, body.message || 'Upload CMS file');
       return json(result, result.ok ? 200 : 502);
     }
+
     const content = body.content;
     if (!content || typeof content !== 'string') {
       return json({ ok: false, message: 'Missing content' }, 400);
@@ -63,6 +88,7 @@ export default {
     return json(result, result.ok ? 200 : 502);
   },
 };
+
 async function putGitHubFile(env, path, contentBase64, message) {
   const owner = env.GH_OWNER;
   const repo = env.GH_REPO;
@@ -108,6 +134,53 @@ async function putGitHubFile(env, path, contentBase64, message) {
     download_url: data.content && data.content.download_url,
   };
 }
+
+async function deleteGitHubFile(env, path, message) {
+  const owner = env.GH_OWNER;
+  const repo = env.GH_REPO;
+  const branch = env.GH_BRANCH || 'main';
+  const token = env.GITHUB_TOKEN;
+  const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+  const getRes = await fetch(`${apiBase}?ref=${encodeURIComponent(branch)}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+      'User-Agent': '7ways-cms-worker',
+    },
+  });
+
+  if (getRes.status === 404) {
+    return { ok: true, message: 'File already absent on GitHub', path };
+  }
+  if (!getRes.ok) {
+    const err = await getRes.text();
+    return { ok: false, message: `GitHub read failed: ${getRes.status} ${err}` };
+  }
+
+  const file = await getRes.json();
+  const delRes = await fetch(apiBase, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+      'User-Agent': '7ways-cms-worker',
+    },
+    body: JSON.stringify({
+      message: message || ('Delete ' + path),
+      sha: file.sha,
+      branch,
+    }),
+  });
+
+  if (!delRes.ok) {
+    const err = await delRes.text();
+    return { ok: false, message: `GitHub delete failed: ${delRes.status} ${err}` };
+  }
+  return { ok: true, message: '✓ File deleted from GitHub', path };
+}
+
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
