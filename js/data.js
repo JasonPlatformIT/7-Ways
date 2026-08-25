@@ -22,20 +22,6 @@ const CMS_DATA = {
       "slug": "sophia-laurent"
     },
     {
-      "id": 3,
-      "name": "Emma Johansson",
-      "photos": [
-        "https://picsum.photos/id/91/400/500"
-      ],
-      "photo": "https://picsum.photos/id/91/400/500",
-      "nationality": "Swedish",
-      "available": [
-        "tomorrow"
-      ],
-      "description": "Calm and friendly. Loves outdoor activities and good music.",
-      "slug": "emma-johansson"
-    },
-    {
       "id": 4,
       "name": "Mia Chen",
       "photos": [
