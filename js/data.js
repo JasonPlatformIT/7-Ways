@@ -22,34 +22,6 @@ const CMS_DATA = {
       "slug": "sophia-laurent"
     },
     {
-      "id": 5,
-      "name": "Olivia Müller",
-      "photos": [
-        "https://picsum.photos/id/338/400/500"
-      ],
-      "photo": "https://picsum.photos/id/338/400/500",
-      "nationality": "German",
-      "available": [
-        "today"
-      ],
-      "description": "Professional and discreet. Enjoys theatre and city walks.",
-      "slug": "olivia-muller"
-    },
-    {
-      "id": 6,
-      "name": "Ava Petrov",
-      "photos": [
-        "https://picsum.photos/id/342/400/500"
-      ],
-      "photo": "https://picsum.photos/id/342/400/500",
-      "nationality": "Russian",
-      "available": [
-        "tomorrow"
-      ],
-      "description": "Striking presence with a love of fashion and culture.",
-      "slug": "ava-petrov"
-    },
-    {
       "id": 7,
       "name": "Chloe Dubois",
       "photos": [
