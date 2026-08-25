@@ -7,19 +7,19 @@ const CMS_DATA = {
   "people": [
     {
       "id": 1,
-      "name": "Sophia Laurent",
+      "name": "Ivana",
       "photos": [
-        "https://picsum.photos/id/64/400/500",
-        "images/people/1/1787656523287-nemu-1.webp"
+        "images/people/1/1787659895096-img_0423.jpeg",
+        "images/people/1/1787659897423-img_0424.jpeg"
       ],
-      "photo": "https://picsum.photos/id/64/400/500",
-      "nationality": "French",
+      "photo": "images/people/1/1787659895096-img_0423.jpeg",
+      "nationality": "Chinese",
       "available": [
         "today",
         "tomorrow"
       ],
-      "description": "Elegant and sophisticated. Enjoys fine dining and interesting conversation.",
-      "slug": "sophia-laurent"
+      "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
+      "slug": "ivana"
     }
   ],
   "pricingText": {
