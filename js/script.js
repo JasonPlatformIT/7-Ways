@@ -2,6 +2,90 @@
  * Main site logic
  */
 
+/** Sydney calendar date YYYY-MM-DD */
+function getSydneyDateString(d) {
+  const dt = d ? new Date(d) : new Date();
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Australia/Sydney',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(dt);
+}
+
+function parseYMD(s) {
+  const [y, m, day] = String(s).split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, day));
+}
+
+function addDaysYMD(ymd, days) {
+  const dt = parseYMD(ymd);
+  dt.setUTCDate(dt.getUTCDate() + days);
+  return dt.toISOString().slice(0, 10);
+}
+
+/** Roll availability: tomorrow → today; plain today → cleared. One day per step. */
+function rollAvailabilityOneDay(people) {
+  return (people || []).map(p => {
+    const avail = p.available || [];
+    const hadTomorrow = avail.includes('tomorrow');
+    const next = [];
+    if (hadTomorrow) next.push('today');
+    return Object.assign({}, p, { available: next });
+  });
+}
+
+/**
+ * Apply Sydney midnight rollovers so "today"/"tomorrow" match the current Sydney date.
+ * Uses CMS_DATA.scheduleDate as the day those labels were last set for.
+ * Mutates CMS_DATA in memory for display (persist via admin Save & Publish).
+ */
+function applySydneyAvailabilityRollover() {
+  if (typeof CMS_DATA === 'undefined') return;
+  const sydneyToday = getSydneyDateString();
+  let schedule = CMS_DATA.scheduleDate || sydneyToday;
+  if (schedule > sydneyToday) {
+    // Clock skew / future date – trust schedule
+    return;
+  }
+  let people = (CMS_DATA.people || []).map(p => Object.assign({}, p));
+  let guard = 0;
+  while (schedule < sydneyToday && guard < 400) {
+    people = rollAvailabilityOneDay(people);
+    schedule = addDaysYMD(schedule, 1);
+    guard++;
+  }
+  CMS_DATA.people = people;
+  CMS_DATA.scheduleDate = sydneyToday;
+}
+
+function slugifyName(name) {
+  return String(name || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60) || 'profile';
+}
+
+function profileUrl(person) {
+  const slug = person.slug || slugifyName(person.name);
+  // Clean URL: /sophia-laurent.html (no profile.html?name=)
+  return slug + '.html';
+}
+
+/** Slug from current page path, e.g. /sophia-laurent.html → sophia-laurent */
+function slugFromPathname() {
+  const path = window.location.pathname || '';
+  const file = path.split('/').pop() || '';
+  if (!file || file === 'profile.html' || file === 'index.html') return '';
+  if (file.endsWith('.html')) return file.slice(0, -5).toLowerCase();
+  return '';
+}
+
+
+
 // Load text content for CURRENT language from deployed CMS_DATA (GitHub = source of truth)
 // key = 'pricingText' or 'contactText'
 function getTextContent(key, lang) {
@@ -24,7 +108,7 @@ function createPersonCard(person) {
   const card = document.createElement('div');
   card.className = 'person-card';
   card.innerHTML = `
-    <a href="profile.html?id=${person.id}" class="card-link">
+    <a href="${profileUrl(person)}" class="card-link">
       <img src="${getPrimaryPhoto(person)}" alt="${person.name}" loading="lazy"
            onerror="this.src='https://via.placeholder.com/400x500/1a1a1a/d4af37?text=No+Photo'">
       <div class="person-info">
@@ -45,6 +129,7 @@ function getPrimaryPhoto(person) {
 
 // Public site always uses deployed CMS_DATA (updated when GitHub Pages rebuilds)
 function getLivePeople() {
+  applySydneyAvailabilityRollover();
   return (typeof CMS_DATA !== 'undefined' && CMS_DATA.people) ? CMS_DATA.people : [];
 }
 
@@ -167,12 +252,27 @@ function refreshCustomTexts() {
 // Individual profile page (profile.html?id=1)
 function initProfilePage() {
   const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id'), 10);
+  const idParam = params.get('id');
+  const nameParam = params.get('name');
+  const pathSlug = slugFromPathname();
   const container = document.getElementById('profile-content');
 
   if (!container) return;
 
-  const person = getLivePeople().find(p => p.id === id);
+  const people = getLivePeople();
+  let person = null;
+  // Prefer clean URL: /sophia-laurent.html
+  if (pathSlug) {
+    person = people.find(p => (p.slug || slugifyName(p.name)) === pathSlug);
+  }
+  if (!person && nameParam) {
+    const slug = decodeURIComponent(nameParam).toLowerCase();
+    person = people.find(p => (p.slug || slugifyName(p.name)) === slug);
+  }
+  if (!person && idParam) {
+    const id = parseInt(idParam, 10);
+    person = people.find(p => p.id === id);
+  }
 
   if (!person) {
     const notFound = (typeof t === 'function') ? t('person_not_found') : 'Person not found';
@@ -280,6 +380,7 @@ function setActiveNav() {
 
 // Initialize based on page
 document.addEventListener('DOMContentLoaded', () => {
+  applySydneyAvailabilityRollover();
   setActiveNav();
 
   // Language system

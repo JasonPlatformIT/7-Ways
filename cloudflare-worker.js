@@ -33,16 +33,23 @@ export default {
     if (!token || !owner || !repo) {
       return json({ ok: false, message: 'Worker secrets not configured' }, 500);
     }
-    if (type === 'image') {
+    if (type === 'image' || type === 'file') {
       const path = body.path;
       const contentBase64 = body.contentBase64;
       if (!path || !contentBase64) {
         return json({ ok: false, message: 'Missing path or contentBase64' }, 400);
       }
-      if (!path.startsWith('images/') || path.includes('..')) {
+      if (path.includes('..') || path.startsWith('/')) {
+        return json({ ok: false, message: 'Invalid path' }, 400);
+      }
+      // Images must stay under images/; HTML profile pages allowed at repo root
+      if (type === 'image' && !path.startsWith('images/')) {
         return json({ ok: false, message: 'Invalid image path' }, 400);
       }
-      const result = await putGitHubFile(env, path, contentBase64, body.message || 'Upload CMS image');
+      if (type === 'file' && !(path.endsWith('.html') || path.startsWith('images/') || path.startsWith('js/'))) {
+        return json({ ok: false, message: 'Invalid file path' }, 400);
+      }
+      const result = await putGitHubFile(env, path, contentBase64, body.message || 'Upload CMS file');
       return json(result, result.ok ? 200 : 502);
     }
     const content = body.content;

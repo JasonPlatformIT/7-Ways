@@ -43,14 +43,43 @@ function showAdmin() {
 
 // ---------- People data (localStorage override) ----------
 function getPeople() {
-  // Admin working copy in this browser; publish pushes to GitHub for all devices
+  // Apply Sydney day rollover on live data first (same rules as public site)
+  if (typeof applySydneyAvailabilityRollover === 'function') {
+    applySydneyAvailabilityRollover();
+  } else if (typeof CMS_DATA !== 'undefined') {
+    // minimal fallback if script.js helpers not loaded on admin
+  }
   const stored = localStorage.getItem('cms_people');
   if (stored) {
     try {
-      return JSON.parse(stored);
+      const list = JSON.parse(stored);
+      return list.map(p => {
+        if (!p.slug) p.slug = slugifyAdmin(p.name);
+        return p;
+      });
     } catch (e) {}
   }
-  return JSON.parse(JSON.stringify(CMS_DATA.people || []));
+  const people = JSON.parse(JSON.stringify((CMS_DATA && CMS_DATA.people) || []));
+  return people.map(p => {
+    if (!p.slug) p.slug = slugifyAdmin(p.name);
+    return p;
+  });
+}
+
+function slugifyAdmin(name) {
+  if (typeof slugifyName === 'function') return slugifyName(name);
+  return String(name || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60) || 'profile';
+}
+
+function findPersonBySlug(people, slug, exceptId) {
+  return (people || []).find(p => {
+    if (exceptId != null && p.id === exceptId) return false;
+    return (p.slug || slugifyAdmin(p.name)) === slug;
+  });
 }
 
 /** Reset admin draft from the live deployed data.js (use after others published) */
@@ -205,9 +234,70 @@ function onPersonFieldChange(e) {
     people[index].available = Array.from(avail);
   } else {
     people[index][field] = input.value.trim();
+    if (field === 'name') {
+      const newSlug = slugifyAdmin(people[index].name);
+      const clash = findPersonBySlug(people, newSlug, people[index].id);
+      if (clash) {
+        const ok = confirm(
+          'Another profile already uses this name URL ("' + clash.name + '").\n\n' +
+          'If you publish, profile links for this name will show one of them (overwrite risk).\n\nKeep this name anyway?'
+        );
+        if (!ok) {
+          input.value = people[index].name;
+          renderPeopleList();
+          return;
+        }
+      }
+      people[index].slug = newSlug;
+    }
   }
   savePeople(people);
   syncPeopleToRuntime(people);
+}
+
+
+/** Create /name.html and push data.js so the new profile link works on the live site */
+async function createProfileLinkForPerson(person) {
+  const s = loadPublishSettings();
+  if (!s.workerUrl) {
+    return {
+      ok: false,
+      message: 'Profile saved here. Set Worker URL and click Save & Publish to create the live /' +
+        (person.slug || slugifyAdmin(person.name)) + '.html link.'
+    };
+  }
+  const slug = person.slug || slugifyAdmin(person.name);
+  try {
+    await uploadTextFileToGitHub(
+      slug + '.html',
+      buildPersonPageHtml(person),
+      'Create profile page for ' + person.name
+    );
+    // Push data.js so the page can load this person
+    const content = buildDataJsContent();
+    const res = await fetch(s.workerUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Admin-Key': s.adminKey || ''
+      },
+      body: JSON.stringify({ type: 'data', content: content })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) {
+      return {
+        ok: false,
+        message: 'Page file created, but data.js update failed: ' + (data.message || res.status) +
+          '. Click Save & Publish.'
+      };
+    }
+    return {
+      ok: true,
+      message: '✓ Profile added and live link created: /' + slug + '.html (may take ~1 min on GitHub Pages)'
+    };
+  } catch (e) {
+    return { ok: false, message: 'Could not create profile link: ' + e.message };
+  }
 }
 
 async function addPerson() {
@@ -226,6 +316,65 @@ async function addPerson() {
   }
 
   const people = getPeople();
+  const slug = slugifyAdmin(name);
+  const existing = findPersonBySlug(people, slug);
+  if (existing) {
+    const ok = confirm(
+      'A profile with this name (or same URL name) already exists:\n\n' +
+      '"' + existing.name + '"\n\n' +
+      'Publishing will OVERWRITE that profile.\n\nContinue and replace the original?'
+    );
+    if (!ok) return;
+    // Overwrite existing: keep id, replace fields later
+    const idx = people.findIndex(p => p.id === existing.id);
+    const today = document.getElementById('new-today').checked;
+    const tomorrow = document.getElementById('new-tomorrow').checked;
+    const available = [];
+    if (today) available.push('today');
+    if (tomorrow) available.push('tomorrow');
+    const photoUrl = document.getElementById('new-photo') ? document.getElementById('new-photo').value.trim() : '';
+    const description = (document.getElementById('new-description') || {}).value || '';
+    const fileInput = document.getElementById('new-photos-files');
+    const files = fileInput ? Array.from(fileInput.files || []) : [];
+    let photos = normalizePhotos(existing);
+    if (photoUrl) photos = [photoUrl].concat(photos);
+    if (files.length) {
+      const status = document.getElementById('save-status');
+      if (status) { status.textContent = 'Uploading images…'; status.style.color = 'var(--text-muted)'; }
+      try {
+        for (const file of files) {
+          const path = await uploadImageToGitHub(existing.id, file);
+          photos.push(path);
+        }
+      } catch (e) {
+        alert('Image upload failed: ' + e.message);
+        return;
+      }
+    }
+    people[idx] = Object.assign({}, existing, {
+      name,
+      slug,
+      nationality: nationality || existing.nationality,
+      description: (description || existing.description || '').trim(),
+      available,
+      photos: photos.length ? photos : (existing.photos || [existing.photo].filter(Boolean)),
+      photo: (photos[0] || existing.photo || '')
+    });
+    people[idx].photo = people[idx].photos[0] || people[idx].photo;
+    savePeople(people);
+    syncPeopleToRuntime(people);
+    renderPeopleList();
+    const statusEl = document.getElementById('save-status');
+    if (statusEl) { statusEl.textContent = 'Creating profile link…'; statusEl.style.color = 'var(--text-muted)'; }
+    const linkResult = await createProfileLinkForPerson(people[idx]);
+    if (statusEl) {
+      statusEl.textContent = linkResult.message;
+      statusEl.style.color = linkResult.ok ? '#2a9d8f' : '#d4af37';
+    }
+    alert(linkResult.message);
+    return;
+  }
+
   const maxId = people.reduce((m, p) => Math.max(m, p.id || 0), 0);
   const id = maxId + 1;
   const available = [];
@@ -254,15 +403,17 @@ async function addPerson() {
     photos.push('https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo');
   }
 
-  people.push({
+  const newPerson = {
     id,
     name,
+    slug: slugifyAdmin(name),
     nationality: nationality || 'Unknown',
     photo: photos[0],
     photos,
     description: (description || '').trim(),
     available
-  });
+  };
+  people.push(newPerson);
 
   savePeople(people);
   syncPeopleToRuntime(people);
@@ -275,7 +426,14 @@ async function addPerson() {
   if (fileInput) fileInput.value = '';
   document.getElementById('new-today').checked = true;
   document.getElementById('new-tomorrow').checked = false;
-  if (status) { status.textContent = 'Person added. Click Save & Publish to go live.'; status.style.color = '#2a9d8f'; }
+
+  if (status) { status.textContent = 'Creating profile link…'; status.style.color = 'var(--text-muted)'; }
+  const linkResult = await createProfileLinkForPerson(newPerson);
+  if (status) {
+    status.textContent = linkResult.message;
+    status.style.color = linkResult.ok ? '#2a9d8f' : '#d4af37';
+  }
+  if (!linkResult.ok) alert(linkResult.message);
 }
 
 function escapeAttr(str) {
@@ -360,7 +518,12 @@ function buildDataJsContent() {
     pricing[l] = getTextForLang('pricingText', l);
     contact[l] = getTextForLang('contactText', l);
   });
+  const sydneyToday = (typeof getSydneyDateString === 'function')
+    ? getSydneyDateString()
+    : new Date().toISOString().slice(0, 10);
+
   return '/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = ' + JSON.stringify({
+    scheduleDate: sydneyToday,
     people: people,
     pricingText: pricing,
     contactText: contact
@@ -424,6 +587,81 @@ async function uploadImageToGitHub(personId, file) {
   return path;
 }
 
+
+function buildPersonPageHtml(person) {
+  const slug = person.slug || slugifyAdmin(person.name);
+  const title = (person.name || 'Profile') + ' | Black Garter 7 ways';
+  // Same shell as profile.html – script resolves person from the filename slug
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="${String(person.name || '').replace(/"/g, '&quot;')} – Black Garter 7 ways">
+  <meta name="robots" content="index,follow">
+  <title>${title.replace(/</g, '')}</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="profile">
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-text">Black Garter<br><span>7 ways</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Roster</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="employment.html">Employment</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="lang-bar">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en" title="English"><img src="images/flag-en.png" alt="English"></button>
+      <button class="lang-btn" data-lang="ja" title="日本語"><img src="images/flag-ja.png" alt="日本語"></button>
+      <button class="lang-btn" data-lang="zh" title="中文"><img src="images/flag-zh.png" alt="中文"></button>
+      <button class="lang-btn" data-lang="ko" title="한국어"><img src="images/flag-ko.png" alt="한국어"></button>
+    </div>
+  </div>
+  <main>
+    <div id="profile-content"><div class="empty-state">Loading profile…</div></div>
+  </main>
+  <footer>
+    <p>&copy; 2026 Black Garter 7 ways. All rights reserved.</p>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>`;
+}
+
+async function uploadTextFileToGitHub(path, text, message) {
+  const s = loadPublishSettings();
+  if (!s.workerUrl) throw new Error('Set Cloudflare Worker URL first');
+  const contentBase64 = btoa(unescape(encodeURIComponent(text)));
+  const res = await fetch(s.workerUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Admin-Key': s.adminKey || ''
+    },
+    body: JSON.stringify({
+      type: 'file',
+      path: path,
+      contentBase64: contentBase64,
+      message: message || ('Update ' + path)
+    })
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) {
+    throw new Error(data.message || ('Upload failed HTTP ' + res.status));
+  }
+  return data;
+}
+
 async function publishViaWorker() {
   const s = loadPublishSettings();
   if (!s.workerUrl) {
@@ -452,9 +690,31 @@ async function publishViaWorker() {
     if (!res.ok || !data.ok) {
       return { ok: false, message: data.message || ('Publish failed (HTTP ' + res.status + ')') };
     }
+
+    // Create clean profile pages: /sophia-laurent.html
+    const people = getPeople();
+    let pagesOk = 0;
+    for (const person of people) {
+      const slug = person.slug || slugifyAdmin(person.name);
+      if (!slug) continue;
+      try {
+        await uploadTextFileToGitHub(
+          slug + '.html',
+          buildPersonPageHtml(person),
+          'Profile page for ' + person.name
+        );
+        pagesOk++;
+      } catch (err) {
+        return {
+          ok: false,
+          message: 'Data saved, but profile page failed for ' + person.name + ': ' + err.message
+        };
+      }
+    }
+
     return {
       ok: true,
-      message: data.message || '✓ Pushed to GitHub. Live for everyone in about 1 minute. Other admins: refresh.'
+      message: '✓ Live update sent. ' + pagesOk + ' profile page(s) published (e.g. /name.html). Live in ~1 minute.'
     };
   } catch (e) {
     return { ok: false, message: 'Network error calling Worker: ' + e.message };
@@ -542,6 +802,26 @@ document.addEventListener('DOMContentLoaded', () => {
     saveTextForLang('contactText', contactEditLang, contactVal);
 
     const people = getPeople();
+    // Detect duplicate name slugs before publish
+    const slugMap = {};
+    const dupes = [];
+    people.forEach(p => {
+      const s = p.slug || slugifyAdmin(p.name);
+      p.slug = s;
+      if (slugMap[s]) dupes.push(p.name + ' / ' + slugMap[s]);
+      else slugMap[s] = p.name;
+    });
+    if (dupes.length) {
+      const ok = confirm(
+        'Warning: more than one profile shares the same name URL:\n\n' +
+        dupes.join('\n') +
+        '\n\nThe last one with that name will win on the public profile link.\n\nPublish anyway?'
+      );
+      if (!ok) {
+        status.textContent = 'Publish cancelled.';
+        return;
+      }
+    }
     savePeople(people);
     syncPeopleToRuntime(people);
 
