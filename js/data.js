@@ -10,10 +10,10 @@ const CMS_DATA = {
       "id": 1,
       "name": "Ivana (NEW)",
       "photos": [
-        "https://picsum.photos/id/64/400/500",
-        "images/people/1/1787656523287-nemu-1.webp"
+        "images/people/1/1787738495605-ivana-1.jpg",
+        "images/people/1/1787738501151-ivana-2.jpg"
       ],
-      "photo": "https://picsum.photos/id/64/400/500",
+      "photo": "images/people/1/1787738495605-ivana-1.jpg",
       "nationality": "Chinese",
       "available": [
         "today",
@@ -32,6 +32,21 @@ const CMS_DATA = {
         "images/people/2/1787738478216-mizu-1.jpg"
       ],
       "description": "All new girl (Japanese Miku)\nRecommend Very good Service!!\n168cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Kitty (NEW)",
+      "slug": "kitty-new",
+      "nationality": "Chinese",
+      "photo": "images/people/3/1787738534353-kitty-1.jpg",
+      "photos": [
+        "images/people/3/1787738534353-kitty-1.jpg"
+      ],
+      "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
       "available": [
         "today",
         "tomorrow"
