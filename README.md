@@ -1,10 +1,11 @@
 # Black Garter 7 ways — Website
 
-Static multi-page site (HTML / CSS / JS) with a password-protected admin CMS, multi-language UI, and optional live publish to GitHub via a Cloudflare Worker.
+Static multi-page site (HTML / CSS / JS) with an admin CMS, multi-language UI, and live publish to GitHub via a Cloudflare Worker.
 
 **Brand:** Black Garter 7 ways  
 **Theme:** Black & gold  
 **Domain (example):** 7waysrockdale.com  
+**Address:** 19 The Seven Ways, Rockdale NSW 2216  
 
 ---
 
@@ -12,16 +13,16 @@ Static multi-page site (HTML / CSS / JS) with a password-protected admin CMS, mu
 
 | Page | File | Description |
 |------|------|-------------|
-| Home | `index.html` | Today / Tomorrow roster, pricing & contact previews, phone & WeChat strip |
-| Roster | `roster.html` | Full roster with All / Today / Tomorrow filters |
-| Pricing | `pricing.html` | Multi-language pricing text (editable) |
-| Employment | `employment.html` | Application form (name, nationality, age, contact) |
-| Contact | `contact.html` | Contact text, phone, WeChat, contact form |
-| Profile | `profile.html` or **`{name}.html`** | Individual profile (photos, description, availability) |
-| Admin | `admin.html` | CMS (not linked in public nav) |
-| 404 | `404.html` | Custom not-found page with site links |
+| Home | `index.html` | Today/Tomorrow roster, CMS pricing & contact previews, map, contact strip |
+| Roster | `roster.html` | Full roster (All / Today / Tomorrow) + contact strip |
+| Pricing | `pricing.html` | CMS pricing text only (no public editing) + contact strip |
+| Employment | `employment.html` | Application form (name, nationality, age, contact, **photos**) + contact strip |
+| Contact | `contact.html` | Phone, WeChat, address, map, CMS contact text (**no** contact form) + contact strip |
+| Profile | `profile.html` or **`{slug}.html`** | Individual profile (gallery, description, availability) |
+| Admin | `admin.html` | CMS only (not linked in public nav) |
+| 404 | `404.html` | Not-found page with links to main pages and profiles |
 
-Profile URLs use the person’s name, e.g.:
+Profile URLs use the person’s name slug, e.g.:
 
 - `https://yoursite.com/sophia-laurent.html`
 - `https://yoursite.com/mia-chen.html`
@@ -30,135 +31,161 @@ Profile URLs use the person’s name, e.g.:
 
 ## Features
 
+### Sticky banner
+- Logo + navigation tabs + language flags stay **visible while scrolling** (`.site-top`).
+
+### Contact strip (all main pages)
+Shown on **Home, Roster, Pricing, Employment, Contact Us**:
+
+| Item | Value | Behaviour |
+|------|--------|-----------|
+| Phone | 0450 351 919 | `tel:+61450351919` opens the phone app |
+| WeChat | BG-7ways | Display only |
+| Address | 19 The Seven Ways, Rockdale 2216 | Opens maps with **directions** from the user’s location |
+
+### Google Maps
+- Embedded map on **Home** (bottom) and **Contact Us**
+- Location: 19 The Seven Ways, Rockdale NSW 2216
+
 ### Roster / CMS people
-- Fields: name, slug, photos (multiple), nationality, description, available (`today` / `tomorrow`)
-- **Description** shows only on the profile page
-- **Multiple photos** per person; first photo is the Home/Roster card image; profile has a gallery
-- Clicking a card opens `/{slug}.html`
+- Fields: name, slug, **photos** (multiple), nationality, **description**, available (`today` / `tomorrow`)
+- Description shows **only** on the profile page
+- First photo = Home/Roster card; profile page has a thumbnail gallery
+- Card links to `/{slug}.html`
+
+
+### Roster display order
+- In **admin → Roster / People**, use **↑** / **↓** next to each person to change order
+- **Order #** shows position in the list
+- After **Save & Publish**, **Home** and **Roster** show people in that same order
+- Today / Tomorrow filters keep the relative order of whoever is available that day
 
 ### Sydney midnight rotation
-- At midnight **Australia/Sydney**, people marked **Tomorrow** move to **Today**
-- People who were only **Today** are cleared for that day
-- Driven by `scheduleDate` in `js/data.js` (updated on Save & Publish)
+- At midnight **Australia/Sydney**, **Tomorrow** → **Today**
+- People who were only **Today** are cleared
+- Stored via `scheduleDate` in `js/data.js`
+- When **Tomorrow** is empty after rollover, Home/Roster show:  
+  **“The roster for tomorrow will be updated tonight by 9pm”** (translated per language)
 
 ### Languages
-- Flags under the header: English, Japanese, Chinese, Korean
-- UI strings + Pricing/Contact text are per language
+- Flags: English, Japanese, Chinese, Korean
+- UI strings + **Pricing** and **Contact** CMS text are per language
 
-### Contact
-- Phone: **0450 351 919** (`tel:+61450351919`) on Home strip and Contact page
-- WeChat: **BG-7ways**
+### Pricing & contact content (single source)
+- Edited **only in admin CMS** (not on public pages)
+- Same text appears on:
+  - Home (Pricing / Contact sections)
+  - Pricing page
+  - Contact page
+- After **Save & Publish**, all three update together (via `js/data.js`)
+
+### Employment form
+- Fields: name, nationality, age, contact number, optional **photos** (up to 5, ~3 MB each)
+- Submissions email **jason@platformit.com.au** and **tyler@platformit.com.au** via Cloudflare Worker + Resend
+- Photos are attached to the email
 
 ### Admin (`admin.html`)
 - Login: `admin` / `Adm1n1strator` (client-side only — see Security)
-- Manage roster (add / edit / delete, multi-image upload)
-- Edit pricing & contact text per language
-- **Save & Publish** pushes `js/data.js` and profile HTML pages via Cloudflare Worker
-- Adding a person also creates their `/{slug}.html` page when the Worker is configured
-- **Deleting** a person also **deletes** their `/{slug}.html` page from GitHub (via Worker) and updates `js/data.js`
-- Duplicate name/slug shows a warning before overwrite
+- Roster CRUD, **reorder** (↑/↓ — same order on Home & Roster), multi-image upload, description
+- Pricing & contact text per language
+- **Save & Publish** → updates `js/data.js`, profile HTML pages, stores `workerUrl` for the public form
+- **Add person** → creates `/{slug}.html` on GitHub (when Worker is set)
+- **Delete person** → removes `/{slug}.html` from GitHub and updates data
+- Duplicate name/slug → warning before overwrite
+
+### Mobile
+- Layout constrained to device width (no horizontal overflow)
+- Images and long text wrap within the screen
 
 ---
 
 ## Local use
 
-1. Download / extract the site folder  
+1. Extract the site folder  
 2. Open `index.html` in a browser  
-3. For admin: open `admin.html` directly  
+3. Admin: open `admin.html` directly  
 
-Photo uploads and live GitHub publish need the Cloudflare Worker (below).
+Photo upload, live publish, and employment email need the Cloudflare Worker.
 
 ---
 
 ## GitHub Pages hosting
 
-1. Upload **all files** in this folder to your repo (repo root if the custom domain points at the site root)  
-2. Enable **GitHub Pages** (Settings → Pages)  
-3. Set custom domain if needed (e.g. `7waysrockdale.com`)  
-4. Ensure these exist in the repo after each publish:
+1. Upload **all** files to the repo root (if the custom domain points at the site root)  
+2. Enable **Pages** in repo Settings  
+3. Custom domain example: `7waysrockdale.com` + **Enforce HTTPS**  
+4. Keep in the repo:
    - `js/data.js`
-   - Every profile file such as `sophia-laurent.html`
-   - `404.html` (GitHub Pages serves this for missing URLs)
+   - Every `/{slug}.html` profile file
+   - `404.html`
 
 ### DNS (GoDaddy → GitHub)
 
-**A records** for apex (`@`):
+**A records** (`@`):
 
 - `185.199.108.153`
 - `185.199.109.153`
 - `185.199.110.153`
 - `185.199.111.153`
 
-**CNAME** for `www` → `YourGitHubUsername.github.io`
-
-Then in repo **Settings → Pages → Custom domain**, enter your domain and enable **Enforce HTTPS**.
+**CNAME** `www` → `YourGitHubUsername.github.io`
 
 ---
 
-## Option C — Cloudflare Worker (live CMS publish)
+## Cloudflare Worker (Option C)
 
-The browser never holds the GitHub token. Admin calls your Worker; the Worker pushes to GitHub.
+File: **`cloudflare-worker.js`** — deploy and update this whenever the project ships a new Worker.
 
-### 1. Deploy the Worker
-
-Use the code in **`cloudflare-worker.js`**.
-
-### 2. Worker secrets / variables
+### Secrets / variables
 
 | Name | Purpose |
 |------|---------|
-| `GITHUB_TOKEN` | Personal access token (`repo` scope) — **Secret** |
+| `GITHUB_TOKEN` | PAT with `repo` scope (**Secret**) |
 | `GH_OWNER` | e.g. `JasonPlatformIT` |
 | `GH_REPO` | Repository name |
 | `GH_BRANCH` | Usually `main` |
 | `GH_PATH` | `js/data.js` |
-| `ADMIN_KEY` | Shared publish password — **Secret** |
+| `ADMIN_KEY` | Shared publish password (**Secret**) |
+| `RESEND_API_KEY` | Resend API key for employment email (**Secret**) |
+| `EMAIL_FROM` | e.g. `Black Garter <onboarding@resend.dev>` or verified domain |
+| `EMAIL_TO` | Optional; default `jason@platformit.com.au,tyler@platformit.com.au` |
 
-### 3. Admin publish settings
+### Admin publish settings (once per device)
 
-In `admin.html` after login:
+- **Worker URL** — e.g. `https://your-worker.workers.dev`  
+- **Admin Key** — same as `ADMIN_KEY`  
+- **Save Publish Settings**, then **Save & Publish** (writes `workerUrl` into `js/data.js` for the employment form)
 
-- **Cloudflare Worker URL** — e.g. `https://7ways-cms-publish.xxx.workers.dev`
-- **Admin Key** — same as `ADMIN_KEY`
+### Worker POST types
 
-Save once per device, then use **Save & Publish Changes**.
-
-### Worker request types
-
-- `{ type: "data", content: "<full data.js text>" }` — update CMS data  
-- `{ type: "image", path: "images/people/...", contentBase64: "..." }` — photo upload  
-- `{ type: "file", path: "name.html", contentBase64: "..." }` — profile HTML pages  
-
-Uploaded photos are stored under `images/people/{id}/`.
-
----
-
-## Why profile links returned 404 (and the fix)
-
-Links go to **`/{slug}.html`** (not `profile.html?name=...`).
-
-Those files must **exist in the GitHub repo**. They are:
-
-1. Included in this package for the sample people, and  
-2. Created/updated when you **add a person** or **Save & Publish** (via the Worker)
-
-If you only uploaded an older build without the `*.html` profile files, GitHub returned 404.  
-**Re-upload this full package** (or run Save & Publish so the Worker creates every profile page).
-
-`profile.html` still works as a fallback with `?name=slug` or `?id=`.
+| Type | Auth | Purpose |
+|------|------|---------|
+| `data` | Admin key | Update `js/data.js` |
+| `image` | Admin key | Upload under `images/people/...` |
+| `file` | Admin key | Create/update profile `.html` pages |
+| `delete` | Admin key | Delete profile `.html` (not core pages) |
+| `employment` | **Public** | Email application (+ photo attachments) via Resend |
 
 ---
 
-## Security notes
+## Employment email (Resend)
 
-| Layer | Strength |
-|--------|----------|
-| Admin not in main nav | Hides URL from casual users only |
+1. Create account at [resend.com](https://resend.com) and an API key  
+2. Set `RESEND_API_KEY` and `EMAIL_FROM` on the Worker  
+3. Ensure `workerUrl` is in `js/data.js` (via admin Save & Publish)  
+4. Redeploy Worker after code changes  
+
+---
+
+## Security
+
+| Layer | Notes |
+|--------|--------|
+| Admin not in main nav | Hides URL only |
 | Admin login in the page | **Weak** — password is in client-side JS |
-| Cloudflare Access on `/admin.html` | **Strong** — blocks the page before it loads |
-| GitHub token in Worker secret only | Correct for Option C |
-
-For real protection, put **Cloudflare Access** (Zero Trust) on path `/admin.html` after proxying the domain through Cloudflare.
+| Cloudflare Access on `/admin.html` | **Strong** — recommended |
+| GitHub token only on Worker | Correct for Option C |
+| Employment form is public | No admin key (by design) |
 
 ---
 
@@ -167,17 +194,13 @@ For real protection, put **Cloudflare Access** (Zero Trust) on path `/admin.html
 ```text
 website/
   index.html, roster.html, pricing.html, employment.html, contact.html
-  profile.html          ← generic profile loader
-  404.html              ← custom not-found
-  admin.html            ← CMS
-  {slug}.html           ← one file per person (e.g. sophia-laurent.html)
-  cloudflare-worker.js  ← deploy to Cloudflare
+  profile.html, 404.html, admin.html
+  {slug}.html              ← per person (e.g. sophia-laurent.html)
+  cloudflare-worker.js
   css/style.css
-  js/data.js            ← CMS source of truth (people, texts, scheduleDate)
-  js/script.js          ← public site logic
-  js/admin.js           ← admin CMS logic
-  js/i18n.js            ← translations
-  images/               ← flags, uploads path people/…
+  js/data.js               ← CMS source of truth (people, texts, scheduleDate, workerUrl)
+  js/script.js, js/admin.js, js/i18n.js
+  images/
   README.md
 ```
 
@@ -188,41 +211,37 @@ website/
 - **Username:** `admin`  
 - **Password:** `Adm1n1strator`  
 
-Change these in `js/admin.js` if needed (and treat them as public unless Access is enabled).
+Treat as public unless Cloudflare Access (or similar) protects `admin.html`.
 
 ---
 
-## Support checklist after deploy
+## Deploy checklist
 
-1. Site opens on custom domain with HTTPS  
-2. Home Today/Tomorrow shows people  
-3. Clicking a person opens `/{slug}.html` (no 404)  
-4. Bad URL shows custom `404.html` with links  
-5. Admin opens only via direct URL (+ Access if configured)  
-6. Worker + Admin Key set; Save & Publish updates GitHub  
-7. New person gets a new `/{slug}.html` after add/publish  
+1. [ ] Custom domain + HTTPS  
+2. [ ] Roster order matches admin after Save & Publish (Home + Roster)
+2. [ ] Contact strip on Home / Roster / Pricing / Employment / Contact  
+3. [ ] Address opens directions in maps app  
+4. [ ] Map visible on Home and Contact  
+5. [ ] Profile cards open `/{slug}.html` (no 404)  
+6. [ ] Home pricing & contact match CMS after publish  
+7. [ ] Tomorrow empty message after daily rollover  
+8. [ ] Worker redeployed; Admin Key + Worker URL set  
+9. [ ] Resend configured; test employment form (with photo)  
+10. [ ] Delete profile removes GitHub `.html` page  
+11. [ ] Sticky nav stays visible while scrolling  
+12. [ ] Mobile: no horizontal scroll; images fit screen  
 
+---
 
-## Employment form emails
+## Changelog (recent)
 
-Applications are sent by the Cloudflare Worker to:
-
-- jason@platformit.com.au
-- tyler@platformit.com.au
-
-### Extra Worker secrets (Resend)
-
-Cloudflare Workers cannot send email by themselves. Use [Resend](https://resend.com) (free tier is enough):
-
-1. Create a Resend account and API key  
-2. In the Worker → **Settings → Variables**:
-
-| Name | Value |
-|------|--------|
-| `RESEND_API_KEY` | your Resend API key (Secret) |
-| `EMAIL_FROM` | e.g. `Black Garter <onboarding@resend.dev>` for tests, or a verified domain address |
-| `EMAIL_TO` | `jason@platformit.com.au,tyler@platformit.com.au` (optional; this is the default) |
-
-3. Put the **same Worker URL** in admin Publish Settings and **Save & Publish** once so `workerUrl` is stored in `js/data.js` for the public form.
-
-Redeploy the Worker with the latest `cloudflare-worker.js` after updating code.
+- Roster reorder in CMS (↑/↓); same order on Home and Roster
+- Sticky nav + language bar  
+- Contact strip on all main pages; address opens **directions**  
+- Google Maps on Home and Contact; no public contact form  
+- No public pricing/contact editors (admin CMS only); Home shows same CMS text  
+- Mobile overflow fixes  
+- Tomorrow empty state: “updated tonight by 9pm”  
+- Employment photos + email via Worker/Resend  
+- Profile create/delete syncs GitHub HTML pages  
+- Name-based profile URLs; custom 404  

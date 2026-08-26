@@ -244,16 +244,24 @@ function initEditableSection(sectionKey, displayId, editId, saveBtnId) {
   }
 }
 
-// Refresh custom text areas when language changes
+// Fill every pricing/contact CMS text block on the page (home, pricing, contact)
+function fillCmsTextElements() {
+  const pricing = getTextContent('pricingText');
+  const contact = getTextContent('contactText');
+
+  document.querySelectorAll('[data-cms-text="pricingText"], #pricing-preview, #pricing-display').forEach(el => {
+    el.textContent = pricing;
+  });
+  document.querySelectorAll('[data-cms-text="contactText"], #contact-preview, #contact-display').forEach(el => {
+    el.textContent = contact;
+  });
+}
+
+// Refresh when language changes
 function refreshCustomTexts() {
   if (typeof window.refresh_pricingText === 'function') window.refresh_pricingText();
   if (typeof window.refresh_contactText === 'function') window.refresh_contactText();
-
-  // Home page previews
-  const pricingPreview = document.getElementById('pricing-preview');
-  const contactPreview = document.getElementById('contact-preview');
-  if (pricingPreview) pricingPreview.textContent = getTextContent('pricingText');
-  if (contactPreview) contactPreview.textContent = getTextContent('contactText');
+  fillCmsTextElements();
 }
 
 // Individual profile page (profile.html?id=1)
@@ -490,29 +498,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (page === 'home') {
     initHomePage();
-    const pricingPreview = document.getElementById('pricing-preview');
-    const contactPreview = document.getElementById('contact-preview');
-    if (pricingPreview) pricingPreview.textContent = getTextContent('pricingText');
-    if (contactPreview) contactPreview.textContent = getTextContent('contactText');
-    const pricingDisp = document.getElementById('pricing-display');
-    const contactDisp = document.getElementById('contact-display');
-    if (pricingDisp) pricingDisp.textContent = getTextContent('pricingText');
-    if (contactDisp) contactDisp.textContent = getTextContent('contactText');
   }
 
   if (page === 'roster') {
     initRosterPage();
   }
 
-  if (page === 'pricing') {
-    const el = document.getElementById('pricing-display');
-    if (el) el.textContent = getTextContent('pricingText');
-  }
-
-  if (page === 'contact') {
-    const el = document.getElementById('contact-display');
-    if (el) el.textContent = getTextContent('contactText');
-  }
+  // Home previews + Pricing + Contact pages all use the same CMS text
+  fillCmsTextElements();
 
   if (page === 'profile') {
     initProfilePage();

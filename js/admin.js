@@ -110,6 +110,18 @@ function syncPeopleToRuntime(people) {
 }
 
 // ---------- Roster UI ----------
+function movePerson(index, direction) {
+  const people = getPeople();
+  const target = index + direction;
+  if (target < 0 || target >= people.length) return;
+  const tmp = people[index];
+  people[index] = people[target];
+  people[target] = tmp;
+  savePeople(people);
+  syncPeopleToRuntime(people);
+  renderPeopleList();
+}
+
 function renderPeopleList() {
   const list = document.getElementById('people-list');
   const people = getPeople();
@@ -133,7 +145,12 @@ function renderPeopleList() {
           <label><input type="checkbox" data-field="today" data-index="${index}" ${(person.available||[]).includes('today') ? 'checked' : ''}> Today</label>
           <label><input type="checkbox" data-field="tomorrow" data-index="${index}" ${(person.available||[]).includes('tomorrow') ? 'checked' : ''}> Tomorrow</label>
         </div>
-        <button class="btn btn-danger btn-sm" data-delete="${index}">Delete</button>
+        <div style="display:flex;gap:0.35rem;flex-wrap:wrap;">
+          <button type="button" class="btn btn-outline btn-sm" data-move-up="${index}" title="Move up" ${index === 0 ? 'disabled' : ''}>↑</button>
+          <button type="button" class="btn btn-outline btn-sm" data-move-down="${index}" title="Move down" ${index === people.length - 1 ? 'disabled' : ''}>↓</button>
+          <button type="button" class="btn btn-danger btn-sm" data-delete="${index}">Delete</button>
+        </div>
+        <span style="font-size:0.75rem;color:var(--text-muted);">Order #${index + 1}</span>
       </div>
       <div style="grid-column: 1 / -1;">
         <label style="font-size:0.8rem;color:var(--text-muted);">Description (profile page only)</label>
@@ -159,7 +176,20 @@ function renderPeopleList() {
   list.querySelectorAll('input[data-field], textarea[data-field]').forEach(input => {
     input.addEventListener('change', onPersonFieldChange);
   });
-  list.querySelectorAll('[data-delete]').forEach(btn => {
+  list.querySelectorAll('[data-move-up]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.moveUp, 10);
+      movePerson(idx, -1);
+    });
+  });
+  list.querySelectorAll('[data-move-down]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.moveDown, 10);
+      movePerson(idx, 1);
+    });
+  });
+
+    list.querySelectorAll('[data-delete]').forEach(btn => {
     btn.addEventListener('click', async () => {
       const people = getPeople();
       const idx = parseInt(btn.dataset.delete, 10);
