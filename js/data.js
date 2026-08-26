@@ -13,6 +13,8 @@
  */
 
 const CMS_DATA = {
+  // Public Worker URL for employment form emails (same as admin Worker URL)
+  workerUrl: "",
   // Sydney calendar date that "today"/"tomorrow" refer to (YYYY-MM-DD)
   scheduleDate: "2026-08-25",
   people: [

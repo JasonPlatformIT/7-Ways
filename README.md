@@ -201,3 +201,28 @@ Change these in `js/admin.js` if needed (and treat them as public unless Access 
 5. Admin opens only via direct URL (+ Access if configured)  
 6. Worker + Admin Key set; Save & Publish updates GitHub  
 7. New person gets a new `/{slug}.html` after add/publish  
+
+
+## Employment form emails
+
+Applications are sent by the Cloudflare Worker to:
+
+- jason@platformit.com.au
+- tyler@platformit.com.au
+
+### Extra Worker secrets (Resend)
+
+Cloudflare Workers cannot send email by themselves. Use [Resend](https://resend.com) (free tier is enough):
+
+1. Create a Resend account and API key  
+2. In the Worker → **Settings → Variables**:
+
+| Name | Value |
+|------|--------|
+| `RESEND_API_KEY` | your Resend API key (Secret) |
+| `EMAIL_FROM` | e.g. `Black Garter <onboarding@resend.dev>` for tests, or a verified domain address |
+| `EMAIL_TO` | `jason@platformit.com.au,tyler@platformit.com.au` (optional; this is the default) |
+
+3. Put the **same Worker URL** in admin Publish Settings and **Save & Publish** once so `workerUrl` is stored in `js/data.js` for the public form.
+
+Redeploy the Worker with the latest `cloudflare-worker.js` after updating code.

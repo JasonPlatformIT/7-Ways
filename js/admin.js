@@ -609,7 +609,9 @@ function buildDataJsContent() {
     ? getSydneyDateString()
     : new Date().toISOString().slice(0, 10);
 
+  const pub = loadPublishSettings();
   return '/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = ' + JSON.stringify({
+    workerUrl: (pub && pub.workerUrl) || (typeof CMS_DATA !== 'undefined' && CMS_DATA.workerUrl) || '',
     scheduleDate: sydneyToday,
     people: people,
     pricingText: pricing,

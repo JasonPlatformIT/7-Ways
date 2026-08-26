@@ -348,29 +348,116 @@ function initProfilePage() {
   });
 }
 
-// Employment application form
+// Employment application form – emails via Cloudflare Worker → Resend
+function getWorkerUrl() {
+  if (typeof CMS_DATA !== 'undefined' && CMS_DATA.workerUrl) {
+    return String(CMS_DATA.workerUrl).trim().replace(/\/$/, '');
+  }
+  try {
+    const s = JSON.parse(localStorage.getItem('7ways_publish_settings') || '{}');
+    if (s.workerUrl) return String(s.workerUrl).trim().replace(/\/$/, '');
+  } catch (e) {}
+  return '';
+}
+
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = String(reader.result || '');
+      const base64 = result.split(',')[1] || '';
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 function initEmploymentForm() {
   const form = document.getElementById('employment-form');
   if (!form) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const name = document.getElementById('emp-name').value.trim();
     const nationality = document.getElementById('emp-nationality').value.trim();
     const age = document.getElementById('emp-age').value.trim();
     const contact = document.getElementById('emp-contact').value.trim();
+    const photoInput = document.getElementById('emp-photos');
+    const files = photoInput ? Array.from(photoInput.files || []) : [];
 
-    // Basic validation (HTML required already handles most)
     if (!name || !nationality || !age || !contact) {
       alert('Please fill in all required fields.');
       return;
     }
 
-    // Show confirmation
-    const msg = (typeof t === 'function' ? t('form_success') : 'Application received! Thank you.');
-    alert(msg + '\n\nName: ' + name + '\nNationality: ' + nationality + '\nAge: ' + age + '\nContact: ' + contact);
-    form.reset();
+    const maxBytes = 3 * 1024 * 1024;
+    for (const file of files) {
+      if (!file.type.startsWith('image/')) {
+        alert('Please attach image files only.');
+        return;
+      }
+      if (file.size > maxBytes) {
+        alert('Each photo must be under 3 MB. Please resize and try again.');
+        return;
+      }
+    }
+    if (files.length > 5) {
+      alert('Please attach up to 5 photos only.');
+      return;
+    }
+
+    const workerUrl = getWorkerUrl();
+    if (!workerUrl) {
+      alert('Form is not connected yet. Please contact the site administrator.');
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    try {
+      const photos = [];
+      for (const file of files) {
+        const content = await readFileAsBase64(file);
+        photos.push({
+          filename: file.name || 'photo.jpg',
+          contentType: file.type || 'image/jpeg',
+          content: content
+        });
+      }
+
+      const res = await fetch(workerUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'employment',
+          name,
+          nationality,
+          age,
+          contact,
+          photos
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.message || ('Send failed (' + res.status + ')'));
+      }
+      const msg = (typeof t === 'function' ? t('form_success') : 'Application received! Thank you.');
+      alert(msg);
+      form.reset();
+    } catch (err) {
+      alert('Could not send application: ' + err.message);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = (typeof t === 'function' ? t('submit_application') : 'Submit Application');
+      }
+    }
   });
 }
 
