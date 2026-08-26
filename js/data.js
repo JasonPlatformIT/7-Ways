@@ -51,6 +51,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 4,
+      "name": "Aaliyah",
+      "slug": "aaliyah",
+      "nationality": "Iranian",
+      "photo": "images/people/4/1787738558264-aaliyah-1.jpg",
+      "photos": [
+        "images/people/4/1787738558264-aaliyah-1.jpg"
+      ],
+      "description": "All new girl (IRAN Aaliyah)\n156cm. Natural Busty C. 61kg . \nNice Curvy Sexy . Round nice Bum!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "pricingText": {
