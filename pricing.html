@@ -22,7 +22,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="pricing">
-  <header>
+  <div class="site-top">
+<header>
     <nav>
       <a href="index.html" class="logo">
         
@@ -37,8 +38,7 @@
       </ul>
     </nav>
   </header>
-
-  <div class="lang-bar">
+<div class="lang-bar">
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="en" title="English"><img src="images/flag-en.png" alt="English"></button>
       <button class="lang-btn" data-lang="ja" title="日本語"><img src="images/flag-ja.png" alt="日本語"></button>
@@ -46,22 +46,14 @@
       <button class="lang-btn" data-lang="ko" title="한국어"><img src="images/flag-ko.png" alt="한국어"></button>
     </div>
   </div>
+  </div>
 
   <main>
     <h1 data-i18n="pricing_title">Pricing</h1>
 
     <section class="content-section">
       <h2 data-i18n="current_pricing">Current Pricing</h2>
-      <div id="pricing-display" class="editable-text"></div>
-    </section>
-
-    <section class="content-section">
-      <h2 data-i18n="edit_pricing">Edit Pricing Text</h2>
-      <p class="admin-note" style="margin-bottom: 1rem;" >
-        Changes are saved for the <strong>currently selected language</strong>. Switch the flag above, then edit and save to set text for that language.
-      </p>
-      <textarea id="pricing-edit" class="editable" rows="12"></textarea>
-      <button id="save-pricing" class="btn save-btn" data-i18n="save_pricing">Save Pricing</button>
+      <div id="pricing-display" class="cms-text"></div>
     </section>
   </main>
 

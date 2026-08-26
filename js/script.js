@@ -146,7 +146,14 @@ function renderRoster(containerId, filter) {
   }
 
   if (people.length === 0) {
-    const emptyMsg = (typeof t === 'function') ? t('empty_day') : 'No one scheduled for this day yet.';
+    let emptyMsg;
+    if (filter === 'tomorrow') {
+      emptyMsg = (typeof t === 'function')
+        ? t('tomorrow_pending')
+        : 'The roster for tomorrow will be updated tonight by 9pm';
+    } else {
+      emptyMsg = (typeof t === 'function') ? t('empty_day') : 'No one scheduled for this day yet.';
+    }
     container.innerHTML = `<div class="empty-state">${emptyMsg}</div>`;
     return;
   }
@@ -400,6 +407,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactPreview = document.getElementById('contact-preview');
     if (pricingPreview) pricingPreview.textContent = getTextContent('pricingText');
     if (contactPreview) contactPreview.textContent = getTextContent('contactText');
+    const pricingDisp = document.getElementById('pricing-display');
+    const contactDisp = document.getElementById('contact-display');
+    if (pricingDisp) pricingDisp.textContent = getTextContent('pricingText');
+    if (contactDisp) contactDisp.textContent = getTextContent('contactText');
   }
 
   if (page === 'roster') {
@@ -407,11 +418,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (page === 'pricing') {
-    initEditableSection('pricingText', 'pricing-display', 'pricing-edit', 'save-pricing');
+    const el = document.getElementById('pricing-display');
+    if (el) el.textContent = getTextContent('pricingText');
   }
 
   if (page === 'contact') {
-    initEditableSection('contactText', 'contact-display', 'contact-edit', 'save-contact');
+    const el = document.getElementById('contact-display');
+    if (el) el.textContent = getTextContent('contactText');
   }
 
   if (page === 'profile') {

@@ -71,6 +71,7 @@ const TRANSLATIONS = {
 
     // Common
     empty_day: "No one scheduled for this day yet.",
+    tomorrow_pending: "The roster for tomorrow will be updated tonight by 9pm",
     footer: "© 2026 7 Ways. All rights reserved.",
     saved: "Saved! Content updated (stored in your browser)."
   },
@@ -134,6 +135,7 @@ const TRANSLATIONS = {
     profile_not_exist: "このプロフィールは存在しません。",
 
     empty_day: "この日の予定はありません。",
+    tomorrow_pending: "明日のロスターは今夜9時までに更新されます",
     footer: "© 2026 7 Ways. All rights reserved.",
     saved: "保存しました！（ブラウザに保存されています）"
   },
@@ -197,6 +199,7 @@ const TRANSLATIONS = {
     profile_not_exist: "此个人资料不存在。",
 
     empty_day: "当天暂无安排。",
+    tomorrow_pending: "明日的名单将于今晚9点前更新",
     footer: "© 2026 7 Ways. 保留所有权利。",
     saved: "已保存！内容已更新（保存在浏览器中）。"
   },
@@ -260,6 +263,7 @@ const TRANSLATIONS = {
     profile_not_exist: "이 프로필은 존재하지 않습니다.",
 
     empty_day: "해당 날짜에 예정된 사람이 없습니다.",
+    tomorrow_pending: "내일 명단은 오늘 밤 9시까지 업데이트됩니다",
     footer: "© 2026 7 Ways. All rights reserved.",
     saved: "저장되었습니다! (브라우저에 저장됨)"
   }
