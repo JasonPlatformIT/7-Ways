@@ -88,6 +88,8 @@ Shown on **Home, Roster, Pricing, Employment, Contact Us**:
 - Login: `admin` / `Adm1n1strator` (client-side only — see Security)
 - Roster CRUD, **reorder** (↑/↓ — same order on Home & Roster), multi-image upload, description
 - Pricing & contact text per language
+- **Format Settings** tab: body/header colour and size, with preview before publish
+- Admin fields load from **current live** `js/data.js` on login (Reload from live site)
 - **Save & Publish** → updates `js/data.js`, profile HTML pages, stores `workerUrl` for the public form
 - **Add person** → creates `/{slug}.html` on GitHub (when Worker is set)
 - **Delete person** → removes `/{slug}.html` from GitHub and updates data
@@ -235,6 +237,8 @@ Treat as public unless Cloudflare Access (or similar) protects `admin.html`.
 
 ## Changelog (recent)
 
+- CMS loads live website content into edit fields
+- Format Settings tab (body/header colour & size) with preview
 - Roster reorder in CMS (↑/↓); same order on Home and Roster
 - Sticky nav + language bar  
 - Contact strip on all main pages; address opens **directions**  

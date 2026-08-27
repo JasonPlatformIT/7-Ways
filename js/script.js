@@ -1,3 +1,35 @@
+
+function getSiteFormat() {
+  const defaults = {
+    bodyColor: '#f1f1f1',
+    bodySize: '16px',
+    headerColor: '#d4af37',
+    headerSize: '2.2rem'
+  };
+  const f = (typeof CMS_DATA !== 'undefined' && CMS_DATA.format) ? CMS_DATA.format : {};
+  return Object.assign({}, defaults, f);
+}
+
+
+function pinSiteTop() {
+  const top = document.querySelector('.site-top');
+  if (!top) return;
+  const h = top.offsetHeight || 0;
+  document.body.style.paddingTop = h + 'px';
+}
+
+function applySiteFormat(fmt) {
+  const format = fmt || getSiteFormat();
+  const root = document.documentElement;
+  if (format.bodyColor) root.style.setProperty('--text', format.bodyColor);
+  if (format.bodySize) root.style.setProperty('--body-size', format.bodySize);
+  if (format.headerColor) {
+    root.style.setProperty('--header-color', format.headerColor);
+    root.style.setProperty('--red', format.headerColor);
+  }
+  if (format.headerSize) root.style.setProperty('--header-size', format.headerSize);
+}
+
 /**
  * Main site logic
  */
@@ -482,6 +514,7 @@ function setActiveNav() {
 
 // Initialize based on page
 document.addEventListener('DOMContentLoaded', () => {
+  applySiteFormat();
   applySydneyAvailabilityRollover();
   setActiveNav();
 

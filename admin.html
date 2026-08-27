@@ -46,6 +46,49 @@
     }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 700px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .format-field {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .format-field label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .format-field input[type="color"] {
+      width: 64px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--border);
+      background: #111;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    .format-field input[type="text"],
+    .format-field select {
+      width: calc(100% - 76px);
+      min-width: 140px;
+      padding: 0.55rem 0.75rem;
+      background: #111;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .format-field select { width: 100%; }
+
     .person-row {
       display: grid;
       grid-template-columns: 60px 1fr 1fr 1.2fr auto;
@@ -184,6 +227,7 @@
         <button class="tab-btn active" data-tab="roster">Roster</button>
         <button class="tab-btn" data-tab="pricing">Pricing Text</button>
         <button class="tab-btn" data-tab="contact">Contact Text</button>
+        <button class="tab-btn" data-tab="format">Format Settings</button>
       </div>
 
       <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
@@ -221,7 +265,7 @@
       <!-- ROSTER TAB -->
       <div id="tab-roster" class="tab-content active">
         <h2>Manage Roster</h2>
-        <p style="color: var(--text-muted); margin-bottom: 1rem;">Add, edit or remove people. Changes are saved in this browser.</p>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Add, edit or remove people. Fields load from what is currently live on the website. Edit here, then Save &amp; Publish.</p>
         <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.75rem;">Use <strong>↑</strong> / <strong>↓</strong> to reorder. Home and Roster use this same order after Save &amp; Publish.</p>
         <div id="people-list"></div>
 
@@ -287,6 +331,60 @@
         </div>
         <textarea id="admin-contact-edit" class="editable" rows="14"></textarea>
         <button id="save-admin-contact" class="btn save-btn" style="margin-top: 0.75rem;">Save Contact</button>
+      </div>
+
+      <!-- FORMAT TAB -->
+      <div id="tab-format" class="tab-content">
+        <h2>Format Settings</h2>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">
+          These settings apply to body text and headings across the public site after Save &amp; Publish.
+          Use the preview below before going live.
+        </p>
+        <div class="form-row">
+          <div class="form-group format-field">
+            <label>Body text colour</label>
+            <input type="color" id="fmt-body-color" value="#f1f1f1">
+            <input type="text" id="fmt-body-color-text" value="#f1f1f1" placeholder="#f1f1f1">
+          </div>
+          <div class="form-group format-field">
+            <label>Body text size</label>
+            <select id="fmt-body-size">
+              <option value="14px">Small (14px)</option>
+              <option value="16px" selected>Normal (16px)</option>
+              <option value="18px">Medium (18px)</option>
+              <option value="20px">Large (20px)</option>
+              <option value="22px">Extra large (22px)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group format-field">
+            <label>Header colour</label>
+            <input type="color" id="fmt-header-color" value="#d4af37">
+            <input type="text" id="fmt-header-color-text" value="#d4af37" placeholder="#d4af37">
+          </div>
+          <div class="form-group format-field">
+            <label>Header size</label>
+            <select id="fmt-header-size">
+              <option value="1.6rem">Small</option>
+              <option value="1.9rem">Medium</option>
+              <option value="2.2rem" selected>Normal</option>
+              <option value="2.6rem">Large</option>
+              <option value="3rem">Extra large</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" id="fmt-preview-btn" class="btn btn-outline">Update preview</button>
+        <button type="button" id="fmt-reset-btn" class="btn btn-outline">Reset to current live values</button>
+
+        <div id="format-preview" class="content-section" style="margin-top:1.5rem;">
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:0.75rem;">Preview (not live until you Save &amp; Publish)</p>
+          <h1 id="preview-h1" style="border:none;margin-bottom:0.75rem;">Black Garter 7 ways</h1>
+          <h2 id="preview-h2" style="color:inherit;margin-bottom:0.75rem;">Sample section heading</h2>
+          <p id="preview-body">This is sample body text. Pricing, contact and descriptions on the public site will use this colour and size after you publish.</p>
+          <p id="preview-muted" style="opacity:0.75;">Muted supporting text example.</p>
+        </div>
+      </div>
       </div>
 
     </div>

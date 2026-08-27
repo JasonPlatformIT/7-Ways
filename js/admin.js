@@ -34,31 +34,58 @@ function showLogin() {
   document.getElementById('admin-panel').classList.remove('visible');
 }
 
-function showAdmin() {
-  document.getElementById('login-section').classList.remove('visible');
-  document.getElementById('admin-panel').classList.add('visible');
+
+async function fetchLiveCmsData() {
+  try {
+    const res = await fetch('js/data.js?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    const idx = text.indexOf('const CMS_DATA');
+    const eq = text.indexOf('=', idx);
+    if (eq < 0) throw new Error('CMS_DATA not found');
+    let payload = text.slice(eq + 1).trim();
+    if (payload.endsWith(';')) payload = payload.slice(0, -1);
+    const live = new Function('return (' + payload + ')')();
+    if (live && typeof live === 'object') {
+      window.CMS_DATA = live;
+      return live;
+    }
+  } catch (e) {
+    console.warn('Could not refresh live CMS data', e);
+  }
+  return (typeof CMS_DATA !== 'undefined') ? CMS_DATA : {};
+}
+
+async function loadAdminFromLiveSite(silent) {
+  await fetchLiveCmsData();
+  localStorage.removeItem('cms_people');
+  ['en','ja','zh','ko'].forEach(l => {
+    localStorage.removeItem('cms_pricingText_' + l);
+    localStorage.removeItem('cms_contactText_' + l);
+  });
+  if (typeof applySydneyAvailabilityRollover === 'function') {
+    applySydneyAvailabilityRollover();
+  }
   renderPeopleList();
   loadTextEditors();
+  loadFormatFields();
+  if (!silent) {
+    alert('Loaded current live website content into the CMS fields.');
+  }
+}
+
+async function showAdmin() {
+  document.getElementById('login-section').classList.remove('visible');
+  document.getElementById('admin-panel').classList.add('visible');
+  await loadAdminFromLiveSite(true);
 }
 
 // ---------- People data (localStorage override) ----------
 function getPeople() {
-  // Apply Sydney day rollover on live data first (same rules as public site)
   if (typeof applySydneyAvailabilityRollover === 'function') {
     applySydneyAvailabilityRollover();
-  } else if (typeof CMS_DATA !== 'undefined') {
-    // minimal fallback if script.js helpers not loaded on admin
   }
-  const stored = localStorage.getItem('cms_people');
-  if (stored) {
-    try {
-      const list = JSON.parse(stored);
-      return list.map(p => {
-        if (!p.slug) p.slug = slugifyAdmin(p.name);
-        return p;
-      });
-    } catch (e) {}
-  }
+  // Prefer in-memory CMS_DATA (loaded from live data.js). Session edits patch CMS_DATA via syncPeopleToRuntime.
   const people = JSON.parse(JSON.stringify((CMS_DATA && CMS_DATA.people) || []));
   return people.map(p => {
     if (!p.slug) p.slug = slugifyAdmin(p.name);
@@ -566,16 +593,119 @@ let pricingEditLang = 'en';
 let contactEditLang = 'en';
 
 function getTextForLang(key, lang) {
-  const storageKey = 'cms_' + key + '_' + lang;
-  const stored = localStorage.getItem(storageKey);
-  if (stored !== null) return stored;
-  const data = CMS_DATA[key];
+  const data = (typeof CMS_DATA !== 'undefined') ? CMS_DATA[key] : null;
   if (data && typeof data === 'object') return data[lang] || data.en || '';
-  return data || '';
+  if (typeof data === 'string') return data;
+  return '';
 }
 
 function saveTextForLang(key, lang, value) {
+  if (typeof CMS_DATA === 'undefined') return;
+  if (!CMS_DATA[key] || typeof CMS_DATA[key] !== 'object') CMS_DATA[key] = {};
+  CMS_DATA[key][lang] = value;
   localStorage.setItem('cms_' + key + '_' + lang, value);
+}
+
+
+function defaultFormat() {
+  return {
+    bodyColor: '#f1f1f1',
+    bodySize: '16px',
+    headerColor: '#d4af37',
+    headerSize: '2.2rem'
+  };
+}
+
+function readFormatFromForm() {
+  const bodyColor = (document.getElementById('fmt-body-color-text') || {}).value
+    || (document.getElementById('fmt-body-color') || {}).value
+    || '#f1f1f1';
+  const headerColor = (document.getElementById('fmt-header-color-text') || {}).value
+    || (document.getElementById('fmt-header-color') || {}).value
+    || '#d4af37';
+  return {
+    bodyColor: bodyColor.trim(),
+    bodySize: (document.getElementById('fmt-body-size') || {}).value || '16px',
+    headerColor: headerColor.trim(),
+    headerSize: (document.getElementById('fmt-header-size') || {}).value || '2.2rem'
+  };
+}
+
+function loadFormatFields() {
+  const f = Object.assign(defaultFormat(), (CMS_DATA && CMS_DATA.format) || {});
+  const bc = document.getElementById('fmt-body-color');
+  const bct = document.getElementById('fmt-body-color-text');
+  const bs = document.getElementById('fmt-body-size');
+  const hc = document.getElementById('fmt-header-color');
+  const hct = document.getElementById('fmt-header-color-text');
+  const hs = document.getElementById('fmt-header-size');
+  if (bc) bc.value = /^#[0-9a-fA-F]{6}$/.test(f.bodyColor) ? f.bodyColor : '#f1f1f1';
+  if (bct) bct.value = f.bodyColor;
+  if (bs) bs.value = f.bodySize;
+  if (hc) hc.value = /^#[0-9a-fA-F]{6}$/.test(f.headerColor) ? f.headerColor : '#d4af37';
+  if (hct) hct.value = f.headerColor;
+  if (hs) {
+    if (![...hs.options].some(o => o.value === f.headerSize)) {
+      const opt = document.createElement('option');
+      opt.value = f.headerSize;
+      opt.textContent = f.headerSize;
+      hs.appendChild(opt);
+    }
+    hs.value = f.headerSize;
+  }
+  previewFormat(f);
+}
+
+function previewFormat(fmt) {
+  const f = fmt || readFormatFromForm();
+  const box = document.getElementById('format-preview');
+  const h1 = document.getElementById('preview-h1');
+  const h2 = document.getElementById('preview-h2');
+  const body = document.getElementById('preview-body');
+  const muted = document.getElementById('preview-muted');
+  if (!box) return;
+  if (h1) {
+    h1.style.color = f.headerColor;
+    h1.style.fontSize = f.headerSize;
+  }
+  if (h2) {
+    h2.style.color = f.headerColor;
+    h2.style.fontSize = 'calc(' + f.headerSize + ' * 0.7)';
+  }
+  if (body) {
+    body.style.color = f.bodyColor;
+    body.style.fontSize = f.bodySize;
+  }
+  if (muted) {
+    muted.style.color = f.bodyColor;
+    muted.style.fontSize = f.bodySize;
+  }
+}
+
+function bindFormatControls() {
+  const pairs = [
+    ['fmt-body-color', 'fmt-body-color-text'],
+    ['fmt-header-color', 'fmt-header-color-text']
+  ];
+  pairs.forEach(([cId, tId]) => {
+    const c = document.getElementById(cId);
+    const t = document.getElementById(tId);
+    if (c && t) {
+      c.addEventListener('input', () => { t.value = c.value; previewFormat(); });
+      t.addEventListener('input', () => {
+        if (/^#[0-9a-fA-F]{6}$/.test(t.value.trim())) c.value = t.value.trim();
+        previewFormat();
+      });
+    }
+  });
+  ['fmt-body-size', 'fmt-header-size'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', () => previewFormat());
+  });
+  const prev = document.getElementById('fmt-preview-btn');
+  if (prev) prev.addEventListener('click', () => previewFormat());
+  const reset = document.getElementById('fmt-reset-btn');
+  if (reset) reset.addEventListener('click', () => loadFormatFields());
 }
 
 function loadTextEditors() {
@@ -640,9 +770,12 @@ function buildDataJsContent() {
     : new Date().toISOString().slice(0, 10);
 
   const pub = loadPublishSettings();
+  const format = readFormatFromForm();
+  if (typeof CMS_DATA !== 'undefined') CMS_DATA.format = format;
   return '/**\n * CMS DATA - managed via admin\n */\n\nconst CMS_DATA = ' + JSON.stringify({
     workerUrl: (pub && pub.workerUrl) || (typeof CMS_DATA !== 'undefined' && CMS_DATA.workerUrl) || '',
     scheduleDate: sydneyToday,
+    format: format,
     people: people,
     pricingText: pricing,
     contactText: contact
@@ -842,6 +975,8 @@ async function publishViaWorker() {
 
 // ---------- Init ----------
 document.addEventListener('DOMContentLoaded', () => {
+  bindFormatControls();
+  loadFormatFields();
   // Login
   document.getElementById('login-btn').addEventListener('click', () => {
     const user = document.getElementById('username').value.trim();
@@ -953,9 +1088,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reloadBtn = document.getElementById('reload-live-btn');
   if (reloadBtn) {
-    reloadBtn.addEventListener('click', () => {
+    reloadBtn.addEventListener('click', async () => {
       if (confirm('Reload from the live site? Unpublished edits on this device will be lost.')) {
-        reloadFromLiveSite();
+        await loadAdminFromLiveSite(false);
       }
     });
   }
