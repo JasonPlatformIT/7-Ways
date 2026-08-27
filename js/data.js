@@ -68,6 +68,21 @@ const CMS_DATA = {
       "available": [
         "today"
       ]
+    },
+    {
+      "id": 5,
+      "name": "Lawrence",
+      "slug": "lawrence",
+      "nationality": "Chinese",
+      "photo": "images/people/5/1787823831012-kiko-1.webp",
+      "photos": [
+        "images/people/5/1787823831012-kiko-1.webp"
+      ],
+      "description": "LAWRENCE IS BEST TIME",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "pricingText": {
