@@ -7,7 +7,7 @@ const CMS_DATA = {
   "scheduleDate": "2026-08-27",
   "format": {
     "bodyColor": "#f1f1f1",
-    "bodySize": "18px",
+    "bodySize": "16px",
     "headerColor": "#d4af37",
     "headerSize": "2.2rem"
   },
@@ -67,21 +67,6 @@ const CMS_DATA = {
       "description": "All new girl (IRAN Aaliyah)\n156cm. Natural Busty C. 61kg . \nNice Curvy Sexy . Round nice Bum!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
       "available": [
         "today"
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Lawrence",
-      "slug": "lawrence",
-      "nationality": "Chinese",
-      "photo": "images/people/5/1787823831012-kiko-1.webp",
-      "photos": [
-        "images/people/5/1787823831012-kiko-1.webp"
-      ],
-      "description": "LAWRENCE IS BEST TIME",
-      "available": [
-        "today",
-        "tomorrow"
       ]
     }
   ],
