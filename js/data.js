@@ -7,7 +7,7 @@ const CMS_DATA = {
   "scheduleDate": "2026-08-27",
   "format": {
     "bodyColor": "#f1f1f1",
-    "bodySize": "16px",
+    "bodySize": "18px",
     "headerColor": "#d4af37",
     "headerSize": "2.2rem"
   },
