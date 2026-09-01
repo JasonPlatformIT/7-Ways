@@ -4,7 +4,13 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-08-26",
+  "scheduleDate": "2026-09-01",
+  "format": {
+    "bodyColor": "#fafafa",
+    "bodySize": "16px",
+    "headerColor": "#d4af37",
+    "headerSize": "2.2rem"
+  },
   "people": [
     {
       "id": 1,
@@ -68,6 +74,12 @@ const CMS_DATA = {
       ]
     }
   ],
+  "introText": {
+    "en": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
+    "ja": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
+    "zh": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
+    "ko": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!"
+  },
   "pricingText": {
     "en": "We offer multiple relaxation services including Erotic Massage and Diamond Services\n\nPricing Starts from:\n\nErotic Massage\n30mins: $160\n45mins: $190\n60mins: $210\n\nDiamond Services\n30mins: $200\n45mins: $280\n60mins: $330",
     "ja": "料金は競争力があり、明確です。\n\n• 1時間: $300\n• 2時間: $500\n• 一晩: $1200\n• 週末パッケージはご要望に応じてご用意\n\n市内の移動は含まれます。市外は追加料金がかかる場合があります。\n\nカスタムや長時間のご予約はお問い合わせください。",
@@ -79,17 +91,5 @@ const CMS_DATA = {
     "ja": "お問い合わせ・ご予約は24時間対応しています。\n\n電話: +1 (555) 123-4567\nメール: bookings@example.com\nWhatsApp: +1 (555) 123-4567\n\n場所: ダウンタウン・メトロエリア\n\nご希望の日時や特別なご要望をお知らせください。営業時間内は15分以内に返信します。",
     "zh": "我们全天候接受咨询和预订。\n\n电话: +1 (555) 123-4567\n邮箱: bookings@example.com\nWhatsApp: +1 (555) 123-4567\n\n地点: 市中心都会区\n\n联系时请提供首选日期、时间和任何特殊要求。营业时间内我们会在15分钟内回复。",
     "ko": "문의 및 예약은 연중무휴 24시간 가능합니다.\n\n전화: +1 (555) 123-4567\n이메일: bookings@example.com\nWhatsApp: +1 (555) 123-4567\n\n위치: 다운타운 메트로 지역\n\n연락 시 원하시는 날짜, 시간 및 특별 요청 사항을 알려 주세요. 영업 시간 내 15분 이내에 답변드립니다."
-  },
-  "format": {
-    "bodyColor": "#fafafa",
-    "bodySize": "16px",
-    "headerColor": "#d4af37",
-    "headerSize": "2.2rem"
-  },
-  "introText": {
-    "en": "Welcome to Black Garter 7 ways.\n\nWe look forward to seeing you. Browse today and tomorrow’s roster below, or get in touch to book.",
-    "ja": "",
-    "zh": "",
-    "ko": ""
   }
 };
