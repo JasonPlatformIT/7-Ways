@@ -225,6 +225,7 @@
 
       <div class="admin-tabs">
         <button class="tab-btn active" data-tab="roster">Roster</button>
+        <button class="tab-btn" data-tab="intro">Intro Text</button>
         <button class="tab-btn" data-tab="pricing">Pricing Text</button>
         <button class="tab-btn" data-tab="contact">Contact Text</button>
         <button class="tab-btn" data-tab="format">Format Settings</button>
@@ -306,6 +307,23 @@
       </div>
 
       <!-- PRICING TAB -->
+
+      <div id="tab-intro" class="tab-content">
+        <h2>Home Intro Text (per language)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">
+          This appears under Welcome on the Home page. Select a language, edit, then Save &amp; Publish.
+          Language flags on the site switch this text the same way as Pricing and Contact.
+        </p>
+        <div class="lang-edit-tabs" id="intro-lang-tabs">
+          <button data-lang="en" class="active">English</button>
+          <button data-lang="ja">日本語</button>
+          <button data-lang="zh">中文</button>
+          <button data-lang="ko">한국어</button>
+        </div>
+        <textarea id="admin-intro-edit" class="editable" rows="10"></textarea>
+        <button id="save-admin-intro" class="btn save-btn" style="margin-top: 0.75rem;">Save Intro</button>
+      </div>
+
       <div id="tab-pricing" class="tab-content">
         <h2>Pricing Text (per language)</h2>
         <p style="color: var(--text-muted); margin-bottom: 1rem;">Select a language, edit the text, then save.</p>
@@ -343,8 +361,8 @@
         <div class="form-row">
           <div class="form-group format-field">
             <label>Body text colour</label>
-            <input type="color" id="fmt-body-color" value="#f1f1f1">
-            <input type="text" id="fmt-body-color-text" value="#f1f1f1" placeholder="#f1f1f1">
+            <input type="color" id="fmt-body-color" value="#fafafa">
+            <input type="text" id="fmt-body-color-text" value="#fafafa" placeholder="#f1f1f1">
           </div>
           <div class="form-group format-field">
             <label>Body text size</label>

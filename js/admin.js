@@ -62,6 +62,7 @@ async function loadAdminFromLiveSite(silent) {
   ['en','ja','zh','ko'].forEach(l => {
     localStorage.removeItem('cms_pricingText_' + l);
     localStorage.removeItem('cms_contactText_' + l);
+    localStorage.removeItem('cms_introText_' + l);
   });
   if (typeof applySydneyAvailabilityRollover === 'function') {
     applySydneyAvailabilityRollover();
@@ -115,6 +116,7 @@ function reloadFromLiveSite() {
   ['en','ja','zh','ko'].forEach(l => {
     localStorage.removeItem('cms_pricingText_' + l);
     localStorage.removeItem('cms_contactText_' + l);
+    localStorage.removeItem('cms_introText_' + l);
   });
   if (typeof CMS_DATA !== 'undefined') {
     // editors will re-read CMS_DATA
@@ -591,6 +593,7 @@ function escapeAttr(str) {
 // ---------- Text editors (Pricing / Contact) ----------
 let pricingEditLang = 'en';
 let contactEditLang = 'en';
+let introEditLang = 'en';
 
 function getTextForLang(key, lang) {
   const data = (typeof CMS_DATA !== 'undefined') ? CMS_DATA[key] : null;
@@ -609,7 +612,7 @@ function saveTextForLang(key, lang, value) {
 
 function defaultFormat() {
   return {
-    bodyColor: '#f1f1f1',
+    bodyColor: '#fafafa',
     bodySize: '16px',
     headerColor: '#d4af37',
     headerSize: '2.2rem'
@@ -709,8 +712,12 @@ function bindFormatControls() {
 }
 
 function loadTextEditors() {
-  document.getElementById('admin-pricing-edit').value = getTextForLang('pricingText', pricingEditLang);
-  document.getElementById('admin-contact-edit').value = getTextForLang('contactText', contactEditLang);
+  const p = document.getElementById('admin-pricing-edit');
+  const c = document.getElementById('admin-contact-edit');
+  const i = document.getElementById('admin-intro-edit');
+  if (p) p.value = getTextForLang('pricingText', pricingEditLang);
+  if (c) c.value = getTextForLang('contactText', contactEditLang);
+  if (i) i.value = getTextForLang('introText', introEditLang);
 }
 
 
@@ -761,9 +768,11 @@ function buildDataJsContent() {
   const langs = ['en', 'ja', 'zh', 'ko'];
   const pricing = {};
   const contact = {};
+  const intro = {};
   langs.forEach(l => {
     pricing[l] = getTextForLang('pricingText', l);
     contact[l] = getTextForLang('contactText', l);
+    intro[l] = getTextForLang('introText', l);
   });
   const sydneyToday = (typeof getSydneyDateString === 'function')
     ? getSydneyDateString()
@@ -777,6 +786,7 @@ function buildDataJsContent() {
     scheduleDate: sydneyToday,
     format: format,
     people: people,
+    introText: intro,
     pricingText: pricing,
     contactText: contact
   }, null, 2) + ';\n';
@@ -999,6 +1009,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add person
   document.getElementById('add-person-btn').addEventListener('click', addPerson);
 
+  document.getElementById('save-admin-intro').addEventListener('click', () => {
+    const val = document.getElementById('admin-intro-edit').value;
+    saveTextForLang('introText', introEditLang, val);
+    alert('Intro text saved for ' + introEditLang.toUpperCase());
+  });
+
   // Pricing save
   document.getElementById('save-admin-pricing').addEventListener('click', () => {
     const val = document.getElementById('admin-pricing-edit').value;
@@ -1014,6 +1030,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   // Language tabs for text editors
+  document.querySelectorAll('#intro-lang-tabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#intro-lang-tabs button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      introEditLang = btn.dataset.lang;
+      document.getElementById('admin-intro-edit').value = getTextForLang('introText', introEditLang);
+    });
+  });
   document.querySelectorAll('#pricing-lang-tabs button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#pricing-lang-tabs button').forEach(b => b.classList.remove('active'));
@@ -1050,6 +1074,8 @@ document.addEventListener('DOMContentLoaded', () => {
     status.textContent = 'Saving…';
     status.style.color = 'var(--text-muted)';
 
+    const introEl = document.getElementById('admin-intro-edit');
+    if (introEl) saveTextForLang('introText', introEditLang, introEl.value);
     const pricingVal = document.getElementById('admin-pricing-edit').value;
     saveTextForLang('pricingText', pricingEditLang, pricingVal);
     const contactVal = document.getElementById('admin-contact-edit').value;

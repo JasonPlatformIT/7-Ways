@@ -14,8 +14,10 @@ function getSiteFormat() {
 function pinSiteTop() {
   const top = document.querySelector('.site-top');
   if (!top) return;
-  const h = top.offsetHeight || 0;
-  document.body.style.paddingTop = h + 'px';
+  const h = Math.ceil(top.getBoundingClientRect().height || top.offsetHeight || 0);
+  const offset = Math.max(h + 8, 120) + 'px';
+  document.documentElement.style.setProperty('--site-top-offset', offset);
+  document.body.style.paddingTop = offset;
 }
 
 function applySiteFormat(fmt) {
@@ -280,12 +282,16 @@ function initEditableSection(sectionKey, displayId, editId, saveBtnId) {
 function fillCmsTextElements() {
   const pricing = getTextContent('pricingText');
   const contact = getTextContent('contactText');
+  const intro = getTextContent('introText');
 
   document.querySelectorAll('[data-cms-text="pricingText"], #pricing-preview, #pricing-display').forEach(el => {
     el.textContent = pricing;
   });
   document.querySelectorAll('[data-cms-text="contactText"], #contact-preview, #contact-display').forEach(el => {
     el.textContent = contact;
+  });
+  document.querySelectorAll('[data-cms-text="introText"], #intro-display').forEach(el => {
+    el.textContent = intro;
   });
 }
 
@@ -369,7 +375,7 @@ function initProfilePage() {
             <span class="meta-value">${availableText}</span>
           </div>
         </div>
-        ${person.description ? `<div class="profile-description" style="margin-top:1.5rem; color:var(--text-muted); line-height:1.7;">${person.description}</div>` : ''}
+        ${person.description ? `<div class="profile-description" style="margin-top:1.5rem; color:var(--text); line-height:1.7;">${person.description}</div>` : ''}
         <p style="margin-top: 2rem;">
           <a href="roster.html" class="btn btn-outline">${backTxt}</a>
           <a href="contact.html" class="btn" style="margin-left: 0.75rem;">${contactTxt}</a>
