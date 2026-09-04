@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-09-01",
+  "scheduleDate": "2026-09-04",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
