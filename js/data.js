@@ -22,8 +22,8 @@ const CMS_DATA = {
       "photo": "images/people/1/1787738495605-ivana-1.jpg",
       "nationality": "Chinese",
       "available": [
-        "today",
-        "tomorrow"
+        "tomorrow",
+        "today"
       ],
       "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
       "slug": "ivana-new"
