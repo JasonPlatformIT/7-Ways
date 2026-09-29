@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-09-19",
+  "scheduleDate": "2026-09-29",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -21,10 +21,7 @@ const CMS_DATA = {
       ],
       "photo": "images/people/1/1787738495605-ivana-1.jpg",
       "nationality": "Chinese",
-      "available": [
-        "tomorrow",
-        "today"
-      ],
+      "available": [],
       "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
       "slug": "ivana-new"
     },
@@ -38,10 +35,7 @@ const CMS_DATA = {
         "images/people/2/1787738478216-mizu-1.jpg"
       ],
       "description": "All new girl (Japanese Miku)\nRecommend Very good Service!!\n168cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 3,
@@ -53,10 +47,7 @@ const CMS_DATA = {
         "images/people/3/1787738534353-kitty-1.jpg"
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 4,
@@ -72,7 +63,7 @@ const CMS_DATA = {
     }
   ],
   "introText": {
-    "en": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
+    "en": "************** GRAND OPENING ON 1ST OCT 2026 **************\n\nWelcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
     "ja": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
     "zh": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
     "ko": "Welcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!"
