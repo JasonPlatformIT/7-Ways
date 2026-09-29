@@ -76,8 +76,8 @@ const CMS_DATA = {
   },
   "contactText": {
     "en": "We are open 6pm - 3am daily!\n\nCall or message us at:\nPhone: 0450 351 919 | \nWechat: WeChat: BG-7ways  \nAddress: 19 The Seven Ways, Rockdale, 2216\n\nParking is available closeby!! \n4min walk from Rockdale station parking lot\n2min walk from Hotel Rockdale\n1min walk from Bay St \n",
-    "ja": "お問い合わせ・ご予約は24時間対応しています。\n\n電話: +1 (555) 123-4567\nメール: bookings@example.com\nWhatsApp: +1 (555) 123-4567\n\n場所: ダウンタウン・メトロエリア\n\nご希望の日時や特別なご要望をお知らせください。営業時間内は15分以内に返信します。",
-    "zh": "我们全天候接受咨询和预订。\n\n电话: +1 (555) 123-4567\n邮箱: bookings@example.com\nWhatsApp: +1 (555) 123-4567\n\n地点: 市中心都会区\n\n联系时请提供首选日期、时间和任何特殊要求。营业时间内我们会在15分钟内回复。",
-    "ko": "문의 및 예약은 연중무휴 24시간 가능합니다.\n\n전화: +1 (555) 123-4567\n이메일: bookings@example.com\nWhatsApp: +1 (555) 123-4567\n\n위치: 다운타운 메트로 지역\n\n연락 시 원하시는 날짜, 시간 및 특별 요청 사항을 알려 주세요. 영업 시간 내 15분 이내에 답변드립니다."
+    "ja": "🕒 営業時間\n毎日営業：18:00～翌3:00\n📞 ご予約・お問い合わせ\n電話：0450 351 919\nWeChat：BG-7ways\n住所：19 The Seven Ways, Rockdale, NSW 2216\n🚗 アクセス・駐車場\n近隣に駐車場がございます！\n- Rockdale駅の駐車場から徒歩約4分\n- Hotel Rockdaleから徒歩約2分\n- Bay Stから徒歩約1分",
+    "zh": "🕒 營業時間\n每日營業：下午6時至凌晨3時\n📞 預約及查詢\n電話：0450 351 919\n微信：BG-7ways\n地址：19 The Seven Ways, Rockdale, NSW 2216\n🚗 交通及泊車資訊\n附近設有停車場，交通方便！\n- 從 Rockdale 火車站停車場步行約4分鐘\n- 從 Hotel Rockdale 步行約2分鐘\n- 從 Bay St 步行約1分鐘",
+    "ko": "🕒 영업시간\n매일 영업: 오후 6시 ~ 다음 날 새벽 3시\n📞 예약 및 문의\n전화: 0450 351 919\nWeChat: BG-7ways\n주소: 19 The Seven Ways, Rockdale, NSW 2216\n🚗 교통 및 주차 안내\n매장 인근에 주차 공간이 마련되어 있어 편리하게 방문하실 수 있습니다!\n- Rockdale 역 주차장에서 도보 약 4분\n- Hotel Rockdale에서 도보 약 2분\n- Bay St에서 도보 약 1분"
   }
 };
