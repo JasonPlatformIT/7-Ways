@@ -70,9 +70,9 @@ const CMS_DATA = {
   },
   "pricingText": {
     "en": "We offer multiple relaxation services including Erotic Massage and Diamond Services\n\nPricing Starts from::\n\nErotic Massage\n30mins: $160\n45mins: $190\n60mins: $210\n\nDiamond Services\n30mins: $200\n45mins: $280\n60mins: $330",
-    "ja": "料金は競争力があり、明確です。\n\n• 1時間: $300\n• 2時間: $500\n• 一晩: $1200\n• 週末パッケージはご要望に応じてご用意\n\n市内の移動は含まれます。市外は追加料金がかかる場合があります。\n\nカスタムや長時間のご予約はお問い合わせください。",
-    "zh": "我们的价格具有竞争力且透明。\n\n• 1小时: $300\n• 2小时: $500\n• 过夜: $1200\n• 周末套餐可按要求提供\n\n市内交通已包含。市外可能产生额外交通费。\n\n如需定制或更长时间预订，请联系我们。",
-    "ko": "요금은 경쟁력 있고 투명합니다.\n\n• 1시간: $300\n• 2시간: $500\n• 숙박: $1200\n• 주말 패키지는 요청 시 가능\n\n시내 이동은 포함됩니다. 시외는 추가 요금이 발생할 수 있습니다.\n\n맞춤 또는 장시간 예약은 문의해 주세요."
+    "ja": "当店では、エロティックマッサージやダイヤモンドサービスなど、さまざまなリラクゼーションサービスをご用意しております。\n💎 料金のご案内\nエロティックマッサージ（Erotic Massage）\n- 30分：$160\n- 45分：$190\n- 60分：$210\nダイヤモンドサービス（Diamond Services）\n- 30分：$200\n- 45分：$280\n- 60分：$330",
+    "zh": "我們提供多種放鬆及休閒服務，包括情趣按摩及鑽石服務，讓您享受舒適愉悅的體驗。\n💎 服務價格\n情趣按摩（Erotic Massage）\n- 30分鐘：$160\n- 45分鐘：$190\n- 60分鐘：$210\n鑽石服務（Diamond Services）\n- 30分鐘：$200\n- 45分鐘：$280\n- 60分鐘：$330",
+    "ko": "저희는 에로틱 마사지와 다이아몬드 서비스를 포함한 다양한 릴랙세이션 서비스를 제공하고 있습니다.\n💎 서비스 요금 안내\n에로틱 마사지 (Erotic Massage)\n- 30분: $160\n- 45분: $190\n- 60분: $210\n다이아몬드 서비스 (Diamond Services)\n- 30분: $200\n- 45분: $280\n- 60분: $330"
   },
   "contactText": {
     "en": "We are open 6pm - 3am daily!\n\nCall or message us at:\nPhone: 0450 351 919 | \nWechat: WeChat: BG-7ways  \nAddress: 19 The Seven Ways, Rockdale, 2216\n\nParking is available closeby!! \n4min walk from Rockdale station parking lot\n2min walk from Hotel Rockdale\n1min walk from Bay St \n",
