@@ -91,6 +91,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 7,
+      "name": "Maya",
+      "slug": "maya",
+      "nationality": "Aussie",
+      "photo": "images/people/7/1790763210641-maya.jpg",
+      "photos": [
+        "images/people/7/1790763210641-maya.jpg"
+      ],
+      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
