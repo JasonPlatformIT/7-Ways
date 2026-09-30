@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-09-29",
+  "scheduleDate": "2026-09-30",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -60,6 +60,20 @@ const CMS_DATA = {
       ],
       "description": "All new girl (IRAN Aaliyah)\n156cm. Natural Busty C. 61kg . \nNice Curvy Sexy . Round nice Bum!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
       "available": []
+    },
+    {
+      "id": 5,
+      "name": "Sweety",
+      "slug": "sweety",
+      "nationality": "Chinese",
+      "photo": "images/people/5/1790759835539-sweety.jpg",
+      "photos": [
+        "images/people/5/1790759835539-sweety.jpg"
+      ],
+      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
+      "available": [
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
