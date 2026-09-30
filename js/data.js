@@ -73,7 +73,8 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
       "available": [
-        "tomorrow"
+        "tomorrow",
+        "today"
       ]
     }
   ],
