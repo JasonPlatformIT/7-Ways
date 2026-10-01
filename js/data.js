@@ -118,6 +118,21 @@ const CMS_DATA = {
       "available": [
         "today"
       ]
+    },
+    {
+      "id": 9,
+      "name": "Lola",
+      "slug": "lola",
+      "nationality": "Australian",
+      "photo": "images/people/9/1790831341592-158.jpeg",
+      "photos": [
+        "images/people/9/1790831341592-158.jpeg",
+        "images/people/9/1790831347622-781.jpeg"
+      ],
+      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
+      "available": [
+        "today"
+      ]
     }
   ],
   "introText": {
