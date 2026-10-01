@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-09-30",
+  "scheduleDate": "2026-10-01",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -73,7 +73,6 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
       "available": [
-        "tomorrow",
         "today"
       ]
     },
@@ -88,8 +87,7 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Zoe)\nRecommend Very good Service!!\nSuper Pretty!! VERY FRIENDLY!!\n165cm. Natural BUSTY D+   53kg\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -103,8 +101,22 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Lili",
+      "slug": "lili",
+      "nationality": "Vietnam",
+      "photo": "images/people/8/1790824158978-img_0725.jpeg",
+      "photos": [
+        "images/people/8/1790824158978-img_0725.jpeg",
+        "images/people/8/1790824161259-img_0724.jpeg"
+      ],
+      "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "available": [
+        "today"
       ]
     }
   ],
