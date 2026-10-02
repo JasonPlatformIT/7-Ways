@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-01",
+  "scheduleDate": "2026-10-02",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -21,7 +21,10 @@ const CMS_DATA = {
       ],
       "photo": "images/people/1/1787738495605-ivana-1.jpg",
       "nationality": "Chinese",
-      "available": [],
+      "available": [
+        "today",
+        "tomorrow"
+      ],
       "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
       "slug": "ivana-new"
     },
@@ -47,7 +50,10 @@ const CMS_DATA = {
         "images/people/3/1787738534353-kitty-1.jpg"
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 4,
@@ -73,7 +79,8 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -86,9 +93,7 @@ const CMS_DATA = {
         "images/people/6/1790760277508-zoe.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Zoe)\nRecommend Very good Service!!\nSuper Pretty!! VERY FRIENDLY!!\n165cm. Natural BUSTY D+   53kg\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 7,
@@ -101,7 +106,8 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -116,7 +122,8 @@ const CMS_DATA = {
       ],
       "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -130,9 +137,7 @@ const CMS_DATA = {
         "images/people/9/1790831347622-781.jpeg"
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     }
   ],
   "introText": {
