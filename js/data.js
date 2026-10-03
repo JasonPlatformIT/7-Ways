@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-02",
+  "scheduleDate": "2026-10-04",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -50,10 +50,7 @@ const CMS_DATA = {
         "images/people/3/1787738534353-kitty-1.jpg"
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 4,
