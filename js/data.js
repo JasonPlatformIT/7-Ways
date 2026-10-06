@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-06",
+  "scheduleDate": "2026-10-07",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -48,8 +48,7 @@ const CMS_DATA = {
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -76,8 +75,7 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -116,8 +114,7 @@ const CMS_DATA = {
       ],
       "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -132,8 +129,7 @@ const CMS_DATA = {
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -147,8 +143,7 @@ const CMS_DATA = {
       ],
       "description": "NEW girl (Chinese Coco）\nAvailable for a limited time!\nSexy new Chinese beauty, is here to give you an unforgettable experience and wonderful girl friend experiences！！！\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     }
   ],
@@ -162,7 +157,7 @@ const CMS_DATA = {
     "en": "We offer multiple relaxation services including Erotic Massage and Diamond Services\n\nPricing Starts from::\n\nErotic Massage\n30mins: $160\n45mins: $190\n60mins: $210\n\nDiamond Services\n30mins: $200\n45mins: $280\n60mins: $330",
     "ja": "当店では、エロティックマッサージやダイヤモンドサービスなど、さまざまなリラクゼーションサービスをご用意しております。\n💎 料金のご案内\nエロティックマッサージ（Erotic Massage）\n- 30分：$160\n- 45分：$190\n- 60分：$210\nダイヤモンドサービス（Diamond Services）\n- 30分：$200\n- 45分：$280\n- 60分：$330",
     "zh": "我們提供多種放鬆及休閒服務，包括情趣按摩及鑽石服務，讓您享受舒適愉悅的體驗。\n💎 服務價格\n情趣按摩（Erotic Massage）\n- 30分鐘：$160\n- 45分鐘：$190\n- 60分鐘：$210\n鑽石服務（Diamond Services）\n- 30分鐘：$200\n- 45分鐘：$280\n- 60分鐘：$330",
-    "ko": "저희는 에로틱 마사지와 다이아몬드 서비스를 포함한 다양한 릴랙세이션 서비스를 제공하고 있습니다.\n💎 서비스 요금 안내\n에로틱 마사지 (Erotic Massage)\n- 30분: $160\n- 45분: $190\n- 60분: $210\n다이아몬드 서비스 (Diamond Services)\n- 30분: $200\n- 45분: $280\n- 60분: $330"
+    "ko": "저희는 에로틱 마사지와 다이아몬드 서비스를 포함한 다양한 릴랙세이션 서비스를 제공하고 있습니다.\n💎 서비스 요금 안내\n에로틱 마사지 (Erotic Massage)\n- 30분: $160\n- 45분: $190\n- 60분: $210\n다이아몬드 서비스 (Diamond Services)\n- 30분: $200 - $230\n- 45분: $280\n- 60분: $330"
   },
   "contactText": {
     "en": "We are open 6pm - 6am daily!\n\nCall or message us at:\nPhone: 0450 351 919 \nWechat: WeChat: BG-7ways  \nAddress: 19 The Seven Ways, Rockdale, 2216\n\nParking is available closeby!! \n4min walk from Rockdale station parking lot\n2min walk from Hotel Rockdale\n1min walk from Bay St \n",
