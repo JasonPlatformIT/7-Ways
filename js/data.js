@@ -159,7 +159,7 @@ const CMS_DATA = {
     "ko": "저희는 에로틱 마사지와 다이아몬드 서비스를 포함한 다양한 릴랙세이션 서비스를 제공하고 있습니다.\n💎 서비스 요금 안내\n에로틱 마사지 (Erotic Massage)\n- 30분: $160\n- 45분: $190\n- 60분: $210\n다이아몬드 서비스 (Diamond Services)\n- 30분: $200\n- 45분: $280\n- 60분: $330"
   },
   "contactText": {
-    "en": "We are open 6pm - 3am daily!\n\nCall or message us at:\nPhone: 0450 351 919 | \nWechat: WeChat: BG-7ways  \nAddress: 19 The Seven Ways, Rockdale, 2216\n\nParking is available closeby!! \n4min walk from Rockdale station parking lot\n2min walk from Hotel Rockdale\n1min walk from Bay St \n",
+    "en": "We are open 6pm - 6am daily!\n\nCall or message us at:\nPhone: 0450 351 919 \nWechat: WeChat: BG-7ways  \nAddress: 19 The Seven Ways, Rockdale, 2216\n\nParking is available closeby!! \n4min walk from Rockdale station parking lot\n2min walk from Hotel Rockdale\n1min walk from Bay St \n",
     "ja": "🕒 営業時間\n毎日営業：18:00～翌3:00\n📞 ご予約・お問い合わせ\n電話：0450 351 919\nWeChat：BG-7ways\n住所：19 The Seven Ways, Rockdale, NSW 2216\n🚗 アクセス・駐車場\n近隣に駐車場がございます！\n- Rockdale駅の駐車場から徒歩約4分\n- Hotel Rockdaleから徒歩約2分\n- Bay Stから徒歩約1分",
     "zh": "🕒 營業時間\n每日營業：下午6時至凌晨3時\n📞 預約及查詢\n電話：0450 351 919\n微信：BG-7ways\n地址：19 The Seven Ways, Rockdale, NSW 2216\n🚗 交通及泊車資訊\n附近設有停車場，交通方便！\n- 從 Rockdale 火車站停車場步行約4分鐘\n- 從 Hotel Rockdale 步行約2分鐘\n- 從 Bay St 步行約1分鐘",
     "ko": "🕒 영업시간\n매일 영업: 오후 6시 ~ 다음 날 새벽 3시\n📞 예약 및 문의\n전화: 0450 351 919\nWeChat: BG-7ways\n주소: 19 The Seven Ways, Rockdale, NSW 2216\n🚗 교통 및 주차 안내\n매장 인근에 주차 공간이 마련되어 있어 편리하게 방문하실 수 있습니다!\n- Rockdale 역 주차장에서 도보 약 4분\n- Hotel Rockdale에서 도보 약 2분\n- Bay St에서 도보 약 1분"
