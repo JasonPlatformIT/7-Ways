@@ -130,7 +130,7 @@ const CMS_DATA = {
         "images/people/9/1790831341592-158.jpeg",
         "images/people/9/1790831347622-781.jpeg"
       ],
-      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
       "available": [
         "today",
         "tomorrow"
@@ -153,7 +153,7 @@ const CMS_DATA = {
     }
   ],
   "introText": {
-    "en": "**************🎉🎉🎉 GRAND OPENING ON 1ST OCT 2026 🎉🎉🎉**************\n\nWelcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min wlak of rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
+    "en": "**************🎉🎉🎉 GRAND OPENING ON 1ST OCT 2026 🎉🎉🎉**************\n\nWelcome to Black Garter 7 ways, The premier Brothel and Exotic Massage parlor in the Rockdale area!\n\nPerfectly situated within a 2min walk of Rockdale station. We offer the most beautiful women who will take you too our new renovated modern rooms.\n\nSend us a message or give us a call to secure your booking today!",
     "ja": "🎉 2026年10月1日 グランドオープン！🎉\nRockdaleエリア屈指の高級Brothel＆エキゾチックマッサージ店、Black Garter 7 Waysへようこそ！\nRockdale駅から徒歩わずか2分という抜群のロケーション。\n新しくリニューアルされたモダンで快適なお部屋で、美しい女性たちが皆様をお迎えいたします。\nご予約はお電話またはメッセージにて、お気軽にお問い合わせください！",
     "zh": "🎉 2026年10月1日 盛大開幕！🎉\n歡迎來到 Black Garter 7 Ways！\n我們是 Rockdale 地區頂級的成人娛樂及特色按摩會所！\n地理位置優越，距離 Rockdale 火車站僅需步行2分鐘，交通十分便利。\n我們擁有美麗迷人的佳麗，並提供全新裝修、時尚現代的舒適房間，為您帶來優質的體驗。\n立即發送訊息或致電我們，預約您的專屬時段！",
     "ko": "🎉 2026년 10월 1일 그랜드 오픈! 🎉\nRockdale 지역 최고의 성인 엔터테인먼트 및 이국적인 마사지 업소, Black Garter 7 Ways에 오신 것을 환영합니다!\nRockdale 역에서 도보로 단 2분 거리에 위치해 있어 편리하게 방문하실 수 있습니다.\n새롭게 리모델링한 현대적이고 쾌적한 객실에서 아름다운 여성들이 여러분을 맞이합니다.\n지금 바로 메시지를 보내시거나 전화로 문의하셔서 예약하세요!"
