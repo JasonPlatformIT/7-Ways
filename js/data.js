@@ -114,7 +114,7 @@ const CMS_DATA = {
         "images/people/8/1790824158978-img_0725.jpeg",
         "images/people/8/1790824161259-img_0724.jpeg"
       ],
-      "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
       "available": [
         "today",
         "tomorrow"
@@ -130,7 +130,7 @@ const CMS_DATA = {
         "images/people/9/1790831341592-158.jpeg",
         "images/people/9/1790831347622-781.jpeg"
       ],
-      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
+      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
       "available": [
         "today",
         "tomorrow"
@@ -145,7 +145,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/10/1791213642952-797.jpeg"
       ],
-      "description": "NEW girl (Chinese Coco）\nAvailable for a limited time!\nSexy new Chinese beauty, is here to give you an unforgettable experience and wonderful girl friend experiences！！！\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "description": "NEW girl (Chinese Coco）\nAvailable for a limited time!\nSexy new Chinese beauty, is here to give you an unforgettable experience and wonderful girl friend experiences！！！\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330",
       "available": [
         "today",
         "tomorrow"
