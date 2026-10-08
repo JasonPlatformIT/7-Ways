@@ -150,6 +150,22 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 12,
+      "name": "Summer",
+      "slug": "summer",
+      "nationality": "Malaysian",
+      "photo": "images/people/12/1791462445121-157.jpeg",
+      "photos": [
+        "images/people/12/1791462445121-157.jpeg",
+        "images/people/12/1791462447065-158.jpeg"
+      ],
+      "description": "New hot Malaysian girl\nSexy new Malaysian beauty, she have really big and nice ass，very good English\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
