@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-07",
+  "scheduleDate": "2026-10-08",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -47,9 +47,7 @@ const CMS_DATA = {
         "images/people/3/1787738534353-kitty-1.jpg"
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 4,
@@ -74,9 +72,7 @@ const CMS_DATA = {
         "images/people/5/1790759858255-sweety-2.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 6,
@@ -99,8 +95,11 @@ const CMS_DATA = {
       "photos": [
         "images/people/7/1790763210641-maya.jpg"
       ],
-      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.",
-      "available": []
+      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\nToday · 8pm – 4am\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 8,
@@ -113,9 +112,7 @@ const CMS_DATA = {
         "images/people/8/1790824161259-img_0724.jpeg"
       ],
       "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 9,
@@ -127,9 +124,10 @@ const CMS_DATA = {
         "images/people/9/1790831341592-158.jpeg",
         "images/people/9/1790831347622-781.jpeg"
       ],
-      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
+      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 5pm – 4am\n💵30mins $200 \n💵45mins $280. \n💵1 hour $330",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -141,9 +139,10 @@ const CMS_DATA = {
       "photos": [
         "images/people/10/1791213642952-797.jpeg"
       ],
-      "description": "NEW girl (Chinese Coco）\nAvailable for a limited time!\nSexy new Chinese beauty, is here to give you an unforgettable experience and wonderful girl friend experiences！！！\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330",
+      "description": "NEW girl (Chinese Coco）\nAvailable for a limited time!\nSexy new Chinese beauty, is here to give you an unforgettable experience and wonderful girl friend experiences！！！\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\nToday · 5pm – 4am\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     }
   ],
