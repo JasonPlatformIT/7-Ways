@@ -209,7 +209,8 @@ const CMS_DATA = {
       "nationality": "Australian",
       "photo": "images/people/15/1791463603192-img_0742.png",
       "photos": [
-        "images/people/15/1791463603192-img_0742.png"
+        "images/people/15/1791463603192-img_0742.png",
+        "images/people/15/1791463794014-img_0742.png"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.",
       "available": [
