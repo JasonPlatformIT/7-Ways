@@ -125,7 +125,10 @@ const CMS_DATA = {
         "images/people/9/1790831347622-781.jpeg"
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 10,
@@ -210,7 +213,8 @@ const CMS_DATA = {
       "photo": "images/people/15/1791463603192-img_0742.png",
       "photos": [
         "images/people/15/1791463603192-img_0742.png",
-        "images/people/15/1791463794014-img_0742.png"
+        "images/people/15/1791463794014-img_0742.png",
+        "images/people/15/1791463825728-img_0742.png"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.",
       "available": [
