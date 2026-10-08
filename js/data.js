@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-08",
+  "scheduleDate": "2026-10-09",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -76,15 +76,18 @@ const CMS_DATA = {
     },
     {
       "id": 6,
-      "name": "Zoe",
-      "slug": "zoe",
+      "name": "Hanna",
+      "slug": "hanna",
       "nationality": "Chinese",
       "photo": "images/people/6/1790760277508-zoe.jpg",
       "photos": [
         "images/people/6/1790760277508-zoe.jpg"
       ],
-      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Zoe)\nRecommend Very good Service!!\nSuper Pretty!! VERY FRIENDLY!!\n165cm. Natural BUSTY D+   53kg\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
-      "available": []
+      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Hanna）\nRecommend Very good Service!!\nSuper Pretty!! VERY FRIENDLY!!\n165cm. Natural BUSTY D+   53kg\nSexy Curvy body and nice face！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
+      "available": [
+        "tomorrow",
+        "today"
+      ]
     },
     {
       "id": 7,
