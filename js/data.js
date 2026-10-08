@@ -182,6 +182,22 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 14,
+      "name": "Sammy",
+      "slug": "sammy",
+      "nationality": "Singaporian",
+      "photo": "images/people/14/1791463367668-804.jpeg",
+      "photos": [
+        "images/people/14/1791463367668-804.jpeg",
+        "images/people/14/1791463370076-803.jpeg"
+      ],
+      "description": "New to the industry, likes to chat.",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
