@@ -96,7 +96,10 @@ const CMS_DATA = {
         "images/people/7/1790763210641-maya.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 8,
@@ -194,6 +197,21 @@ const CMS_DATA = {
         "images/people/14/1791463370076-803.jpeg"
       ],
       "description": "New to the industry, likes to chat.",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Anna",
+      "slug": "anna",
+      "nationality": "Australian",
+      "photo": "images/people/15/1791463603192-img_0742.png",
+      "photos": [
+        "images/people/15/1791463603192-img_0742.png"
+      ],
+      "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.",
       "available": [
         "today",
         "tomorrow"
