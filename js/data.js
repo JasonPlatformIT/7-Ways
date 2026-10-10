@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-10",
+  "scheduleDate": "2026-10-11",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -97,8 +97,7 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -126,8 +125,7 @@ const CMS_DATA = {
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -153,8 +151,7 @@ const CMS_DATA = {
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -168,8 +165,7 @@ const CMS_DATA = {
       ],
       "description": "New hot Malaysian girl\nSexy new Malaysian beauty, she have really big and nice ass，very good English\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n12pm – 12am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -183,8 +179,7 @@ const CMS_DATA = {
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 10pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -199,6 +194,20 @@ const CMS_DATA = {
         "images/people/15/1791463825728-img_0742.png"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 7pm – 4am",
+      "available": [
+        "today"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Aurora Lilith",
+      "slug": "aurora-lilith",
+      "nationality": "Australian",
+      "photo": "images/people/16/1791647010651-img_0747.webp",
+      "photos": [
+        "images/people/16/1791647010651-img_0747.webp"
+      ],
+      "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
       "available": [
         "today",
         "tomorrow"
