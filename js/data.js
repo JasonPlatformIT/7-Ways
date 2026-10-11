@@ -215,8 +215,8 @@ const CMS_DATA = {
     },
     {
       "id": 17,
-      "name": "Megon",
-      "slug": "megon",
+      "name": "Megan",
+      "slug": "megan",
       "nationality": "Vietnam and Italy",
       "photo": "images/people/17/1791710287113-269.jpeg",
       "photos": [
