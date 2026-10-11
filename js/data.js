@@ -225,6 +225,22 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 18,
+      "name": "Kiki",
+      "slug": "kiki",
+      "nationality": "China",
+      "photo": "images/people/18/1791721250267-275.jpeg",
+      "photos": [
+        "images/people/18/1791721250267-275.jpeg",
+        "images/people/18/1791721252391-276.jpeg"
+      ],
+      "description": "New Chinese Innocent girl！！！\n26yo. 157cm. 45kg . Busty D+ . Super friendly and Good Service girl!! Pretty \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
