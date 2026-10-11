@@ -187,11 +187,9 @@ const CMS_DATA = {
       "name": "Anna",
       "slug": "anna",
       "nationality": "Australian",
-      "photo": "images/people/15/1791463603192-img_0742.png",
+      "photo": "images/people/15/1791711687201-274.jpeg",
       "photos": [
-        "images/people/15/1791463603192-img_0742.png",
-        "images/people/15/1791463794014-img_0742.png",
-        "images/people/15/1791463825728-img_0742.png"
+        "images/people/15/1791711687201-274.jpeg"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 7pm – 4am",
       "available": [
@@ -203,9 +201,9 @@ const CMS_DATA = {
       "name": "Aurora Lilith",
       "slug": "aurora-lilith",
       "nationality": "Australian",
-      "photo": "images/people/16/1791647010651-img_0747.webp",
+      "photo": "images/people/16/1791711664937-273.jpeg",
       "photos": [
-        "images/people/16/1791647010651-img_0747.webp"
+        "images/people/16/1791711664937-273.jpeg"
       ],
       "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
       "available": [
