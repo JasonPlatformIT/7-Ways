@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-11",
+  "scheduleDate": "2026-10-13",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -96,9 +96,7 @@ const CMS_DATA = {
         "images/people/7/1790763210641-maya.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 8,
@@ -124,9 +122,7 @@ const CMS_DATA = {
         "images/people/9/1790831347622-781.jpeg"
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 2pm – 4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 10,
@@ -150,9 +146,7 @@ const CMS_DATA = {
         "images/people/11/1791620681285-261.jpeg"
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 12,
@@ -164,9 +158,7 @@ const CMS_DATA = {
         "images/people/12/1791620655826-263.jpeg"
       ],
       "description": "New hot Malaysian girl\nSexy new Malaysian beauty, she have really big and nice ass，very good English\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n12pm – 12am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 13,
@@ -178,9 +170,7 @@ const CMS_DATA = {
         "images/people/13/1791620666585-262.jpeg"
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 10pm – 4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 15,
@@ -192,9 +182,7 @@ const CMS_DATA = {
         "images/people/15/1791711687201-274.jpeg"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 7pm – 4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 16,
@@ -206,10 +194,7 @@ const CMS_DATA = {
         "images/people/16/1791711664937-273.jpeg"
       ],
       "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 17,
@@ -221,10 +206,7 @@ const CMS_DATA = {
         "images/people/17/1791710287113-269.jpeg"
       ],
       "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 18,
@@ -237,10 +219,7 @@ const CMS_DATA = {
         "images/people/18/1791721252391-276.jpeg"
       ],
       "description": "New Chinese Innocent girl！！！\n26yo. 157cm. 45kg . Busty D+ . Super friendly and Good Service girl!! Pretty \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 19,
@@ -252,10 +231,7 @@ const CMS_DATA = {
         "images/people/19/1791722447759-286.jpeg"
       ],
       "description": "New Chinese sexy girl！！！\n26yo. 157cm. 45kg . Busty D+ . Super friendly and Good Service girl!! Pretty \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 20,
@@ -267,6 +243,18 @@ const CMS_DATA = {
         "images/people/20/1791722657538-287.jpeg"
       ],
       "description": "New Chinese  Mature and sexy woman girl！！！\n Annie 30yr 160cm C cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
+      "available": []
+    },
+    {
+      "id": 21,
+      "name": "Rola",
+      "slug": "rola",
+      "nationality": "China",
+      "photo": "images/people/21/1791817309327-318.jpeg",
+      "photos": [
+        "images/people/21/1791817309327-318.jpeg"
+      ],
+      "description": "New Chinese A sexy bombshell girl！！！\n Rola 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
