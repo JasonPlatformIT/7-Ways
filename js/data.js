@@ -134,10 +134,14 @@ const CMS_DATA = {
       "nationality": "China",
       "photo": "images/people/10/1791213642952-797.jpeg",
       "photos": [
-        "images/people/10/1791213642952-797.jpeg"
+        "images/people/10/1791213642952-797.jpeg",
+        "images/people/10/1791818755001-316.jpeg"
       ],
-      "description": "NEW girl (Chinese Coco）\nAvailable for a limited time!\nSexy new Chinese beauty, is here to give you an unforgettable experience and wonderful girl friend experiences！！！\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
-      "available": []
+      "description": "New Chinese pretty girl！！！\n Coco 25years 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 11,
