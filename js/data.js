@@ -257,7 +257,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/21/1791880320267-374.jpeg"
       ],
-      "description": "New Chinese A sexy bombshell girl！！！\nCan do double diamond services with Kiki,highly recommend！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 161cm natural E cup !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
@@ -303,7 +303,7 @@ const CMS_DATA = {
         "images/people/24/1791881964100-387.jpeg",
         "images/people/24/1791881966181-386.jpeg"
       ],
-      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan do double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A girl！！！\n Kiki 23year 162cm natural  E cup !!!\nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
