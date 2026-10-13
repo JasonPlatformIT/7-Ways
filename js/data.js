@@ -235,9 +235,9 @@ const CMS_DATA = {
       "name": "Annie",
       "slug": "annie",
       "nationality": "China",
-      "photo": "images/people/20/1791722657538-287.jpeg",
+      "photo": "images/people/20/1791852296053-img_0905.jpeg",
       "photos": [
-        "images/people/20/1791722657538-287.jpeg"
+        "images/people/20/1791852296053-img_0905.jpeg"
       ],
       "description": "New Chinese  Mature and sexy woman girl！！！\n Annie 30yr 160cm C cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
       "available": [
@@ -250,11 +250,11 @@ const CMS_DATA = {
       "name": "Lala",
       "slug": "lala",
       "nationality": "China",
-      "photo": "images/people/21/1791817309327-318.jpeg",
+      "photo": "images/people/21/1791861002951-img_0919.jpeg",
       "photos": [
-        "images/people/21/1791817309327-318.jpeg"
+        "images/people/21/1791861002951-img_0919.jpeg"
       ],
-      "description": "New Chinese A sexy bombshell girl！！！\n Rola 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
