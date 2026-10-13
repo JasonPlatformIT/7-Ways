@@ -204,19 +204,15 @@ const CMS_DATA = {
     },
     {
       "id": 18,
-      "name": "Kiki",
-      "slug": "kiki",
+      "name": "Nini",
+      "slug": "nini",
       "nationality": "China",
       "photo": "images/people/18/1791721250267-275.jpeg",
       "photos": [
         "images/people/18/1791721250267-275.jpeg",
-        "images/people/18/1791721252391-276.jpeg",
-        "images/people/18/1791881844740-387.jpeg",
-        "images/people/18/1791881847157-386.jpeg",
-        "images/people/18/1791881878263-387.jpeg",
-        "images/people/18/1791881880145-386.jpeg"
+        "images/people/18/1791721252391-276.jpeg"
       ],
-      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A girl！！！\n Nini 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
@@ -292,6 +288,22 @@ const CMS_DATA = {
         "images/people/23/1791819464536-316.jpeg"
       ],
       "description": "New Chinese pretty girl！！！\n Coco 25years 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Kiki",
+      "slug": "kiki",
+      "nationality": "China",
+      "photo": "images/people/24/1791881964100-387.jpeg",
+      "photos": [
+        "images/people/24/1791881964100-387.jpeg",
+        "images/people/24/1791881966181-386.jpeg"
+      ],
+      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
