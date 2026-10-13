@@ -210,10 +210,15 @@ const CMS_DATA = {
       "photo": "images/people/18/1791721250267-275.jpeg",
       "photos": [
         "images/people/18/1791721250267-275.jpeg",
-        "images/people/18/1791721252391-276.jpeg"
+        "images/people/18/1791721252391-276.jpeg",
+        "images/people/18/1791881844740-387.jpeg",
+        "images/people/18/1791881847157-386.jpeg"
       ],
-      "description": "New Chinese Innocent girl！！！\n26yo. 157cm. 45kg . Busty D+ . Super friendly and Good Service girl!! Pretty \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9pm-4am",
-      "available": []
+      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 19,
