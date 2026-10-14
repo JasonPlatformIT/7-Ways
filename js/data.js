@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-13",
+  "scheduleDate": "2026-10-15",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -123,8 +123,8 @@ const CMS_DATA = {
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -149,7 +149,10 @@ const CMS_DATA = {
         "images/people/12/1791620655826-263.jpeg"
       ],
       "description": "New hot Malaysian girl\nSexy new Malaysian beauty, she have really big and nice ass，very good English\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n12pm – 12am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 13,
@@ -173,7 +176,10 @@ const CMS_DATA = {
         "images/people/15/1791711687201-274.jpeg"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 7pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 16,
@@ -213,10 +219,7 @@ const CMS_DATA = {
         "images/people/18/1791721252391-276.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Nini 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 19,
@@ -228,25 +231,19 @@ const CMS_DATA = {
         "images/people/19/1791722447759-286.jpeg"
       ],
       "description": "New Chinese sexy girl！！！\n26yo. 157cm. 45kg . Busty D+ . Super friendly and Good Service girl!! Pretty \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 20,
       "name": "Annie",
       "slug": "annie",
       "nationality": "China",
-      "photo": "images/people/20/1791886784373-388.jpeg",
+      "photo": "images/people/20/1791722657538-287.jpeg",
       "photos": [
-        "images/people/20/1791886784373-388.jpeg"
+        "images/people/20/1791722657538-287.jpeg"
       ],
       "description": "New Chinese  Mature and sexy woman girl！！！\n Annie 30yr 160cm C cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 21,
@@ -257,7 +254,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/21/1791880320267-374.jpeg"
       ],
-      "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 161cm natural E cup !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": []
     },
     {
@@ -285,10 +282,7 @@ const CMS_DATA = {
         "images/people/23/1791819464536-316.jpeg"
       ],
       "description": "New Chinese pretty girl！！！\n Coco 25years 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 24,
@@ -300,7 +294,7 @@ const CMS_DATA = {
         "images/people/24/1791881964100-387.jpeg",
         "images/people/24/1791881966181-386.jpeg"
       ],
-      "description": "New Chinese A girl！！！\n Kiki 23year 162cm natural  E cup !!!\nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": []
     }
   ],
