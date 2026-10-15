@@ -96,7 +96,10 @@ const CMS_DATA = {
         "images/people/7/1790763210641-maya.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 8,
@@ -137,7 +140,9 @@ const CMS_DATA = {
         "images/people/11/1791620681285-261.jpeg"
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 12,
