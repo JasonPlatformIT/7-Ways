@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-15",
+  "scheduleDate": "2026-10-16",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -141,7 +141,8 @@ const CMS_DATA = {
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -154,10 +155,7 @@ const CMS_DATA = {
         "images/people/12/1791620655826-263.jpeg"
       ],
       "description": "New hot Malaysian girl\nSexy new Malaysian beauty, she have really big and nice ass，very good English\n160cm 50kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice Breast！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n12pm – 12am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 13,
@@ -181,10 +179,7 @@ const CMS_DATA = {
         "images/people/15/1791711687201-274.jpeg"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 7pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 16,
