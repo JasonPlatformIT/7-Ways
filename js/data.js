@@ -296,6 +296,19 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": []
+    },
+    {
+      "id": 25,
+      "name": "Tina",
+      "slug": "tina",
+      "nationality": "European",
+      "photo": "images/people/25/1792073604618-406.jpeg",
+      "photos": [
+        "images/people/25/1792073604618-406.jpeg",
+        "images/people/25/1792073606753-405.jpeg"
+      ],
+      "description": "26yo. 168cm. Busty E . Erotic Massage Service with Happy Ending . 30mins$140. 45mins$160. 60mins $180",
+      "available": []
     }
   ],
   "introText": {
