@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-17",
+  "scheduleDate": "2026-10-18",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -97,8 +97,7 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -125,7 +124,9 @@ const CMS_DATA = {
         "images/people/9/1790831347622-781.jpeg"
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 11,
@@ -137,9 +138,7 @@ const CMS_DATA = {
         "images/people/11/1791620681285-261.jpeg"
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 12,
@@ -202,8 +201,7 @@ const CMS_DATA = {
       ],
       "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -266,8 +264,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese Mature and sexy  girl！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -307,7 +304,6 @@ const CMS_DATA = {
       ],
       "description": "New sexy girl Tina ！！！\n26yo. 168cm. Busty E . Erotic Massage Service with Happy Ending . 30mins$140. 45mins$160. 60mins $180\n5pm-4am",
       "available": [
-        "tomorrow",
         "today"
       ]
     }
