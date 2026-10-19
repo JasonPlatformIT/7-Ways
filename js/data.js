@@ -84,9 +84,7 @@ const CMS_DATA = {
         "images/people/6/1790760277508-zoe.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Zoe)\nRecommend Very good Service!!\nSuper Pretty!! VERY FRIENDLY!!\n165cm. Natural BUSTY D+   53kg\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. \n💵45mins $280. \n💵1 hour $330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 7,
@@ -269,8 +267,8 @@ const CMS_DATA = {
       ],
       "description": "New Chinese Mature and sexy  girl！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
