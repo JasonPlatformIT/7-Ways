@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-19",
+  "scheduleDate": "2026-10-20",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -96,9 +96,7 @@ const CMS_DATA = {
         "images/people/7/1790763210641-maya.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 8,
@@ -125,8 +123,7 @@ const CMS_DATA = {
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -176,8 +173,7 @@ const CMS_DATA = {
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -203,8 +199,7 @@ const CMS_DATA = {
       ],
       "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -267,8 +262,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese Mature and sexy  girl！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -319,6 +313,20 @@ const CMS_DATA = {
         "images/people/26/1792412778681-454.jpeg"
       ],
       "description": "New sexy Chinese A girl！！！\n Abby 23year 162cm natural E cup ！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!！Highly recommended！！！\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": [
+        "today"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Ayumi",
+      "slug": "ayumi",
+      "nationality": "Chinese",
+      "photo": "images/people/27/1792422406541-455.jpeg",
+      "photos": [
+        "images/people/27/1792422406541-455.jpeg"
+      ],
+      "description": "New cute Chinese A girl！！！\nAyumi 25year 165cm  Very sexy and innocent-looking girl ！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!！Highly recommended！！！\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
