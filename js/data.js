@@ -95,7 +95,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/7/1790763210641-maya.jpg"
       ],
-      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
+      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\nMaya can do double service with Anna or Lola.\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
       "available": []
     },
     {
@@ -121,7 +121,7 @@ const CMS_DATA = {
         "images/people/9/1790831341592-158.jpeg",
         "images/people/9/1790831347622-781.jpeg"
       ],
-      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
+      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nLola can do double service wit Maya or Anna\n\nToday · 7.30pm – 4am",
       "available": [
         "today"
       ]
@@ -171,9 +171,10 @@ const CMS_DATA = {
       "photos": [
         "images/people/15/1791711687201-274.jpeg"
       ],
-      "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
+      "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\nAnna can do double service with Maya or Lola.\n 6pm – 4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
