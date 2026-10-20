@@ -96,7 +96,10 @@ const CMS_DATA = {
         "images/people/7/1790763210641-maya.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\nMaya can do double service with Anna or Lola.\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 8,
