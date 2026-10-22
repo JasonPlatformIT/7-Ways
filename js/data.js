@@ -322,11 +322,8 @@ const CMS_DATA = {
       "name": "Triplet(Lola Maya Anna)",
       "slug": "triplet-lola-maya-anna",
       "nationality": "Australian",
-      "photo": "https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo",
-      "photos": [
-        "https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo",
-        "images/people/27/1792630835973-image0-1-.jpeg"
-      ],
+      "photo": "",
+      "photos": [],
       "description": "Triplet(Lola. Maya. Anna) 3 beautiful young girls . Lola. Maya. Anna available for DOUBLE or TRIPLE of your choice. Have the best of all. They are playful and fun. Will lighten up your day. Come and experience!!",
       "available": [
         "today",
