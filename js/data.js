@@ -304,20 +304,6 @@ const CMS_DATA = {
       "available": []
     },
     {
-      "id": 26,
-      "name": "Ayumi",
-      "slug": "ayumi",
-      "nationality": "China",
-      "photo": "images/people/26/1792512378783-455.jpeg",
-      "photos": [
-        "images/people/26/1792512378783-455.jpeg"
-      ],
-      "description": "New cute Chinese A girl！！！ Ayumi 25year 165cm Very sexy and innocent-looking girl ！！！ Full service : Shower together . Natural Bj . Kissing. Condom Sex!!！Highly recommended！！！ 💵30mins $200. 45mins$280.  💵1 hour$330 Today 6pm-4am",
-      "available": [
-        "today"
-      ]
-    },
-    {
       "id": 27,
       "name": "Triplet(Lola Maya Anna)",
       "slug": "triplet-lola-maya-anna",
