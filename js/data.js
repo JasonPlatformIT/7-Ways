@@ -125,7 +125,10 @@ const CMS_DATA = {
         "images/people/9/1790831347622-781.jpeg"
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 11,
@@ -161,7 +164,10 @@ const CMS_DATA = {
         "images/people/13/1791620666585-262.jpeg"
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 10pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 15,
@@ -173,7 +179,10 @@ const CMS_DATA = {
         "images/people/15/1791711687201-274.jpeg"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 16,
@@ -185,7 +194,10 @@ const CMS_DATA = {
         "images/people/16/1791711664937-273.jpeg"
       ],
       "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 17,
@@ -250,14 +262,14 @@ const CMS_DATA = {
     },
     {
       "id": 22,
-      "name": "Mimi",
-      "slug": "mimi",
+      "name": "Fifi",
+      "slug": "fifi",
       "nationality": "China",
-      "photo": "images/people/22/1791818387463-317.jpeg",
+      "photo": "images/people/22/1792687909688-476.jpeg",
       "photos": [
-        "images/people/22/1791818387463-317.jpeg"
+        "images/people/22/1792687909688-476.jpeg"
       ],
-      "description": "New Chinese Mature and sexy  girl！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 3pm-4am",
+      "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 8pm-4am",
       "available": [
         "today",
         "tomorrow"
@@ -302,18 +314,6 @@ const CMS_DATA = {
       "available": []
     },
     {
-      "id": 26,
-      "name": "Ayumi",
-      "slug": "ayumi",
-      "nationality": "China",
-      "photo": "images/people/26/1792512378783-455.jpeg",
-      "photos": [
-        "images/people/26/1792512378783-455.jpeg"
-      ],
-      "description": "New cute Chinese A girl！！！ Ayumi 25year 165cm Very sexy and innocent-looking girl ！！！ Full service : Shower together . Natural Bj . Kissing. Condom Sex!!！Highly recommended！！！ 💵30mins $200. 45mins$280.  💵1 hour$330 Today 6pm-4am",
-      "available": []
-    },
-    {
       "id": 27,
       "name": "Triplet(Lola Maya Anna)",
       "slug": "triplet-lola-maya-anna",
@@ -329,14 +329,14 @@ const CMS_DATA = {
     },
     {
       "id": 28,
-      "name": "Sophia",
-      "slug": "sophia",
-      "nationality": "Aussie",
-      "photo": "images/people/28/1792687803710-496.jpeg",
+      "name": "Abby",
+      "slug": "abby",
+      "nationality": "Chinese",
+      "photo": "images/people/28/1792635735780-454.jpeg",
       "photos": [
-        "images/people/28/1792687803710-496.jpeg"
+        "images/people/28/1792635735780-454.jpeg"
       ],
-      "description": "New sexy girl Sophia ！！！\n\nGive you a girlfriend experience.\n26years. 168cm. Busty E . 30mins$200. 45mins$280. 60mins $330\n7pm-4am",
+      "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
