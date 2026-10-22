@@ -164,7 +164,10 @@ const CMS_DATA = {
         "images/people/13/1791620666585-262.jpeg"
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 10pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 15,
