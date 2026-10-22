@@ -269,7 +269,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/22/1792687909688-476.jpeg"
       ],
-      "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 8pm-4am",
+      "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 3pm-4am",
       "available": [
         "today",
         "tomorrow"
