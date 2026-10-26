@@ -112,6 +112,21 @@ const CMS_DATA = {
       "available": []
     },
     {
+      "id": 9,
+      "name": "Lola",
+      "slug": "lola",
+      "nationality": "Australian",
+      "photo": "images/people/9/1790831341592-158.jpeg",
+      "photos": [
+        "images/people/9/1790831341592-158.jpeg",
+        "images/people/9/1790831347622-781.jpeg"
+      ],
+      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
+      "available": [
+        "today"
+      ]
+    },
+    {
       "id": 11,
       "name": "Celine",
       "slug": "celine",
@@ -330,6 +345,21 @@ const CMS_DATA = {
       ],
       "description": "New Aussie A girl！！！\n Sophia 23year 162cm D cup ！！！\n\nGive you a girlfriend experience.\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": []
+    },
+    {
+      "id": 30,
+      "name": "Kiana",
+      "slug": "kiana",
+      "nationality": "Aussie",
+      "photo": "images/people/30/1792999418224-532.jpeg",
+      "photos": [
+        "images/people/30/1792999418224-532.jpeg"
+      ],
+      "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
