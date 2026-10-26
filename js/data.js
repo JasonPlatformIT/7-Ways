@@ -112,21 +112,6 @@ const CMS_DATA = {
       "available": []
     },
     {
-      "id": 9,
-      "name": "Lola",
-      "slug": "lola",
-      "nationality": "Australian",
-      "photo": "images/people/9/1790831341592-158.jpeg",
-      "photos": [
-        "images/people/9/1790831341592-158.jpeg",
-        "images/people/9/1790831347622-781.jpeg"
-      ],
-      "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
-      "available": [
-        "today"
-      ]
-    },
-    {
       "id": 11,
       "name": "Celine",
       "slug": "celine",
@@ -195,9 +180,9 @@ const CMS_DATA = {
       "name": "Megan",
       "slug": "megan",
       "nationality": "Vietnam and Italy",
-      "photo": "images/people/17/1792992464943-533.jpeg",
+      "photo": "images/people/17/1791710287113-269.jpeg",
       "photos": [
-        "images/people/17/1792992464943-533.jpeg"
+        "images/people/17/1791710287113-269.jpeg"
       ],
       "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
       "available": [
@@ -239,7 +224,10 @@ const CMS_DATA = {
         "images/people/20/1791722657538-287.jpeg"
       ],
       "description": "New Chinese  Mature and sexy woman girl！！！\n Annie 30yr 160cm C cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 21,
@@ -329,9 +317,7 @@ const CMS_DATA = {
         "images/people/28/1792635735780-454.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 29,
@@ -344,21 +330,6 @@ const CMS_DATA = {
       ],
       "description": "New Aussie A girl！！！\n Sophia 23year 162cm D cup ！！！\n\nGive you a girlfriend experience.\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": []
-    },
-    {
-      "id": 30,
-      "name": "Kiana",
-      "slug": "kiana",
-      "nationality": "Aussie",
-      "photo": "images/people/30/1792992442664-532.jpeg",
-      "photos": [
-        "images/people/30/1792992442664-532.jpeg"
-      ],
-      "description": "Anna's current profile lists her as 23 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
     }
   ],
   "introText": {
