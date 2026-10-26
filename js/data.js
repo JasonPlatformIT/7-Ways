@@ -197,9 +197,9 @@ const CMS_DATA = {
       "name": "Megan",
       "slug": "megan",
       "nationality": "Vietnam and Italy",
-      "photo": "images/people/17/1791710287113-269.jpeg",
+      "photo": "images/people/17/1792992464943-533.jpeg",
       "photos": [
-        "images/people/17/1791710287113-269.jpeg"
+        "images/people/17/1792992464943-533.jpeg"
       ],
       "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
       "available": [
@@ -331,7 +331,9 @@ const CMS_DATA = {
         "images/people/28/1792635735780-454.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": []
+      "available": [
+        "tomorrow"
+      ]
     },
     {
       "id": 29,
