@@ -194,12 +194,12 @@ const CMS_DATA = {
       "id": 17,
       "name": "Megan",
       "slug": "megan",
-      "nationality": "Vietnam and Italy",
-      "photo": "images/people/17/1791710287113-269.jpeg",
+      "nationality": "Singapore",
+      "photo": "images/people/17/1793000436147-533.jpeg",
       "photos": [
-        "images/people/17/1791710287113-269.jpeg"
+        "images/people/17/1793000436147-533.jpeg"
       ],
-      "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
+      "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
       "available": [
         "today",
         "tomorrow"
