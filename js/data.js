@@ -201,7 +201,8 @@ const CMS_DATA = {
       ],
       "description": "Vietnamese and Italian mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
