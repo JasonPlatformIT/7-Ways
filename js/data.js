@@ -96,7 +96,9 @@ const CMS_DATA = {
         "images/people/7/1790763210641-maya.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 8,
@@ -239,10 +241,7 @@ const CMS_DATA = {
         "images/people/20/1791722657538-287.jpeg"
       ],
       "description": "New Chinese  Mature and sexy woman girl！！！\n Annie 30yr 160cm C cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 21,
@@ -345,6 +344,21 @@ const CMS_DATA = {
       ],
       "description": "New Aussie A girl！！！\n Sophia 23year 162cm D cup ！！！\n\nGive you a girlfriend experience.\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": []
+    },
+    {
+      "id": 30,
+      "name": "Kiana",
+      "slug": "kiana",
+      "nationality": "Aussie",
+      "photo": "images/people/30/1792992442664-532.jpeg",
+      "photos": [
+        "images/people/30/1792992442664-532.jpeg"
+      ],
+      "description": "Anna's current profile lists her as 23 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
