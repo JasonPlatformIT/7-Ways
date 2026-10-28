@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-27",
+  "scheduleDate": "2026-10-29",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -97,7 +97,8 @@ const CMS_DATA = {
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -176,8 +177,8 @@ const CMS_DATA = {
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -202,10 +203,7 @@ const CMS_DATA = {
         "images/people/17/1793000436147-533.jpeg"
       ],
       "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 18,
@@ -242,9 +240,7 @@ const CMS_DATA = {
         "images/people/20/1791722657538-287.jpeg"
       ],
       "description": "New Chinese  Mature and sexy woman girl！！！\n Annie 30yr 160cm C cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 21,
@@ -319,8 +315,8 @@ const CMS_DATA = {
       ],
       "description": "Triplet(Lola. Maya. Anna) 3 beautiful young girls . Lola. Maya. Anna available for DOUBLE or TRIPLE of your choice. Have the best of all. They are playful and fun. Will lighten up your day. Come and experience!!",
       "available": [
-        "today",
-        "tomorrow"
+        "tomorrow",
+        "today"
       ]
     },
     {
@@ -333,10 +329,7 @@ const CMS_DATA = {
         "images/people/28/1792635735780-454.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 29,
@@ -360,10 +353,7 @@ const CMS_DATA = {
         "images/people/30/1792999418224-532.jpeg"
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     }
   ],
   "introText": {
