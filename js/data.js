@@ -136,20 +136,6 @@ const CMS_DATA = {
       "available": []
     },
     {
-      "id": 15,
-      "name": "Anna",
-      "slug": "anna",
-      "nationality": "Australian",
-      "photo": "images/people/15/1791711687201-274.jpeg",
-      "photos": [
-        "images/people/15/1791711687201-274.jpeg"
-      ],
-      "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
-      "available": [
-        "today"
-      ]
-    },
-    {
       "id": 16,
       "name": "Aurora Lilith",
       "slug": "aurora-lilith",
