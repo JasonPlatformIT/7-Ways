@@ -202,7 +202,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/17/1793000436147-533.jpeg"
       ],
-      "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n9pm – 4am",
+      "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n3pm – 4am",
       "available": [
         "today",
         "tomorrow"
@@ -357,6 +357,21 @@ const CMS_DATA = {
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
       "available": []
+    },
+    {
+      "id": 31,
+      "name": "Katia",
+      "slug": "katia",
+      "nationality": "European",
+      "photo": "images/people/31/1793256756925-202.jpeg",
+      "photos": [
+        "images/people/31/1793256756925-202.jpeg"
+      ],
+      "description": "Katia price 120-170-200 . Include condom blowjob and Sex \n7.30pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
