@@ -174,7 +174,8 @@ const CMS_DATA = {
       ],
       "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n3pm – 4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -224,7 +225,10 @@ const CMS_DATA = {
         "images/people/21/1791880320267-374.jpeg"
       ],
       "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 22,
@@ -261,7 +265,10 @@ const CMS_DATA = {
         "images/people/24/1791881966181-386.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 25,
@@ -275,6 +282,20 @@ const CMS_DATA = {
       ],
       "description": "New sexy girl Tina ！！！\n26yo. 168cm. Busty E . Erotic Massage Service with Happy Ending . 30mins$140. 45mins$160. 60mins $180\n5pm-4am",
       "available": []
+    },
+    {
+      "id": 27,
+      "name": "Triplet(Lola Maya Anna)",
+      "slug": "triplet-lola-maya-anna",
+      "nationality": "Australian",
+      "photo": "images/people/27/1792630835973-image0-1-.jpeg",
+      "photos": [
+        "images/people/27/1792630835973-image0-1-.jpeg"
+      ],
+      "description": "Triplet(Lola. Maya. Anna) 3 beautiful young girls . Lola. Maya. Anna available for DOUBLE or TRIPLE of your choice. Have the best of all. They are playful and fun. Will lighten up your day. Come and experience!!",
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 28,
