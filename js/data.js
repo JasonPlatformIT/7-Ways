@@ -174,8 +174,7 @@ const CMS_DATA = {
       ],
       "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n3pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -282,20 +281,6 @@ const CMS_DATA = {
       ],
       "description": "New sexy girl Tina ！！！\n26yo. 168cm. Busty E . Erotic Massage Service with Happy Ending . 30mins$140. 45mins$160. 60mins $180\n5pm-4am",
       "available": []
-    },
-    {
-      "id": 27,
-      "name": "Triplet(Lola Maya Anna)",
-      "slug": "triplet-lola-maya-anna",
-      "nationality": "Australian",
-      "photo": "images/people/27/1792630835973-image0-1-.jpeg",
-      "photos": [
-        "images/people/27/1792630835973-image0-1-.jpeg"
-      ],
-      "description": "Triplet(Lola. Maya. Anna) 3 beautiful young girls . Lola. Maya. Anna available for DOUBLE or TRIPLE of your choice. Have the best of all. They are playful and fun. Will lighten up your day. Come and experience!!",
-      "available": [
-        "today"
-      ]
     },
     {
       "id": 28,
