@@ -136,6 +136,20 @@ const CMS_DATA = {
       "available": []
     },
     {
+      "id": 15,
+      "name": "Anna",
+      "slug": "anna",
+      "nationality": "Australian",
+      "photo": "images/people/15/1791711687201-274.jpeg",
+      "photos": [
+        "images/people/15/1791711687201-274.jpeg"
+      ],
+      "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
+      "available": [
+        "today"
+      ]
+    },
+    {
       "id": 16,
       "name": "Aurora Lilith",
       "slug": "aurora-lilith",
@@ -261,20 +275,6 @@ const CMS_DATA = {
       ],
       "description": "New sexy girl Tina ！！！\n26yo. 168cm. Busty E . Erotic Massage Service with Happy Ending . 30mins$140. 45mins$160. 60mins $180\n5pm-4am",
       "available": []
-    },
-    {
-      "id": 27,
-      "name": "Triplet(Lola Maya Anna)",
-      "slug": "triplet-lola-maya-anna",
-      "nationality": "Australian",
-      "photo": "images/people/27/1792630835973-image0-1-.jpeg",
-      "photos": [
-        "images/people/27/1792630835973-image0-1-.jpeg"
-      ],
-      "description": "Triplet(Lola. Maya. Anna) 3 beautiful young girls . Lola. Maya. Anna available for DOUBLE or TRIPLE of your choice. Have the best of all. They are playful and fun. Will lighten up your day. Come and experience!!",
-      "available": [
-        "today"
-      ]
     },
     {
       "id": 28,
