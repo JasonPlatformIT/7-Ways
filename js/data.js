@@ -360,6 +360,21 @@ const CMS_DATA = {
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
       "available": []
+    },
+    {
+      "id": 31,
+      "name": "Katia",
+      "slug": "katia",
+      "nationality": "European",
+      "photo": "images/people/31/1793262178380-202.jpeg",
+      "photos": [
+        "images/people/31/1793262178380-202.jpeg"
+      ],
+      "description": "New pretty girl Katia\nKatia current  profile lists her as 24 years old and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
