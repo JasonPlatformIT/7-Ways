@@ -257,7 +257,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/21/1791880320267-374.jpeg"
       ],
-      "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Chinese A sexy bombshell girl！！！Limited-time comeback！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11pm-3am",
       "available": [
         "today",
         "tomorrow"
@@ -297,8 +297,11 @@ const CMS_DATA = {
         "images/people/24/1791881964100-387.jpeg",
         "images/people/24/1791881966181-386.jpeg"
       ],
-      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": []
+      "description": "New Chinese A girl！！！  Limited-time comeback！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11pm-3am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 25,
@@ -363,21 +366,6 @@ const CMS_DATA = {
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
       "available": []
-    },
-    {
-      "id": 31,
-      "name": "Katia",
-      "slug": "katia",
-      "nationality": "European",
-      "photo": "images/people/31/1793262178380-202.jpeg",
-      "photos": [
-        "images/people/31/1793262178380-202.jpeg"
-      ],
-      "description": "New pretty girl Katia\nKatia current  profile lists her as 24 years old and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
     }
   ],
   "introText": {
