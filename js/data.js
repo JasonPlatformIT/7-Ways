@@ -250,15 +250,18 @@ const CMS_DATA = {
     },
     {
       "id": 21,
-      "name": "Lala",
-      "slug": "lala",
+      "name": "Cici",
+      "slug": "cici",
       "nationality": "China",
       "photo": "images/people/21/1791880320267-374.jpeg",
       "photos": [
         "images/people/21/1791880320267-374.jpeg"
       ],
       "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 22,
