@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-10-29",
+  "scheduleDate": "2026-10-30",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -87,21 +87,6 @@ const CMS_DATA = {
       "available": []
     },
     {
-      "id": 7,
-      "name": "Maya",
-      "slug": "maya",
-      "nationality": "Aussie",
-      "photo": "images/people/7/1790763210641-maya.jpg",
-      "photos": [
-        "images/people/7/1790763210641-maya.jpg"
-      ],
-      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\nWestern Service!!\nTOP GIRL MUST TRY!!\n\nNEW girl (Aussie girl Maya )\nRecommend Very good Service!!\nSUPER Super Pretty . Model figure !!\nYoung 18yo 168cm. Natural B . 45kg\nSlim body and small waist. Leggy!!\nFull service !! Amazing pretty face !!\n💵30mins $200. \n💵45mins $280. \n💵1 hour $330.\nToday · 8pm – 4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
-    },
-    {
       "id": 8,
       "name": "Lili",
       "slug": "lili",
@@ -126,8 +111,7 @@ const CMS_DATA = {
       ],
       "description": "Lola's current venue profile lists her as 22 years old and Australian, with a listed height of 160 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\nToday · 7.30pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -177,8 +161,7 @@ const CMS_DATA = {
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -192,8 +175,7 @@ const CMS_DATA = {
       ],
       "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -207,8 +189,7 @@ const CMS_DATA = {
       ],
       "description": "Singapore mixed \nNew hot girl！！！\nSexy new mixed beauty, she have natural big and nice breasts，and can speak 4 language\n163cm 50kg.  BUSTY D+. \nSexy Curvy body and nice Breast！！！\nAnd also can do party service！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n3pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -250,18 +231,15 @@ const CMS_DATA = {
     },
     {
       "id": 21,
-      "name": "Cici",
-      "slug": "cici",
+      "name": "Lala",
+      "slug": "lala",
       "nationality": "China",
       "photo": "images/people/21/1791880320267-374.jpeg",
       "photos": [
         "images/people/21/1791880320267-374.jpeg"
       ],
-      "description": "New Chinese A sexy bombshell girl！！！Limited-time comeback！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11pm-3am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": []
     },
     {
       "id": 22,
@@ -297,11 +275,8 @@ const CMS_DATA = {
         "images/people/24/1791881964100-387.jpeg",
         "images/people/24/1791881966181-386.jpeg"
       ],
-      "description": "New Chinese A girl！！！  Limited-time comeback！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11pm-3am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "description": "New Chinese A girl！！！\n Kiki 23year 162cm D cup \nCan double diamond services with Lala， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": []
     },
     {
       "id": 25,
@@ -327,7 +302,6 @@ const CMS_DATA = {
       ],
       "description": "Triplet(Lola. Maya. Anna) 3 beautiful young girls . Lola. Maya. Anna available for DOUBLE or TRIPLE of your choice. Have the best of all. They are playful and fun. Will lighten up your day. Come and experience!!",
       "available": [
-        "tomorrow",
         "today"
       ]
     },
