@@ -191,7 +191,10 @@ const CMS_DATA = {
         "images/people/16/1791711664937-273.jpeg"
       ],
       "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 17,
@@ -357,21 +360,6 @@ const CMS_DATA = {
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
       "available": []
-    },
-    {
-      "id": 31,
-      "name": "Katia",
-      "slug": "katia",
-      "nationality": "European",
-      "photo": "images/people/31/1793256756925-202.jpeg",
-      "photos": [
-        "images/people/31/1793256756925-202.jpeg"
-      ],
-      "description": "Katia price 120-170-200 . Include condom blowjob and Sex \n7.30pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
     }
   ],
   "introText": {
