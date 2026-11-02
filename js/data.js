@@ -21,7 +21,9 @@ const CMS_DATA = {
       ],
       "photo": "images/people/1/1787738495605-ivana-1.jpg",
       "nationality": "Chinese",
-      "available": [],
+      "available": [
+        "tomorrow"
+      ],
       "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
       "slug": "ivana-new"
     },
@@ -312,28 +314,14 @@ const CMS_DATA = {
     },
     {
       "id": 31,
-      "name": "Armani",
-      "slug": "armani",
-      "nationality": "Australian",
-      "photo": "images/people/31/1793513520294-581.jpeg",
-      "photos": [
-        "images/people/31/1793513520294-581.jpeg"
-      ],
-      "description": "Armani current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm –4am",
-      "available": [
-        "today"
-      ]
-    },
-    {
-      "id": 32,
       "name": "Lynn",
       "slug": "lynn",
-      "nationality": "Chinese",
-      "photo": "images/people/32/1793586079258-img_1224.png",
+      "nationality": "China",
+      "photo": "images/people/31/1793590192072-584.jpeg",
       "photos": [
-        "images/people/32/1793586079258-img_1224.png"
+        "images/people/31/1793590192072-584.jpeg"
       ],
-      "description": "Lynn is 160cm tall, 46kg. Natural Bust C cup. Slim Petit body with Nice hourglass Curves. She is very FRIENDLY AND FUN TO PLAY WITH.",
+      "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
       "available": [
         "today",
         "tomorrow"
