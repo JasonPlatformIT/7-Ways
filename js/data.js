@@ -329,12 +329,11 @@ const CMS_DATA = {
       "name": "Lynn",
       "slug": "lynn",
       "nationality": "Chinese",
-      "photo": "images/people/32/1793585738393-img_1224.png",
+      "photo": "https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo",
       "photos": [
-        "images/people/32/1793585738393-img_1224.png",
-        "images/people/32/1793585816213-img_1224.png"
+        "https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo"
       ],
-      "description": "Lynn is 160cm tall, 46kg. Natural Bust C cup. Slim Petit body with Nice hourglass Curves. She is very FRIENDLY AND FUN TO PLAY WITH.\n5pm-4am",
+      "description": "Lynn is 160cm tall, 46kg. Natural Bust C cup. Slim Petit body with Nice hourglass Curves. She is very FRIENDLY AND FUN TO PLAY WITH.",
       "available": [
         "today",
         "tomorrow"
