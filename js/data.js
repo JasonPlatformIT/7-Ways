@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-01",
+  "scheduleDate": "2026-11-02",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -134,8 +134,7 @@ const CMS_DATA = {
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 10pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -221,9 +220,7 @@ const CMS_DATA = {
         "images/people/21/1791880320267-374.jpeg"
       ],
       "description": "New Chinese A sexy bombshell girl！！！\n Lala 26year 160cm D cup \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 10pm-4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 22,
@@ -286,8 +283,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -324,6 +320,20 @@ const CMS_DATA = {
         "images/people/31/1793513520294-581.jpeg"
       ],
       "description": "Armani current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm –4am",
+      "available": [
+        "today"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Lynn",
+      "slug": "lynn",
+      "nationality": "Chinese",
+      "photo": "images/people/32/1793585738393-img_1224.png",
+      "photos": [
+        "images/people/32/1793585738393-img_1224.png"
+      ],
+      "description": "Lynn is 160cm tall, 46kg. Natural Bust C cup. Slim Petit body with Nice hourglass Curves. She is very FRIENDLY AND FUN TO PLAY WITH.\n5pm-4am",
       "available": [
         "today",
         "tomorrow"
