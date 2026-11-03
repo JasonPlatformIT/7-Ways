@@ -37,7 +37,9 @@ const CMS_DATA = {
         "images/people/2/1787738478216-mizu-1.jpg"
       ],
       "description": "All new girl (Japanese Miku)\nRecommend Very good Service!!\n168cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 3,
@@ -50,8 +52,7 @@ const CMS_DATA = {
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -115,8 +116,7 @@ const CMS_DATA = {
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -288,10 +288,7 @@ const CMS_DATA = {
         "images/people/28/1792635735780-454.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 29,
@@ -328,8 +325,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     }
   ],
