@@ -333,10 +333,9 @@ const CMS_DATA = {
       "name": "Ash",
       "slug": "ash",
       "nationality": "Australia",
-      "photo": "https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo",
+      "photo": "images/people/32/1793705710107-img_1258.jpeg",
       "photos": [
-        "https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Photo",
-        "images/people/32/1793702046689-img_1258.jpeg"
+        "images/people/32/1793705710107-img_1258.jpeg"
       ],
       "description": "Ash is 165cm 48kg Size 6. Natural B-C cup. FRIENDLY personality and happy have fun with everyone.\nYoung and Pretty",
       "available": [
