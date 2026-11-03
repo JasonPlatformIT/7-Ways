@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-03",
+  "scheduleDate": "2026-11-04",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -21,9 +21,7 @@ const CMS_DATA = {
       ],
       "photo": "images/people/1/1787738495605-ivana-1.jpg",
       "nationality": "Chinese",
-      "available": [
-        "today"
-      ],
+      "available": [],
       "description": "All new girl (Chinese Ivana)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\n168cm. Busty D . 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230. 45mins$280. \n💵1 hour$330",
       "slug": "ivana-new"
     },
@@ -37,9 +35,7 @@ const CMS_DATA = {
         "images/people/2/1787738478216-mizu-1.jpg"
       ],
       "description": "All new girl (Japanese Miku)\nRecommend Very good Service!!\n168cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 3,
@@ -51,9 +47,7 @@ const CMS_DATA = {
         "images/people/3/1787738534353-kitty-1.jpg"
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 4,
@@ -103,7 +97,10 @@ const CMS_DATA = {
         "images/people/8/1790824161259-img_0724.jpeg"
       ],
       "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 11,
@@ -115,9 +112,7 @@ const CMS_DATA = {
         "images/people/11/1791620681285-261.jpeg"
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 12,
@@ -324,9 +319,7 @@ const CMS_DATA = {
         "images/people/31/1793590192072-584.jpeg"
       ],
       "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 32,
@@ -338,9 +331,7 @@ const CMS_DATA = {
         "images/people/32/1793705710107-img_1258.jpeg"
       ],
       "description": "Ash is 165cm 48kg Size 6. Natural B-C cup. FRIENDLY personality and happy have fun with everyone.\nYoung and Pretty",
-      "available": [
-        "today"
-      ]
+      "available": []
     }
   ],
   "introText": {
