@@ -88,15 +88,14 @@ const CMS_DATA = {
     },
     {
       "id": 8,
-      "name": "Lili",
-      "slug": "lili",
-      "nationality": "Vietnam",
-      "photo": "images/people/8/1790824158978-img_0725.jpeg",
+      "name": "Lily",
+      "slug": "lily",
+      "nationality": "China",
+      "photo": "images/people/8/1793724530171-615.jpeg",
       "photos": [
-        "images/people/8/1790824158978-img_0725.jpeg",
-        "images/people/8/1790824161259-img_0724.jpeg"
+        "images/people/8/1793724530171-615.jpeg"
       ],
-      "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n4pm-4am",
+      "description": "NEW girl (Chinese Lily)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n160cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n4pm-4am",
       "available": [
         "today",
         "tomorrow"
