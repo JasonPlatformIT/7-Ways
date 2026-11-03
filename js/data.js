@@ -96,7 +96,7 @@ const CMS_DATA = {
         "images/people/8/1790824158978-img_0725.jpeg",
         "images/people/8/1790824161259-img_0724.jpeg"
       ],
-      "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330",
+      "description": "NEW girl (Vietnam Lili)\nRecommend Very good Service!!\nSexy Pretty!! VERY FRIENDLY!!\n155cm. 48kg.  BUSTY D+. White Skin!!\nSexy Curvy body and nice ASS!!. \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\n4pm-4am",
       "available": [
         "today",
         "tomorrow"
