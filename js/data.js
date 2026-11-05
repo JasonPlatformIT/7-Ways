@@ -335,6 +335,22 @@ const CMS_DATA = {
       ],
       "description": "Ash is 165cm 48kg Size 6. Natural B-C cup. FRIENDLY personality and happy have fun with everyone.\nYoung and Pretty",
       "available": []
+    },
+    {
+      "id": 33,
+      "name": "Barbie",
+      "slug": "barbie",
+      "nationality": "China",
+      "photo": "images/people/33/1793900411962-665.jpeg",
+      "photos": [
+        "images/people/33/1793900411962-665.jpeg",
+        "images/people/33/1793900413795-666.jpeg"
+      ],
+      "description": "New Chinese A girl！！！Can do spring discount 145 dollar for 30mins！\n Barbie 28year 165cm 60 kg She‘s currently a postgraduate student at a music conservatoy！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 5pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
