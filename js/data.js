@@ -47,7 +47,9 @@ const CMS_DATA = {
         "images/people/3/1787738534353-kitty-1.jpg"
       ],
       "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 4,
@@ -59,7 +61,9 @@ const CMS_DATA = {
         "images/people/4/1787738558264-aaliyah-1.jpg"
       ],
       "description": "All new girl (IRAN Aaliyah)\n156cm. Natural Busty C. 61kg . \nNice Curvy Sexy . Round nice Bum!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 5,
