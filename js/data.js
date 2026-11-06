@@ -315,7 +315,10 @@ const CMS_DATA = {
         "images/people/30/1792999418224-532.jpeg"
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 31,
@@ -327,7 +330,10 @@ const CMS_DATA = {
         "images/people/31/1793590192072-584.jpeg"
       ],
       "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 32,
