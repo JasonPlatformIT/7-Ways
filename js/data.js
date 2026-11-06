@@ -29,12 +29,12 @@ const CMS_DATA = {
       "id": 2,
       "name": "SPRING PROMOTION",
       "slug": "spring-promotion",
-      "nationality": "Japanese",
+      "nationality": "ASIAN GIRLS",
       "photo": "images/people/2/1793930509996-744.jpeg",
       "photos": [
         "images/people/2/1793930509996-744.jpeg"
       ],
-      "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE",
+      "description": "",
       "available": [
         "today"
       ]
