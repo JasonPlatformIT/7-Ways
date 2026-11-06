@@ -34,7 +34,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/2/1793930509996-744.jpeg"
       ],
-      "description": "",
+      "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE",
       "available": [
         "today"
       ]
