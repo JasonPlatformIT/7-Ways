@@ -355,7 +355,9 @@ const CMS_DATA = {
         "images/people/33/1793900413795-666.jpeg"
       ],
       "description": "New Chinese A girl！！！Can do spring discount 145 dollar for 30mins！\n Barbie 28year 165cm 60 kg She‘s currently a postgraduate student at a music conservatoy！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 5pm-4am",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 34,
