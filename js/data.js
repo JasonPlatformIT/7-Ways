@@ -392,7 +392,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/36/1794217272865-754.jpeg"
       ],
-      "description": "New Vietnamese A girl！！！\n Rosie 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Vietnamese A girl！！！\n Rosie 26 year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
         "today",
         "tomorrow"
