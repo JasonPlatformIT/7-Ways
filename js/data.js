@@ -368,7 +368,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/34/1793900621681-660.jpeg"
       ],
-      "description": "New Chinese A girl！！！Can do spring discount 145 dollar for 30 mins！！！\n Apple 30year 160cm D cup  very mature sexy\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
+      "description": "ENew Chinese A girl！！！Can do spring discount 145 dollar for 30 mins！！！\n Apple 30year 160cm D cup  very mature sexy\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
       "available": []
     },
     {
@@ -382,6 +382,21 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！Can do spring discount 145 dollar for 30mins！\n Momo 25 year 168cm 60 kg\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
       "available": []
+    },
+    {
+      "id": 36,
+      "name": "Rosie",
+      "slug": "rosie",
+      "nationality": "Vietnamese",
+      "photo": "images/people/36/1794217272865-754.jpeg",
+      "photos": [
+        "images/people/36/1794217272865-754.jpeg"
+      ],
+      "description": "New Vietnamese A girl！！！\n Rosie 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
