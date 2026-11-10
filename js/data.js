@@ -113,7 +113,8 @@ const CMS_DATA = {
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -373,7 +374,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/36/1794217272865-754.jpeg"
       ],
-      "description": "New Vietnamese A girl！！！\n Rosie 26 year 165cm D cup  very sexy girl !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "description": "New Vietnamese A girl！！！\n Rosie 26 year 165cm D cup  very sexy girl !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
         "today",
         "tomorrow"
