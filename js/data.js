@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-12",
+  "scheduleDate": "2026-11-13",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -36,8 +36,7 @@ const CMS_DATA = {
       ],
       "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE!!",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -113,8 +112,7 @@ const CMS_DATA = {
       ],
       "description": "Celine's current venue profile lists her as 24 years old and Filipino , with a listed height of 163 and dress size 6. Reception keeps these details current and can answer practical questions about your visit.\n7pm – 11pm",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -140,8 +138,7 @@ const CMS_DATA = {
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 6pm – 4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -240,8 +237,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 3pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -378,8 +374,7 @@ const CMS_DATA = {
       ],
       "description": "New Vietnamese A girl！！！student !!!\n Rosie 22 year 165cm D cup  very sexy girl !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -393,8 +388,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -407,6 +401,20 @@ const CMS_DATA = {
         "images/people/38/1794238282133-776.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 19year 162cm ， new university girl young and pretty，highly recommend！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
+      "available": [
+        "today"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Bella",
+      "slug": "bella",
+      "nationality": "Australian",
+      "photo": "images/people/39/1794492454050-849.jpeg",
+      "photos": [
+        "images/people/39/1794492454050-849.jpeg"
+      ],
+      "description": "New Aussie girl Bella！！！\n30mins $220 . 45mins $300 . 1 hour $350",
       "available": [
         "today",
         "tomorrow"
