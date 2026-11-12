@@ -26,20 +26,6 @@ const CMS_DATA = {
       "slug": "ivana-new"
     },
     {
-      "id": 2,
-      "name": "SPRING PROMOTION",
-      "slug": "spring-promotion",
-      "nationality": "ASIAN GIRLS",
-      "photo": "images/people/2/1793930509996-744.jpeg",
-      "photos": [
-        "images/people/2/1793930509996-744.jpeg"
-      ],
-      "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE!!",
-      "available": [
-        "today"
-      ]
-    },
-    {
       "id": 3,
       "name": "Kitty (NEW)",
       "slug": "kitty-new",
@@ -374,7 +360,8 @@ const CMS_DATA = {
       ],
       "description": "New Vietnamese A girl！！！student !!!\n Rosie 22 year 165cm D cup  very sexy girl !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -388,7 +375,8 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -401,9 +389,7 @@ const CMS_DATA = {
         "images/people/38/1794238282133-776.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 19year 162cm ， new university girl young and pretty，highly recommend！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 39,
