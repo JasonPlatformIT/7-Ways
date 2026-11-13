@@ -304,7 +304,8 @@ const CMS_DATA = {
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
