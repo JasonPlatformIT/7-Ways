@@ -410,6 +410,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 39,
+      "name": "Bella",
+      "slug": "bella",
+      "nationality": "Australian",
+      "photo": "images/people/39/1794530067856-849.jpeg",
+      "photos": [
+        "images/people/39/1794530067856-849.jpeg"
+      ],
+      "description": "30mins $220 . 45mins $300 . 1 hour $350",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
