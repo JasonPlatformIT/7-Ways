@@ -26,6 +26,18 @@ const CMS_DATA = {
       "slug": "ivana-new"
     },
     {
+      "id": 3,
+      "name": "Kitty (NEW)",
+      "slug": "kitty-new",
+      "nationality": "Chinese",
+      "photo": "images/people/3/1787738534353-kitty-1.jpg",
+      "photos": [
+        "images/people/3/1787738534353-kitty-1.jpg"
+      ],
+      "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
+      "available": []
+    },
+    {
       "id": 2,
       "name": "SPRING PROMOTION",
       "slug": "spring-promotion",
@@ -39,18 +51,6 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
-    },
-    {
-      "id": 3,
-      "name": "Kitty (NEW)",
-      "slug": "kitty-new",
-      "nationality": "Chinese",
-      "photo": "images/people/3/1787738534353-kitty-1.jpg",
-      "photos": [
-        "images/people/3/1787738534353-kitty-1.jpg"
-      ],
-      "description": "All new girl (Chinese Kitty)\nRecommend Very good Service!!\n162cm. Natural B. 49kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. 1 hour$330",
-      "available": []
     },
     {
       "id": 4,
@@ -74,7 +74,7 @@ const CMS_DATA = {
         "images/people/5/1790759835539-sweety.jpg",
         "images/people/5/1790759858255-sweety-2.jpg"
       ],
-      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!\nSuper Pretty . Model figure !!\nYoung 22yo 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
+      "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Sweety)\nRecommend Very good Service!!  University Students – Back for a Limited Time!\nSuper Pretty . Model figure !!\nYoung 18 year 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
       "available": [
         "today",
         "tomorrow"
