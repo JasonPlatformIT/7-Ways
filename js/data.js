@@ -439,7 +439,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/40/1794621453550-868.jpeg"
       ],
-      "description": "New Chinese Amy ！！！\n Amy 27year 155cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9.30-4am",
+      "description": "New Chinese Amy ！！！\n Amy 27year 155cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9.30pm-4am",
       "available": [
         "today",
         "tomorrow"
