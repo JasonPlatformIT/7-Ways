@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-16",
+  "scheduleDate": "2026-11-18",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -75,10 +75,7 @@ const CMS_DATA = {
         "images/people/5/1790759858255-sweety-2.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Mia)\nRecommend Very good Service!!  University Students – Back for a Limited Time!\nSuper Pretty . Model figure !!\nYoung 18 year 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 6,
@@ -139,10 +136,7 @@ const CMS_DATA = {
         "images/people/13/1791620666585-262.jpeg"
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 6pm – 4am",
-      "available": [
-        "tomorrow",
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 15,
@@ -239,10 +233,7 @@ const CMS_DATA = {
         "images/people/22/1792687909688-476.jpeg"
       ],
       "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 3pm-4am",
-      "available": [
-        "tomorrow",
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 23,
@@ -419,9 +410,7 @@ const CMS_DATA = {
         "images/people/39/1794530067856-849.jpeg"
       ],
       "description": "30mins $220 . 45mins $300 . 1 hour $350",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 40,
@@ -433,10 +422,7 @@ const CMS_DATA = {
         "images/people/40/1794621453550-868.jpeg"
       ],
       "description": "New Chinese Amy ！！！\n Amy 27year 155cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9.30pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 41,
@@ -448,10 +434,7 @@ const CMS_DATA = {
         "images/people/41/1794833359424-911.jpeg"
       ],
       "description": "New Japanese Dina ！！！\n Dina 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 1pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     }
   ],
   "introText": {
