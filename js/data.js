@@ -453,6 +453,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 43,
+      "name": "Jade",
+      "slug": "jade",
+      "nationality": "Australian",
+      "photo": "images/people/43/1794991353551-988.jpeg",
+      "photos": [
+        "images/people/43/1794991353551-988.jpeg"
+      ],
+      "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
