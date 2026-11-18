@@ -75,10 +75,7 @@ const CMS_DATA = {
         "images/people/5/1790759858255-sweety-2.jpg"
       ],
       "description": "❤️❤️19 Sevenways Rockdale❤️❤️\n\nNEW girl (Chinese Mia)\nRecommend Very good Service!!  University Students – Back for a Limited Time!\nSuper Pretty . Model figure !!\nYoung 18 year 163cm. Natural C . 47kg \nSlim body and small waist. Leggy!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $230\n💵45mins $280\n💵1 hour $330",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 6,
@@ -441,6 +438,21 @@ const CMS_DATA = {
       ],
       "description": "New Japanese Dina ！！！\n Dina 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 1pm-4am",
       "available": []
+    },
+    {
+      "id": 42,
+      "name": "Chelsea",
+      "slug": "chelsea",
+      "nationality": "Australian",
+      "photo": "images/people/42/1794991268105-990.jpeg",
+      "photos": [
+        "images/people/42/1794991268105-990.jpeg"
+      ],
+      "description": "30min - $250 45min - $330 60min - $400",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
