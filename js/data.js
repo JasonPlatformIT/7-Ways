@@ -468,6 +468,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 44,
+      "name": "Linda",
+      "slug": "linda",
+      "nationality": "China",
+      "photo": "images/people/44/1794992414466-986.jpeg",
+      "photos": [
+        "images/people/44/1794992414466-986.jpeg"
+      ],
+      "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
