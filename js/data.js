@@ -513,6 +513,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 47,
+      "name": "Maori",
+      "slug": "maori",
+      "nationality": "Maddison",
+      "photo": "images/people/47/1795049018108-1011.jpeg",
+      "photos": [
+        "images/people/47/1795049018108-1011.jpeg"
+      ],
+      "description": "30min - $200 45min - $280 60min - $330",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
