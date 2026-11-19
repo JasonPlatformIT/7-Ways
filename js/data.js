@@ -483,6 +483,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 45,
+      "name": "Celeste",
+      "slug": "celeste",
+      "nationality": "Australian",
+      "photo": "images/people/45/1795048883653-1012.jpeg",
+      "photos": [
+        "images/people/45/1795048883653-1012.jpeg"
+      ],
+      "description": "30min - $220 45min - $300 60min - $350",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
