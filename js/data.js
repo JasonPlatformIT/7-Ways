@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-19",
+  "scheduleDate": "2026-11-20",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -48,8 +48,7 @@ const CMS_DATA = {
       ],
       "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE!!",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -449,7 +448,9 @@ const CMS_DATA = {
         "images/people/42/1794991268105-990.jpeg"
       ],
       "description": "30min - $250 45min - $330 60min - $400",
-      "available": []
+      "available": [
+        "today"
+      ]
     },
     {
       "id": 43,
@@ -462,8 +463,7 @@ const CMS_DATA = {
       ],
       "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -477,8 +477,7 @@ const CMS_DATA = {
       ],
       "description": "New  Vietnam girl ！！！\nLinda 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -492,8 +491,7 @@ const CMS_DATA = {
       ],
       "description": "30min - $220 45min - $300 60min - $350",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -507,8 +505,7 @@ const CMS_DATA = {
       ],
       "description": "30min - $200 45min - $280 60min - $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -522,8 +519,7 @@ const CMS_DATA = {
       ],
       "description": "30min - $200 45min - $280 60min - $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     }
   ],
