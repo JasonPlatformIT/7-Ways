@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-18",
+  "scheduleDate": "2026-11-19",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -137,8 +137,8 @@ const CMS_DATA = {
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 6pm – 4am",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -478,7 +478,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/44/1794992414466-986.jpeg"
       ],
-      "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
+      "description": "New  Vietnam girl ！！！\nLinda 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
         "today",
         "tomorrow"
