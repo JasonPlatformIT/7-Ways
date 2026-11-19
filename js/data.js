@@ -463,7 +463,7 @@ const CMS_DATA = {
       "photos": [
         "images/people/43/1794991353551-988.jpeg"
       ],
-      "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
+      "description": "Rate: 30min - $220 45min - $300 1 hour - $350 \n11am-4am",
       "available": [
         "today",
         "tomorrow"
