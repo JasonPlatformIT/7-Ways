@@ -412,7 +412,10 @@ const CMS_DATA = {
         "images/people/39/1794530067856-849.jpeg"
       ],
       "description": "30mins $220 . 45mins $300 . 1 hour $350",
-      "available": []
+      "available": [
+        "tomorrow",
+        "today"
+      ]
     },
     {
       "id": 40,
@@ -448,9 +451,7 @@ const CMS_DATA = {
         "images/people/42/1794991268105-990.jpeg"
       ],
       "description": "30min - $250 45min - $330 60min - $400",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 43,
@@ -463,7 +464,8 @@ const CMS_DATA = {
       ],
       "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -477,7 +479,8 @@ const CMS_DATA = {
       ],
       "description": "New  Vietnam girl ！！！\nLinda 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -491,7 +494,8 @@ const CMS_DATA = {
       ],
       "description": "30min - $220 45min - $300 60min - $350",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -510,9 +514,9 @@ const CMS_DATA = {
     },
     {
       "id": 47,
-      "name": "Maori",
-      "slug": "maori",
-      "nationality": "Maddison",
+      "name": "Maddison",
+      "slug": "maddison",
+      "nationality": "Newzland",
       "photo": "images/people/47/1795049018108-1011.jpeg",
       "photos": [
         "images/people/47/1795049018108-1011.jpeg"
