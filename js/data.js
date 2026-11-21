@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-20",
+  "scheduleDate": "2026-11-21",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -47,9 +47,7 @@ const CMS_DATA = {
         "images/people/2/1793930509996-744.jpeg"
       ],
       "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE!!",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 4,
@@ -412,10 +410,7 @@ const CMS_DATA = {
         "images/people/39/1794530067856-849.jpeg"
       ],
       "description": "30mins $220 . 45mins $300 . 1 hour $350",
-      "available": [
-        "tomorrow",
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 40,
@@ -493,10 +488,7 @@ const CMS_DATA = {
         "images/people/45/1795048883653-1012.jpeg"
       ],
       "description": "30min - $220 45min - $300 60min - $350",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 46,
@@ -508,9 +500,7 @@ const CMS_DATA = {
         "images/people/46/1795048958350-1013.jpeg"
       ],
       "description": "30min - $200 45min - $280 60min - $330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 47,
@@ -523,7 +513,8 @@ const CMS_DATA = {
       ],
       "description": "30min - $200 45min - $280 60min - $330",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     }
   ],
