@@ -516,6 +516,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 48,
+      "name": "Mini",
+      "slug": "mini",
+      "nationality": "Moroccan",
+      "photo": "images/people/48/1795223469953-1034.jpeg",
+      "photos": [
+        "images/people/48/1795223469953-1034.jpeg"
+      ],
+      "description": "30min - $220 45min - $300 60min - $350",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
