@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-21",
+  "scheduleDate": "2026-11-22",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -47,7 +47,10 @@ const CMS_DATA = {
         "images/people/2/1793930509996-744.jpeg"
       ],
       "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE!!",
-      "available": []
+      "available": [
+        "tomorrow",
+        "today"
+      ]
     },
     {
       "id": 4,
@@ -308,8 +311,7 @@ const CMS_DATA = {
       ],
       "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -386,10 +388,7 @@ const CMS_DATA = {
         "images/people/37/1794217808562-755.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     },
     {
       "id": 38,
@@ -425,7 +424,10 @@ const CMS_DATA = {
         "images/people/40/1794621453550-868.jpeg"
       ],
       "description": "New Chinese Amy ！！！\n Amy 27year 155cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9.30pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 41,
@@ -516,8 +518,7 @@ const CMS_DATA = {
       ],
       "description": "30min - $200 45min - $280 60min - $330",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -530,10 +531,7 @@ const CMS_DATA = {
         "images/people/48/1795223469953-1034.jpeg"
       ],
       "description": "30min - $220 45min - $300 60min - $350",
-      "available": [
-        "today",
-        "tomorrow"
-      ]
+      "available": []
     }
   ],
   "introText": {
