@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-22",
+  "scheduleDate": "2026-11-23",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -48,8 +48,8 @@ const CMS_DATA = {
       ],
       "description": "SPRING PROMOTION $145 for 30 mins FULL SERVICE!!",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -310,9 +310,7 @@ const CMS_DATA = {
         "images/people/31/1793590192072-584.jpeg"
       ],
       "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 32,
@@ -439,7 +437,10 @@ const CMS_DATA = {
         "images/people/41/1794833359424-911.jpeg"
       ],
       "description": "New Japanese Dina ！！！\n Dina 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 1pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 42,
@@ -464,8 +465,7 @@ const CMS_DATA = {
       ],
       "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
       "available": [
-        "today",
-        "tomorrow"
+        "today"
       ]
     },
     {
@@ -517,9 +517,7 @@ const CMS_DATA = {
         "images/people/47/1795049018108-1011.jpeg"
       ],
       "description": "30min - $200 45min - $280 60min - $330",
-      "available": [
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 48,
