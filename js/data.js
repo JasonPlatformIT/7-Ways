@@ -233,8 +233,11 @@ const CMS_DATA = {
       "photos": [
         "images/people/22/1792687909688-476.jpeg"
       ],
-      "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 3pm-4am",
-      "available": []
+      "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 23,
@@ -358,7 +361,8 @@ const CMS_DATA = {
       ],
       "description": "New Vietnamese A girl！！！student !!!\n Rosie 22 year 165cm D cup  very sexy girl !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -371,7 +375,10 @@ const CMS_DATA = {
         "images/people/37/1794217808562-755.jpeg"
       ],
       "description": "New Chinese A girl！！！\n Abby 23year 162cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 6pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 38,
