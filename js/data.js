@@ -154,18 +154,6 @@ const CMS_DATA = {
       "available": []
     },
     {
-      "id": 16,
-      "name": "Aurora Lilith",
-      "slug": "aurora-lilith",
-      "nationality": "Australian",
-      "photo": "images/people/16/1791711664937-273.jpeg",
-      "photos": [
-        "images/people/16/1791711664937-273.jpeg"
-      ],
-      "description": "Aurora enjoys exploring BDSM, Dom/sub dynamics, and the excitement of consensual power exchange. She is open-mind about kinks, including a playful appreciation of for feet and other fantasies.\n8pm – 4am",
-      "available": []
-    },
-    {
       "id": 17,
       "name": "Megan",
       "slug": "megan",
