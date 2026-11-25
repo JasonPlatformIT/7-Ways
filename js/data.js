@@ -539,6 +539,21 @@ const CMS_DATA = {
         "today",
         "tomorrow"
       ]
+    },
+    {
+      "id": 50,
+      "name": "Eva",
+      "slug": "eva",
+      "nationality": "Australian",
+      "photo": "images/people/50/1795590651871-1104.jpeg",
+      "photos": [
+        "images/people/50/1795590651871-1104.jpeg"
+      ],
+      "description": "30min - $220 45min - $300 60min - $350\n8:00pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     }
   ],
   "introText": {
