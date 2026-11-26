@@ -4,7 +4,7 @@
 
 const CMS_DATA = {
   "workerUrl": "https://7ways-cms-publish.jason-52c.workers.dev",
-  "scheduleDate": "2026-11-25",
+  "scheduleDate": "2026-11-27",
   "format": {
     "bodyColor": "#fafafa",
     "bodySize": "16px",
@@ -151,7 +151,10 @@ const CMS_DATA = {
         "images/people/15/1791711687201-274.jpeg"
       ],
       "description": "Anna's current venue profile lists her as 27 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 6pm – 4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 17,
@@ -224,7 +227,10 @@ const CMS_DATA = {
         "images/people/22/1792687909688-476.jpeg"
       ],
       "description": "New Chinese Mature and sexy  girl Fifi ！！！\n30yer. 162cm. 50kg . Busty C+ . She’s new to the industry\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 7pm-4am",
-      "available": []
+      "available": [
+        "tomorrow",
+        "today"
+      ]
     },
     {
       "id": 23,
@@ -286,10 +292,7 @@ const CMS_DATA = {
         "images/people/30/1792999418224-532.jpeg"
       ],
       "description": "Kiana current  profile lists her as 24 years old and Australian and dress size 8. Reception keeps these details current and can answer practical questions about your visit.\n 8pm – 4am",
-      "available": [
-        "tomorrow",
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 31,
@@ -301,7 +304,10 @@ const CMS_DATA = {
         "images/people/31/1793590192072-584.jpeg"
       ],
       "description": "New Chinese A girl！！！\nLynn 25year 160cm D cup  very sexy girl， highly recommend！！！\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 4pm-4am",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 32,
@@ -351,6 +357,7 @@ const CMS_DATA = {
       ],
       "description": "New Vietnamese A girl！！！student !!!\n Rosie 22 year 165cm D cup  very sexy girl !!!\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
+        "tomorrow",
         "today"
       ]
     },
@@ -404,8 +411,8 @@ const CMS_DATA = {
       ],
       "description": "New Chinese Amy ！！！\n Amy 27year 155cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 9.30pm-4am",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -419,8 +426,8 @@ const CMS_DATA = {
       ],
       "description": "New Japanese Dina ！！！\n Dina 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 1pm-4am",
       "available": [
-        "tomorrow",
-        "today"
+        "today",
+        "tomorrow"
       ]
     },
     {
@@ -445,10 +452,7 @@ const CMS_DATA = {
         "images/people/43/1794991353551-988.jpeg"
       ],
       "description": "Rate: 30min - $220 45min - $300 1 hour - $350",
-      "available": [
-        "tomorrow",
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 44,
@@ -460,10 +464,7 @@ const CMS_DATA = {
         "images/people/44/1794992414466-986.jpeg"
       ],
       "description": "New  Vietnam girl ！！！\nLinda 25year 160cm ，silm sexy body with DD cup bust\nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
-      "available": [
-        "tomorrow",
-        "today"
-      ]
+      "available": []
     },
     {
       "id": 45,
