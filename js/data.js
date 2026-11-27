@@ -131,9 +131,9 @@ const CMS_DATA = {
       "name": "Emily",
       "slug": "emily",
       "nationality": "Filipino",
-      "photo": "images/people/13/1791620666585-262.jpeg",
+      "photo": "images/people/13/1795764894020-1127.jpeg",
       "photos": [
-        "images/people/13/1791620666585-262.jpeg"
+        "images/people/13/1795764894020-1127.jpeg"
       ],
       "description": "Emily's current venue profile lists her as 32 years old and Filipino , with a listed height of 163 and dress size 14. Reception keeps these details current and can answer practical questions about your visit.\n· 6pm – 4am",
       "available": [
