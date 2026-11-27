@@ -476,7 +476,10 @@ const CMS_DATA = {
         "images/people/45/1795048883653-1012.jpeg"
       ],
       "description": "30min - $220 45min - $300 60min - $350",
-      "available": []
+      "available": [
+        "today",
+        "tomorrow"
+      ]
     },
     {
       "id": 46,
@@ -539,6 +542,21 @@ const CMS_DATA = {
         "images/people/50/1795590651871-1104.jpeg"
       ],
       "description": "30min - $220 45min - $300 60min - $350\n8:00pm-4am",
+      "available": [
+        "today",
+        "tomorrow"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Dolly",
+      "slug": "dolly",
+      "nationality": "Nepalese",
+      "photo": "images/people/51/1795745301372-1112.jpeg",
+      "photos": [
+        "images/people/51/1795745301372-1112.jpeg"
+      ],
+      "description": "New  Nepalese girl ！！！\nDolly 28year 160cm \nFull service : Shower together . Natural Bj . Kissing. Condom Sex!!\n💵30mins $200. 45mins$280. \n💵1 hour$330\nToday 11am-4am",
       "available": [
         "today",
         "tomorrow"
